@@ -1,0 +1,296 @@
+﻿<UserControl x:Class="SMART.WCS.UI.EMS.Views.BASE_INFO.E1005"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+             xmlns:e="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:uButton1="clr-namespace:SMART.WCS.Control.Controls;assembly=SMART.WCS.Control"
+             xmlns:localCtrl="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+             xmlns:uButton="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+             xmlns:commonMapping="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+             xmlns:berhaviors="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+             xmlns:local="clr-namespace:SMART.WCS.UI.EMS.Views.BASE_INFO"
+             xmlns:Converters="clr-namespace:SMART.WCS.Control.Converters;assembly=SMART.WCS.Control"
+             mc:Ignorable="d" 
+             Background="White">
+
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SMART.WCS.Control;component/Themes/BaseStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters:RowHandleToIndexConverter x:Key="RowHandleToIndexConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+    <e:Interaction.Behaviors>
+        <berhaviors:ControlBaseBehavior />
+    </e:Interaction.Behaviors>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <localCtrl:NavigationBar x:Name="NavigationBar"/>
+
+        <Grid Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource ContentMargin}"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource ContentMargin}"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource ContentMargin}"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <!--#region 버튼-->
+            <Grid   Grid.Row="1">
+                <StackPanel Style="{StaticResource CommonPanelStyle}">
+                    <uButton:uSimpleButton Style="{StaticResource CommButtonStyle}"
+                                            x:Name="btnSave"
+                                           ButtonType="SAVE"     IsIconVisibleYN="True" />
+                    <uButton1:uSimpleButtonSearch   x:Name="btnSearch" />
+                </StackPanel>
+            </Grid>
+            <!--#endregion 버튼-->
+
+            <!--#region 조회 조건 영역-->
+            <Border Style="{StaticResource SearchPanelStyle}" Grid.Row="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--#region  3. 사용 여부 (조회 조건)-->
+                    <Grid Style="{StaticResource SearchItemStyle}"  Grid.Row="0"    Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock  commonMapping:CommonProperties.LabelCd="USE_YN"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Center"/>
+                        <dxe:ComboBoxEdit Grid.Column="2" 
+							                          x:Name="cboUseYN" 
+							                          NullText="SELECT" 
+							                          ValueMember="CODE" 
+							                          DisplayMember="NAME" 
+							                          Width="100"/>
+                    </Grid>
+                    <!--#endregion-->
+                </Grid>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region 그리드 위 버튼 & 데이터 수 영역-->
+            <Grid   Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition   Width="200" />
+                    <ColumnDefinition   Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="*" />
+                    <RowDefinition  Height="3" />
+                </Grid.RowDefinitions>
+
+                <Grid   Grid.Column="1"     HorizontalAlignment="Right"     Margin="0,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition   Width="Auto" />
+                        <ColumnDefinition   Width="Auto" />
+                        <ColumnDefinition   Width="Auto" />
+                        <ColumnDefinition   Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--전체 닫힘-->
+                    <uButton:uSimpleButton  x:Name="btnAllOpen"    Grid.Row="0"  Grid.Column="0"  Padding="0" 
+											Height="20"     Cursor="Hand"       BorderBrush="Black" BorderThickness="1"
+											ButtonType="ALL_OPEN"     IsIconVisibleYN="True"    Margin="0">
+                    </uButton:uSimpleButton>
+
+                    <!--전체 닫힘-->
+                    <uButton:uSimpleButton  x:Name="btnAllClose"    Grid.Row="0"  Grid.Column="1"  Padding="0" 
+											Height="20"     Cursor="Hand"       BorderBrush="Black" BorderThickness="1"
+											ButtonType="ALL_CLOSE"     IsIconVisibleYN="True"    Margin="5,0,0,0">
+                    </uButton:uSimpleButton>
+
+                </Grid>
+
+            </Grid>
+            <!--#endregion-->
+
+            <Grid x:Name="gridAreaTreeControl" Grid.Row="7" Margin="10,0,10,0">
+                <dxg:TreeListControl    Name="treeListControl" 
+                                        Height="{Binding ActualHeight,ElementName=gridTreeControl,Mode=OneWay}"
+                                        VerticalAlignment="Top"
+                                        SelectionMode="Cell"
+                                        ShowBorder="True"
+                                        BorderThickness="10"
+                                        ItemsSource="{Binding MenuMgntList}">
+                    <dxg:TreeListControl.View>
+                        <dxg:TreeListView   Name="treeListView"
+                                            KeyFieldName="TREE_ID"
+                                            ParentFieldName="PARENT_PART_CLS_ID" 
+                                            local:E1005.IsEnabled="True"
+                                            IndicatorWidth="0"
+                                            AutoWidth="True"
+                                            AllowEditing="True"
+                                            dx:ScrollBarExtensions.ScrollBarMode="Standard"
+                                            AutoExpandAllNodes="True">
+                            <dxg:TreeListView.RowIndicatorContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DataContext.RowHandle.Value, Converter={StaticResource RowHandleToIndexConverter}}" />
+                                </DataTemplate>
+                            </dxg:TreeListView.RowIndicatorContentTemplate>
+                            <dxg:TreeListView.RowStyle>
+                                <Style TargetType="{x:Type dxg:RowControl}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Row.MENU_URL}" Value="">
+                                            <Setter Property="FontWeight" Value="Bold"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </dxg:TreeListView.RowStyle>
+
+                            <dxg:TreeListView.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem   x:Name="menuItemRowAdd" />
+                                    <MenuItem   x:Name="menuItemRowDelete" />
+                                </ContextMenu>
+                            </dxg:TreeListView.ContextMenu>
+                            <!-- 20180911 hj.kim Bold 처리 end -->
+                        </dxg:TreeListView>
+                    </dxg:TreeListControl.View>
+
+                    <!--Margin="0,0.8,0,-1"-->
+                    <dxg:TreeListControl.Columns>
+                        <dxg:TreeListColumn FieldName="PART_CLS_ID"   Header="PART_CLS_ID_REQ"  IsEnabled="False"   Width="100"     HorizontalHeaderContentAlignment="Center"
+                                            Style="{StaticResource TreeColumnStringCenter}"
+                                            AllowEditing="True">
+                            <!--<dxg:TreeListColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DockPanel>
+                                        <dxe:TextEdit x:Name="PART_Editor" ShowBorder="False"/>
+                                        <dxe:ImageEdit x:Name="imgApp" HorizontalAlignment="Left" DockPanel.Dock="Left"
+                                                                       Visibility="Collapsed" VerticalAlignment="Center" 
+                                                                       Width="15" Height="15" Margin="0,1,0,0" ShowBorder="False" IsReadOnly="True"/>
+                                    </DockPanel>
+
+                                </DataTemplate>
+                            </dxg:TreeListColumn.CellTemplate>-->
+
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#region 메뉴명 - MENU_NM-->
+                        <dxg:TreeListColumn FieldName="PART_CLS_NM"     Header="PART_CLS_NM"    Width="200"     HorizontalHeaderContentAlignment="Center"
+                                                    Style="{StaticResource TreeColumnStringLeft}">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BaseBackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 부품분류비교 - PART_CLS_NOTE-->
+                        <dxg:TreeListColumn FieldName="PART_CLS_NOTE"     Header="PART_CLS_NOTE"    Width="200"     HorizontalHeaderContentAlignment="Center"
+                                                    Style="{StaticResource TreeColumnStringLeft}">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BaseBackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+                        
+                        <!--#region 메뉴 레벨 - MENU_LVL-->
+                        <dxg:TreeListColumn FieldName="PART_CLS_LV"  Header="PART_CLS_LV"     Width="100"     HorizontalHeaderContentAlignment="Center"   Visible="False"
+                                            AllowEditing="False"    Style="{StaticResource TreeColumnStringCenter}">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 메뉴 레벨 - MENU_LVL-->
+                        <dxg:TreeListColumn FieldName="PART_CLS_NOTE"  Header="PART_CLS_NOTE"     Width="100"     HorizontalHeaderContentAlignment="Center"   Visible="False"
+                                            AllowEditing="False"    Style="{StaticResource TreeColumnStringCenter}">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 트리 ID - TREE_ID-->
+                        <dxg:TreeListColumn FieldName="TREE_ID"     Header="TREE_ID"        Width="170"     HorizontalHeaderContentAlignment="Center"   Visible="False"
+                                            Style="{StaticResource TreeColumnStringCenter}" AllowEditing="False">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 부모 ID - PARENT_ID-->
+                        <dxg:TreeListColumn FieldName="PARENT_PART_CLS_ID"   Header="PARENT_PART_CLS_ID"      Width="150"     HorizontalHeaderContentAlignment="Center"   Visible="False"
+                                            Style="{StaticResource TreeColumnStringCenter}" AllowEditing="False">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 사용 여부 - USE_YN-->
+                        <dxg:TreeListColumn FieldName="USE_YN"      Header="USE_YN"         Width="100"     HorizontalHeaderContentAlignment="Center"
+                                                    Style="{StaticResource TreeColumnStringCenter}">
+                            <dxg:TreeListColumn.CellTemplate>
+                                <DataTemplate>
+                                    <dxe:CheckEdit  x:Name="PART_Editor"    EditValue="{Binding RowData.Row.USE_YN_CHECKED, Mode=TwoWay}"  ClickMode="Release" />
+                                </DataTemplate>
+                            </dxg:TreeListColumn.CellTemplate>
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BaseBackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+                    </dxg:TreeListControl.Columns>
+                </dxg:TreeListControl>
+            </Grid>
+
+
+        </Grid>
+        <dx:LoadingDecorator x:Name="loadingScreen" Grid.Row="0" Grid.RowSpan="99"  HorizontalAlignment="Center"    VerticalAlignment="Center"/>
+    </Grid>
+
+</UserControl>

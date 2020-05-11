@@ -1,0 +1,324 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+                    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                    xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
+                    xmlns:Converters="clr-namespace:SMART.WCS.Control.Converters;assembly=SMART.WCS.Control" 
+                    xmlns:localCtrl="clr-namespace:SMART.WCS.Control">
+    <GridLength x:Key="ContentMargin">10</GridLength>
+    <GridLength x:Key="ContentMarginHalf">5</GridLength>
+    <GridLength x:Key="ContentMarginLong">20</GridLength>
+    <GridLength x:Key="TotalCountShowMargin">30</GridLength>
+    <Thickness x:Key="DefaultMargin">10,0,10,0</Thickness>
+    <VerticalAlignment x:Key="VerticalCenter">Center</VerticalAlignment>
+    <TextAlignment x:Key="TextCenter">Center</TextAlignment>
+    
+    <Style TargetType="{x:Type Border}" x:Key="SearchPanelStyle">
+        <Setter Property="Background" Value="#edf0f5"/>
+        <Setter Property="Padding" Value="0,9,0,9"/>
+    </Style>
+    <Style TargetType="{x:Type Border}" x:Key="CommonSearchPanelHeightStyle">
+        <Setter Property="Background" Value="#edf0f5"/>
+        <Setter Property="Padding" Value="0,9,0,9"/>
+        <Setter Property="Height"  Value="40"/>
+    </Style>
+    <Style TargetType="{x:Type Border}" x:Key="OptionPanelStyle">
+        <Setter Property="Background" Value="#D9D9D9"/>
+        <Setter Property="Padding" Value="0,9,0,9"/>
+    </Style>
+
+    <Style TargetType="{x:Type Border}" x:Key="SubOptionPanelStyle">
+        <Setter Property="Background" Value="#D9D9D9"/>
+        <Setter Property="Padding" Value="0"/>
+    </Style>
+
+    <Style TargetType="{x:Type Border}" x:Key="SubItemTitleStyle">
+        <Setter Property="Background"       Value="#D9D9D9"/>
+        <Setter Property="BorderBrush"      Value="Black" />
+        <Setter Property="BorderThickness"  Value="1" />
+        <Setter Property="Padding"          Value="0" />
+    </Style>
+
+    <Style TargetType="{x:Type Border}" x:Key="SubItemStyle">
+        <Setter Property="BorderBrush"      Value="Black" />
+        <Setter Property="BorderThickness"  Value="1" />
+        <Setter Property="Padding"          Value="0" />
+    </Style>
+
+    <Style TargetType="{x:Type Grid}" x:Key="SearchItemStyle">
+        <Setter Property="Margin" Value="30,0,0,0"/>
+    </Style>
+
+    <Style TargetType="{x:Type StackPanel}" x:Key="CommonPanelStyle">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Margin" Value="{StaticResource DefaultMargin}"/>
+    </Style>
+    <Style TargetType="{x:Type StackPanel}" x:Key="SubCommonPanelStyle">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="HorizontalAlignment" Value="Right"/>
+        <Setter Property="Margin" Value="0,0,0,3"/>
+    </Style>
+    <Style TargetType="{x:Type StackPanel}" x:Key="NoticeStackPanel">
+        <Setter Property="Orientation" Value="Horizontal"/>
+        <Setter Property="Margin" Value="5"/>
+    </Style>
+
+    <Style TargetType="{x:Type localCtrl:uSimpleButton}" x:Key="localCtrl:uSimpleButton">
+        <Setter Property="Height"  Value="32"/>
+    </Style>
+    <Style TargetType="{x:Type localCtrl:uSimpleButton}" x:Key="CommButtonStyle" BasedOn="{StaticResource localCtrl:uSimpleButton}">
+        <Setter Property="Margin" Value="3,0,0,0"/>
+    </Style>
+    <Style TargetType="{x:Type localCtrl:uSimpleButton}" x:Key="OtherButtonStyle" BasedOn="{StaticResource localCtrl:uSimpleButton}">
+        <Setter Property="Margin" Value="3,0,0,0"/>
+        <Setter Property="Height"  Value="22"/>
+    </Style>
+    
+    <!--<Style TargetType="dx:SimpleButton" x:Key="NormalButtonStyle">-->
+    <Style TargetType="{x:Type localCtrl:uSimpleButton}" x:Key="SearchButtonStyle" BasedOn="{StaticResource localCtrl:uSimpleButton}">
+        <Setter Property="AllowDrop" Value="False"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="0"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid>
+                        <Border BorderThickness="0" Background="#31383E">
+                            <TextBlock Foreground="White" Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <!--
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFEAF2FA"/>
+                </Trigger>
+            </Style.Triggers>
+            -->
+    </Style>
+    <!--<Style  TargetType="{x:Type TextBlock}" x:Key="SubHeaderAreaStyle">
+        <Setter Property="HorizontalAlignment"  Value="Center" />
+        <Setter Property="VerticalAlignment"    Value="Center" />
+        <Setter Property="Background"           Value="#FFFF99" />
+        <Setter Property="FontWeight"           Value="Bold" />
+    </Style>-->
+
+    
+    <!--#region TextBlock 스타일-->
+    <Style  TargetType="{x:Type TextBlock}"     x:Key="TextBlockStringRight">
+        <Setter Property="HorizontalAlignment"  Value="Right" />
+        <Setter Property="VerticalAlignment"    Value="Center" />
+        <Setter Property="Padding"              Value="0" />
+        <Setter Property="Margin"               Value="0,0,5,0" />
+        
+    </Style>
+  
+    <Style TargetType="{x:Type TextBlock}"      x:Key ="NoticeLeftTextBlock">
+        <Setter Property="Width" Value="60"/>
+        <Setter Property="TextAlignment" Value="Right"/>
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0 0 10 0"/>
+    </Style>
+    
+    <Style TargetType="{x:Type TextBlock}"      x:Key ="NoticeRightTextBlock">
+        <Setter Property="Width" Value="80"/>
+        <Setter Property="TextAlignment" Value="Right"/>
+        <Setter Property="Margin" Value="70 0 10 0"/>
+    </Style>
+    <!--#endregion-->
+
+    <Style  TargetType="{x:Type dxe:TextEdit}"     x:Key="TextEditNumeric">
+        <Setter Property="HorizontalAlignment"          Value="Center" />
+        <Setter Property="VerticalAlignment"            Value="Center" />
+        <Setter Property="HorizontalContentAlignment"   Value="Right" />
+        <Setter Property="Mask"                         Value="#,##0" />
+    </Style>
+    
+    <!--#region 그리드 스타일-->
+    <!--#region 그리드 중앙 정렬 (날짜 타입)-->
+    <Style TargetType="{x:Type dxg:GridColumn}"     x:Key="GridColumnDateTime">
+        <Setter Property="EditSettings">
+            <Setter.Value>
+                <dxe:TextEditSettings   HorizontalContentAlignment="Center"     MaskType="None"   NullText="" 
+                                        DisplayFormat="yyyy-MM-dd HH:mm:ss" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region 그리드 중앙 정렬 (날짜 타입)-->
+    <Style TargetType="{x:Type dxg:GridColumn}"     x:Key="GridColumnDate">
+        <Setter Property="EditSettings">
+            <Setter.Value>
+                <dxe:TextEditSettings   HorizontalContentAlignment="Center"     MaskType="None"   NullText="" 
+                                        DisplayFormat="yyyy-MM-dd" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region 그리드 좌측 정렬-->
+    <Style TargetType="{x:Type dxg:GridColumn}"     x:Key="GridColumnStringLeft">
+        <Setter Property="EditSettings">
+            <Setter.Value>
+                <dxe:TextEditSettings HorizontalContentAlignment="Left"     NullText="" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    
+    <!--#region 그리드 중앙 정렬-->
+    <Style TargetType="{x:Type dxg:GridColumn}"     x:Key="GridColumnStringCenter">
+        <Setter Property="EditSettings">
+            <Setter.Value>
+                <dxe:TextEditSettings   HorizontalContentAlignment="Center"     MaskType="None"         NullText="" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region 그리드 숫자형, 우측정렬-->
+    <Style TargetType="{x:Type dxg:GridColumn}"     x:Key="GridColumnDecimal">
+        <Setter Property="EditSettings">
+            <Setter.Value>
+                <dxe:TextEditSettings   HorizontalContentAlignment="Right"  MaskType="Numeric"  
+                                        DisplayFormat="#,##0" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region 그리드 숫자형 (소수점 2자리), 우측정렬-->
+    <Style TargetType="{x:Type dxg:GridColumn}"     x:Key="GridColumnDecimalPointTwo">
+        <Setter Property="EditSettings">
+            <Setter.Value>
+                <dxe:TextEditSettings   HorizontalContentAlignment="Right"  MaskType="Numeric"
+                                        DisplayFormat="#,##0.00"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region 일반숫자스타일, 우측정렬-->
+    <Style TargetType="{x:Type dxg:GridColumn}"     x:Key="GridColumnStyle">
+        <Setter Property="EditSettings">
+            <Setter.Value>
+                <dxe:TextEditSettings   HorizontalContentAlignment="Right"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    
+    <!--#region 전화번호 포맷, 좌측정렬-->
+    <Style TargetType="{x:Type dxg:GridColumn}"     x:Key="GridColumnTelNo">
+        <Setter Property="EditSettings">
+            <Setter.Value>
+                <dxe:TextEditSettings   HorizontalContentAlignment="Left" MaskType="Simple"  Mask="###-####-####" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#endregion-->
+    
+    <!--#region 트리 스타일-->
+    <!--#region 트리 컨트롤 컬럼 문자열 좌측 정렬-->
+    <Style TargetType="{x:Type dxg:TreeListColumn}"    x:Key="TreeColumnStringLeft">
+        <Setter Property="EditSettings">
+            <Setter.Value>
+                <dxe:TextEditSettings   HorizontalContentAlignment="Left" NullText="" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    
+    <!--#region 트리 컨트롤 컬럼 문자열 중앙 정렬-->
+    <Style TargetType="{x:Type dxg:TreeListColumn}"    x:Key="TreeColumnStringCenter">
+        <Setter Property="EditSettings">
+            <Setter.Value>
+                <dxe:TextEditSettings   HorizontalContentAlignment="Center" NullText="" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    
+    <!--#region 트리 컨트롤 컬럼 문자열 중앙 정렬-->
+    <Style TargetType="{x:Type dxg:TreeListColumn}"    x:Key="TreeColumnStringRight">
+        <Setter Property="EditSettings">
+            <Setter.Value>
+                <dxe:TextEditSettings   HorizontalContentAlignment="Right" NullText="" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--#endregion-->
+    <!--#endregion-->
+    <!--<Style TargetType="{x:Type dxe:TextEditSettings}" x:Key="GridColumnStringCenter">
+        <Setter Property="HorizontalContentAlignment"   Value="Center" />
+    </Style>-->
+
+    <!--<Style TargetType="{x:Type localCtrl:uButton}" x:Key="CommNormalButtonStyle">
+        <Setter Property="Margin" Value="3,0,0,0"/>
+        <Setter Property="Height"  Value="30"/>
+    </Style>-->
+    <!--<Style TargetType="{x:Type localCtrl:uWrapPanel}" x:Key="uWrapPanelSearchPanelStyle">
+        <Setter
+        Property="ItemMargin"
+        Value="5" />
+    </Style>-->
+    <Style TargetType="UserControl" x:Key="{x:Type UserControl}">
+        <Setter Property="dx:ThemeManager.ThemeName" Value="Office2019Colorful"/>
+        <Setter Property="FontFamily" Value="Dotum" />
+        <Setter Property="FontSize" Value="12"/>
+        <!--<Setter Property="CacheMode">
+            <Setter.Value>
+                <BitmapCache/>
+            </Setter.Value>
+        </Setter>-->
+        <Setter Property="TextOptions.TextRenderingMode" Value="Auto"/>
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style TargetType="{x:Type StackPanel}" x:Key="{x:Type StackPanel}">
+        <Setter Property="TextBlock.VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style TargetType="{x:Type TextBlock}" x:Key="{x:Type TextBlock}">
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="TextAlignment"  Value="{StaticResource TextCenter}"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style TargetType="ListViewItem" x:Key="{x:Type ListViewItem}">
+        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+    </Style>
+    <Style TargetType="ListBoxItem" x:Key="{x:Type ListBoxItem}">
+        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+    </Style>
+    <Style TargetType="ComboBoxItem" x:Key="{x:Type ComboBoxItem}">
+        <Setter Property="IsSelected" Value="{Binding IsSelected, Mode=TwoWay}" />
+    </Style>
+    <Style x:Key="{x:Type Window}" TargetType="{x:Type Window}">
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.WindowTextBrushKey}}"/>
+        <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Window}">
+                    <Border BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="0,0,6,6">
+                        <AdornerDecorator>
+                            <ContentPresenter/>
+                        </AdornerDecorator>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="ResizeMode" Value="CanResizeWithGrip">
+                <Setter Property="Template" Value="{StaticResource WindowTemplateKey}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

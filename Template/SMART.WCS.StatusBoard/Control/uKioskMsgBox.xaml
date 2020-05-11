@@ -1,0 +1,231 @@
+﻿<Window x:Class="SMART.WCS.StatusBoard.Control.uKioskMsgBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SMART.WCS.StatusBoard.Control"
+        dx:ThemeManager.ThemeName="Office2019Colorful"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        BorderBrush="#D9D9D9" KeyUp="frmInformationMsg_KeyDown"
+        BorderThickness="1"
+        Height="500" 
+        Width="800">
+
+    <Window.Resources>
+        <Style x:Key="TransparentStyle" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border>
+                            <Border.Style>
+                                <Style TargetType="{x:Type Border}">
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Background" Value="Transparent"/>
+                                            <Setter Property="Opacity" Value="0.9"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Border.Style>
+                            <Grid Background="Transparent">
+                                <ContentPresenter></ContentPresenter>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="dx:SimpleButton" x:Key="SMSButtonStyle">
+            <Setter Property="AllowDrop" Value="False"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="ClickMode" Value="Press"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid>
+                            <Border BorderThickness="0" Background="#999999">
+                                <TextBlock Foreground="White" Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+        <StackPanel Background="White">
+            <!--StateChanged="Window_StateChanged" 
+        LocationChanged="Window_LocationChanged"-->
+            <!--<Border     Name="main" 
+                BorderThickness="0" 
+                BorderBrush="#0078b9" 
+                Margin="0"
+                Padding="0"
+                VerticalAlignment="Top">-->
+            <DockPanel>
+                <!--#region 상단 헤더 영역-->
+                <Border Name="border"   
+                    DockPanel.Dock="Top" 
+                    Height="28">
+                    <Grid   Background="#31383E">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition   Width="8*" />
+                            <ColumnDefinition   Width="1*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Border    PreviewMouseDown="Border_PreviewMouseDown" >
+                            <!--#region 헤더 텍스트 - Question Message-->
+                            <Grid   Grid.Column="0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition  Height="6" />
+                                    <RowDefinition  Height="*" />
+                                    <RowDefinition  Height="6" />
+                                </Grid.RowDefinitions>
+                                <TextBlock  Grid.Row="1"
+                                            x:Name="lblTitle"
+                                            Text="Information Message"
+                                            VerticalAlignment="Center"
+                                            HorizontalAlignment="Left"
+                                            FontWeight="Bold"
+                                            FontSize="13"
+                                            Foreground="White"
+                                            Margin="10,0,15,0"/>
+                            </Grid>
+                            <!--#endregion-->
+                        </Border>
+
+                        <!--#region 메인화면 닫기 버튼-->
+                        <Grid   Grid.Column="1" 
+                            HorizontalAlignment="Right" >
+                            <Grid.RowDefinitions>
+                                <RowDefinition  Height="9" />
+                                <RowDefinition  Height="*" />
+                                <RowDefinition  Height="9" />
+                            </Grid.RowDefinitions>
+
+
+                            <Button x:Name="btnFormClose"
+                                    Grid.Row="1"
+                                    Cursor="Hand"
+                                    Padding="0"
+                                    Background="{x:Null}"
+                                    BorderThickness="0"
+                                    Margin="0,0,5,0">
+                                <Button.Content>
+                                    <!--Source="/SMART.WCS.Resource;component/Image/ico_ft_nestop.png"-->
+                                    <Image  x:Name="imgClose"  Source="/SMART.WCS.Kiosk;component/Resources/btn_pop_colse_w.png" 
+                                            Opacity="1"
+                                            Width="12"
+                                            Height="12"
+                                            PreviewMouseLeftButtonUp="imgClose_PreviewMouseLeftButtonUp"/>
+                                </Button.Content>
+                            </Button>
+                        </Grid>
+                        <!--#endregion-->
+
+                    </Grid>
+                </Border>
+                <!--#endregion-->
+
+                <!--#region Message 영역-->
+                <Border Name="content"
+                        DockPanel.Dock="Top"
+                        Height="340">
+                    <Grid   VerticalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition   Width="150" />
+                            <ColumnDefinition   Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image  x:Name="imgInfo"  Source="/SMART.WCS.Kiosk;component/Resources/ico_msgBox_info.png" 
+                                Width="100"  Visibility="Hidden"/>
+
+                        <Image  x:Name="imgError"   Source="/SMART.WCS.Kiosk;component/Resources/ico_msgBox_Error.png" 
+                                Width="100"  Visibility="Hidden" />
+
+                        <Image  x:Name="imgQues"    Source="/SMART.WCS.Kiosk;component/Resources/ico_msgBox_Ques.png" 
+                                Width="100"  Visibility="Hidden"/>
+
+                        <TextBlock  x:Name="lblContent"     Grid.Column="1"
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
+                                    FontSize="30"
+                                    Margin="2,0,0,2"/>
+                    </Grid>
+                </Border>
+                <!--#endregion-->
+
+                <!--#region Button 확인 (정보) 영역-->
+                <Border Name="ButtonArea"
+                    DockPanel.Dock="Bottom"
+                    Height="120"
+                    Margin="0,3,0,3">
+                    <Grid   HorizontalAlignment="Center">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition   Width="500" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid   x:Name="gridConfirmArea"    HorizontalAlignment="Center"    Visibility="Hidden">
+                            <!--#region 확인 버튼-->
+                            <dx:SimpleButton    x:Name="btnConfirm"
+                                            Style="{StaticResource SMSButtonStyle}"
+                                            Width="170"
+                                            Height="50"
+                                                FontSize="20"
+                                            Cursor="Hand" />
+                            <!--#endregion-->
+                        </Grid>
+
+                        <Grid   x:Name="gridErrorArea"      HorizontalAlignment="Center"    Visibility="Hidden">
+                            <!--#region 오류 버튼-->
+                            <dx:SimpleButton    x:Name="btnError"
+                                            Style="{StaticResource SMSButtonStyle}"
+                                            Width="170"
+                                            Height="50"
+                                                FontSize="20"
+                                            Cursor="Hand" />
+                            <!--#endregion-->
+                        </Grid>
+
+                        <Grid   x:Name="gridQuesArea"   HorizontalAlignment="Center"    Visibility="Hidden">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition   Width="Auto" />
+                                <ColumnDefinition   Width="10" />
+                                <ColumnDefinition   Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <!--#region Yes버튼-->
+                            <dx:SimpleButton    x:Name="btnYes"     Grid.Column="0"
+                                            Style="{StaticResource SMSButtonStyle}"
+                                            Width="170"
+                                            Height="50"
+                                                FontSize="20"
+                                            Cursor="Hand" />
+                            <!--#endregion-->
+
+                            <!--#region No 버튼-->
+                            <dx:SimpleButton    x:Name="btnNo"     Grid.Column="2"
+                                            Style="{StaticResource SMSButtonStyle}"
+                                            Width="170"
+                                            Height="50"
+                                                FontSize="20"
+                                            Cursor="Hand" />
+                            <!--#endregion-->
+                        </Grid>
+
+                    </Grid>
+                </Border>
+                <!--#endregion-->
+
+            </DockPanel>
+        </StackPanel>
+    </StackPanel>
+</Window>

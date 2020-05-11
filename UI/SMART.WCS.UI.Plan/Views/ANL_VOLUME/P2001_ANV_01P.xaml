@@ -1,0 +1,1038 @@
+﻿<Window x:Class="SMART.WCS.UI.Plan.Views.ANL_VOLUME.P2001_ANV_01P"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+        xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+        xmlns:e="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        xmlns:localCtrl="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+        xmlns:uButton="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+        xmlns:commonMapping="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+        xmlns:berhaviors="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+        xmlns:Converters="clr-namespace:SMART.WCS.Control.Converters;assembly=SMART.WCS.Control"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}"
+        mc:Ignorable="d"
+        dx:ThemeManager.ThemeName="Office2019Colorful"
+        Title="P2001_ANV_01P" 
+        WindowStyle="None"    
+        WindowStartupLocation="CenterScreen"         
+        BorderThickness="1"
+        WindowState="Maximized"
+        ResizeMode="NoResize"
+        Height="1080" Width="1920">
+
+    <!--WindowState="Maximized"
+        ResizeMode="NoResize"-->
+
+    <e:Interaction.Behaviors>
+        <commonMapping:ControlBaseBehavior />
+    </e:Interaction.Behaviors>
+
+    <Window.Resources>
+        <Style TargetType="dx:SimpleButton" x:Key="NormalButtonStyle">
+            <Setter Property="AllowDrop" Value="False"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="ClickMode" Value="Press"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid>
+                            <Border BorderThickness="0" Background="#31383E">
+                                <TextBlock Foreground="White" Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Converters:RowHandleToIndexConverter x:Key="RowHandleToIndexConverter"/>
+        <dxe:TextEditSettings x:Key="QTYSetting" MaskUseAsDisplayFormat="True" MaskType="Numeric"  Mask="#,###,##0"  HorizontalContentAlignment="Right"/>
+        <dxe:TextEditSettings x:Key="RateSetting" MaskUseAsDisplayFormat="True" MaskType="Numeric"  Mask="#,###,##0.00 \%"  HorizontalContentAlignment="Right"/>
+        <!--<Style TargetType="{x:Type dxg:GridColumn}"     x:Key="GridColumnDecimal">
+            <Setter Property="EditSettings">
+                <Setter.Value>
+                    <dxe:TextEditSettings   HorizontalContentAlignment="Right"  MaskType="Numeric"  
+                                        DisplayFormat="#,##0" />
+                </Setter.Value>
+            </Setter>
+        </Style>-->
+    </Window.Resources>
+
+    <Grid>
+        <Border BorderThickness="0" Margin="2" Background="#ffffff">
+            <!--#region 폼 테두리 그림자 처리-->
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="5" BlurRadius="10" Color="Gray" Opacity="0.5"/>
+            </Border.Effect>
+            <!--#endregion-->
+
+            <Grid x:Name="_gridNavigation" Background="#fcfcfc" Margin="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42" />
+                    <RowDefinition Height="454" />
+                    <RowDefinition Height="{StaticResource ContentMargin}" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0" Background="#D4D4D4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition   Width="320" />
+                        <ColumnDefinition   Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition  Height="42" />
+                                <RowDefinition  Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+
+                                <ColumnDefinition   Width="Auto" />
+                                <!--#endregion-->
+
+                                <!--#region 메뉴명 - 3-->
+                                <ColumnDefinition   Width="7*" />
+                                <!--#endregion-->
+
+                                <!--#region 닫기 이미지 - 4-->
+                                <ColumnDefinition   Width="3*" />
+                                <!--#endregion-->
+                            </Grid.ColumnDefinitions>
+
+                            <!--#region 네비게이션 이미지 : Column - 1-->
+                            <Image  Grid.Column="0"     Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_menu-button.png"
+                                    Width="10"          Margin="10,0,10,0" />
+                            <!--#endregion-->
+
+                            <!--#region 2 Depth 메뉴 : Column - 6--> <!--물동량 분석결과-->
+                            <TextBlock  Grid.Column="1" Text="{Binding ViewTitle}" MinWidth="100" VerticalAlignment="Center"  HorizontalAlignment="Left" />
+                            <!--#endregion-->
+                        </Grid>
+                    </Border>
+                    <!--#region 메인화면 닫기 버튼-->
+                    <Grid Grid.Column="1" HorizontalAlignment="Right" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="9" />
+                            <RowDefinition  Height="*" />
+                            <RowDefinition  Height="9" />
+                        </Grid.RowDefinitions>
+
+                        <Button x:Name="btnFormClose"
+                                Grid.Row="1"
+                                Cursor="Hand"
+                                Padding="0"
+                                Background="{x:Null}"
+                                BorderThickness="0"
+                                Margin="0,0,9,0">
+                            <Button.Content>
+                                <Image Source="/SMART.WCS.Resource;component/Image/btn_pop_colse_b.png" 
+                                       Width="20" Height="20" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                    <!--#endregion-->
+                </Grid>
+
+                <Grid Grid.Row="1" >
+                    <Grid HorizontalAlignment="Stretch" Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+
+                        <!--#region 조회 조건 영역-->
+                        <Border Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                Width="1200" Height="450">
+                            <Border.Resources>
+                                <Style TargetType="{x:Type TextBlock}" >
+                                    <Setter Property="FontSize" Value="16"/>
+                                </Style>
+                                <Style TargetType="{x:Type dxe:TextEdit}" >
+                                    <Setter Property="FontSize" Value="16"/>
+                                </Style>
+                                <Style TargetType="{x:Type dxe:ListBoxEdit}" >
+                                    <Setter Property="FontSize" Value="16"/>
+                                </Style>
+                            </Border.Resources>
+                            <Grid >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="80"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="100"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!--#region 설명 -->
+                                <Border Grid.Row="0" Grid.Column="0" Style="{StaticResource SearchPanelStyle}" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                                    <TextBlock berhaviors:CommonProperties.LabelCd="DESCRIPTION" Height="22" Width="32"/>
+                                </Border>
+
+                                <Border Background="White" Grid.Row="0" Grid.Column="1" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                                    <dxe:TextEdit x:Name="txtComment" AcceptsReturn="True" VerticalContentAlignment="Top" 
+                                                  VerticalScrollBarVisibility="Auto"
+                                                  Text="{Binding ExtITEM.COMMENTS}"/>
+                                </Border>
+                                
+                                <!--#region 구분 -->
+                                <Border Grid.Row="1" Grid.Column="0" Style="{StaticResource SearchPanelStyle}" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                                    <TextBlock berhaviors:CommonProperties.LabelCd="GUBUN" Height="22" Width="32"/>
+                                </Border>
+
+                                <Border Background="White" Grid.Row="1" Grid.Column="1" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                                    <dxe:ListBoxEdit Name="listExtTarCd" StyleSettings="{dxe:RadioListBoxEditStyleSettings}"
+                                                     SelectedIndexChanged="listExtTarCd_SelectedIndexChanged">
+                                        <dxe:ListBoxEdit.Resources>
+                                            <Style TargetType="{x:Type dxe:ListBoxEditItem}" >
+                                                <Setter Property="FontSize" Value="18"/>
+                                            </Style>
+                                        </dxe:ListBoxEdit.Resources>
+                                        <dxe:ListBoxEdit.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal"/>
+                                            </ItemsPanelTemplate>
+                                        </dxe:ListBoxEdit.ItemsPanel>
+                                        <dxe:ListBoxEdit.Items>
+                                            <dxe:ListBoxEditItem berhaviors:CommonProperties.LabelCd="OUT_WORK" Tag="01" Margin="10, 5" Width="100" />
+                                            <dxe:ListBoxEditItem berhaviors:CommonProperties.LabelCd="IN_WORK" Tag="02" Margin="10, 5" Width="100" />
+                                            <dxe:ListBoxEditItem berhaviors:CommonProperties.LabelCd="STOCK" Tag="03" Margin="10, 5" Width="100" />
+                                        </dxe:ListBoxEdit.Items>
+                                    </dxe:ListBoxEdit>
+                                </Border>
+
+                                <!--#region 추출타입 -->
+                                <Border Grid.Row="2" Grid.Column="0" Style="{StaticResource SearchPanelStyle}" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                                    <TextBlock Grid.Column="0" 
+                                           berhaviors:CommonProperties.LabelCd="EXTRACT_TYPE"
+                                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+
+                                <Border Background="White" Grid.Row="2" Grid.Column="1" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                                    <dxe:ListBoxEdit Name="listExtTypeCd" StyleSettings="{dxe:RadioListBoxEditStyleSettings}"
+                                                     SelectedIndexChanged="listExtTypeCd_SelectedIndexChanged">
+                                        <dxe:ListBoxEdit.Resources>
+                                            <Style TargetType="{x:Type dxe:ListBoxEditItem}" >
+                                                <Setter Property="FontSize" Value="18"/>
+                                            </Style>
+                                        </dxe:ListBoxEdit.Resources>
+                                        <dxe:ListBoxEdit.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal"/>
+                                            </ItemsPanelTemplate>
+                                        </dxe:ListBoxEdit.ItemsPanel>
+                                        <dxe:ListBoxEdit.Items>
+                                            <dxe:ListBoxEditItem Content="CAPA" Tag="01" Margin="10, 5" Width="100" />
+                                            <dxe:ListBoxEditItem Content="EIQ" Tag="02" Margin="10, 5" Width="100" />
+                                            <dxe:ListBoxEditItem Content="ABC" Tag="03" Margin="10, 5" Width="100" />
+                                        </dxe:ListBoxEdit.Items>
+                                    </dxe:ListBoxEdit>
+                                </Border>
+                                <!--#endregion-->
+
+                                <!--#region 추출일자 -->
+                                <Border Grid.Row="3" Grid.Column="0" Style="{StaticResource SearchPanelStyle}" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                                    <TextBlock berhaviors:CommonProperties.LabelCd="EXTRACT_YMD" 
+                                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+
+                                <Border Background="White" Grid.Row="3" Grid.Column="1" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Border Background="White" Grid.Row="0" BorderBrush="Black" BorderThickness="0,0,0,1" >
+                                            <dxe:ListBoxEdit Name="listExtDateTypeCd" StyleSettings="{dxe:RadioListBoxEditStyleSettings}"
+                                                             SelectedIndexChanged="listExtDateTypeCd_SelectedIndexChanged">
+                                                <dxe:ListBoxEdit.Resources>
+                                                    <Style TargetType="{x:Type dxe:ListBoxEditItem}" >
+                                                        <Setter Property="FontSize" Value="18"/>
+                                                    </Style>
+                                                </dxe:ListBoxEdit.Resources>
+                                                <dxe:ListBoxEdit.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel Orientation="Horizontal"/>
+                                                    </ItemsPanelTemplate>
+                                                </dxe:ListBoxEdit.ItemsPanel>
+                                                <dxe:ListBoxEdit.Items>
+                                                    <dxe:ListBoxEditItem berhaviors:CommonProperties.LabelCd="ALL" Margin="10, 5" Width="100" />
+                                                    <dxe:ListBoxEditItem berhaviors:CommonProperties.LabelCd="YEAR"  Margin="10, 5" Width="100" />
+                                                    <dxe:ListBoxEditItem berhaviors:CommonProperties.LabelCd="MONTH" Margin="10, 5" Width="100" />
+                                                    <dxe:ListBoxEditItem berhaviors:CommonProperties.LabelCd="DAY" Margin="10, 5" Width="100" />
+                                                    <dxe:ListBoxEditItem berhaviors:CommonProperties.LabelCd="TIME" Margin="10, 5" Width="100" />
+                                                </dxe:ListBoxEdit.Items>
+                                            </dxe:ListBoxEdit>
+                                        </Border>
+
+                                        <Border Background="White" Grid.Row="1" BorderBrush="Black" BorderThickness="0"  >
+                                            <Grid HorizontalAlignment="Left" Margin="14,0,0,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="10"/>
+                                                    <ColumnDefinition Width="20"/>
+                                                    <ColumnDefinition Width="10"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Grid Margin="0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="120"/>
+                                                        <ColumnDefinition Width="5"/>
+                                                        <ColumnDefinition Width="*"/>
+                                                    </Grid.ColumnDefinitions>
+
+                                                    <dxe:DateEdit x:Name="deExtFr" Grid.Column="0" Width="120" 
+                                                        HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                                        HorizontalContentAlignment="Center" MaskType="DateTime"
+                                                        DisplayFormatString="{Binding DateMaskText}" Margin="0" />
+
+                                                    <dxe:ComboBoxEdit Grid.Column="2" 
+                                                          x:Name="cboExtTimeFr" 
+                                                          NullText="00"
+                                                          ValueMember="CODE" 
+                                                          DisplayMember="NAME"
+                                                          Width="54" VerticalAlignment="Center" HorizontalAlignment="Center">
+                                                        
+                                                    </dxe:ComboBoxEdit>
+                                                </Grid>
+                                                <TextBlock Grid.Column="2" 
+                                                           Text="~"
+                                                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                                    <Grid Margin="0" Grid.Column="4" >
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="120"/>
+                                                            <ColumnDefinition Width="5"/>
+                                                            <ColumnDefinition Width="*"/>
+                                                        </Grid.ColumnDefinitions>
+                                                        <dxe:DateEdit x:Name="deExtTo" Width="120"
+                                                        HorizontalAlignment="Left" VerticalAlignment="Center" 
+                                                        HorizontalContentAlignment="Center" MaskType="DateTime"
+                                                        DisplayFormatString="{Binding DateMaskText}" Margin="0" />
+
+                                                    <dxe:ComboBoxEdit Grid.Column="2" 
+                                                          x:Name="cboExtTimeTo" 
+                                                          NullText="23"
+                                                          ValueMember="CODE" 
+                                                          DisplayMember="NAME"
+                                                          Width="54" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                                </Grid>
+                                            </Grid>
+                                        </Border>
+                                    </Grid>
+                                </Border>
+                                <!--#endregion-->
+
+                                <!--#region 추출항목 -->
+                                <Border Grid.Row="4" Grid.Column="0" Style="{StaticResource SearchPanelStyle}" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                                    <TextBlock berhaviors:CommonProperties.LabelCd="EXTRACT_ITEM" 
+                                           HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                </Border>
+
+                                <Border Background="White" Grid.Row="4" Grid.Column="1" Margin="2" BorderBrush="Black" BorderThickness="1" >
+                                    <Grid>
+                                        <Grid x:Name="gridAggTypeBase" Visibility="Visible">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="50" />
+                                                <ColumnDefinition Width="*" />
+                                                <ColumnDefinition Width="50" />
+                                            </Grid.ColumnDefinitions>
+
+                                            <dxg:GridControl x:Name="gridDetail" 
+                                                 SelectionMode="Row"
+                                                 AutoGenerateColumns="None"
+                                                 ItemsSource="{Binding BaseAnAggTypeList}"
+                                                 EnableSmartColumnsGeneration="False" >
+                                                <dxg:GridControl.View>
+                                                    <dxg:TableView x:Name="tvDetailGrid" 
+                                                         AutoWidth="True"
+                                                         HeaderHorizontalAlignment="Center"
+                                                         ShowGroupPanel="False"
+                                                         NavigationStyle="Row" 
+                                                         ShowTotalSummary="False"                                                         
+                                                         AllowDragDrop="True" 
+                                                         DragRecordOver="OnDragRecordOver">
+
+                                                        <dxg:TableView.RowIndicatorContentTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{Binding DataContext.RowHandle.Value, Converter={StaticResource RowHandleToIndexConverter}}" />
+                                                            </DataTemplate>
+                                                        </dxg:TableView.RowIndicatorContentTemplate>
+                                                    </dxg:TableView>
+                                                </dxg:GridControl.View>
+
+                                                <!--#region Result Index Row-->
+                                                <dxg:GridControl.Columns>
+
+                                                    <!--#region 추출항목-->
+                                                    <dxg:GridColumn Header="EXTRACT_ITEM" FieldName="COM_HDR_CD" Width="*"
+                                                                    HorizontalHeaderContentAlignment="Center" 
+                                                                    Style="{StaticResource GridColumnStringCenter}"
+                                                                    AllowEditing="False">
+
+                                                    </dxg:GridColumn>
+                                                    <!--#endregion-->
+
+                                                    <!--#region 추출항목명-->
+                                                    <dxg:GridColumn Header="EXTRACT_ITEM_NM" FieldName="COM_HDR_NM" Width="*"
+                                                                    HorizontalHeaderContentAlignment="Center" 
+                                                                    Style="{StaticResource GridColumnStringCenter}"
+                                                                    AllowEditing="False">
+                                                    </dxg:GridColumn>
+                                                    <!--#endregion-->
+
+                                                </dxg:GridControl.Columns>
+                                                <!--#endregion-->
+
+                                            </dxg:GridControl>
+
+                                            <Grid Grid.Column="1" Grid.Row="3" Margin="5">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition  Height="*" />
+                                                    <RowDefinition  Height="20" />
+                                                    <RowDefinition  Height="20" />
+                                                    <RowDefinition  Height="20" />
+                                                    <RowDefinition  Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <dx:SimpleButton x:Name="btnLeftToRight" Grid.Row="1" Content="▶" Cursor="Hand" />
+                                                <dx:SimpleButton x:Name="btnRightToLeft" Grid.Row="3" Content="◀" Cursor="Hand" />
+                                            </Grid>
+
+                                            <dxg:GridControl x:Name="gridDetail1" Grid.Column="2"
+                                                             SelectionMode="Row"
+                                                             ItemsSource="{Binding SaveAnAggTypeList}"
+                                                             EnableSmartColumnsGeneration="False"
+                                                             AutoGenerateColumns="None">
+                                                <dxg:GridControl.View>
+                                                    <dxg:TableView x:Name="tvDetailGrid1" 
+                                                                   AutoWidth="True"
+                                                                   HeaderHorizontalAlignment="Center"
+                                                                   ShowGroupPanel="False"
+                                                                   NavigationStyle="Row" 
+                                                                   ShowTotalSummary="False"
+                                                                   AllowDragDrop="True" 
+                                                                   DragRecordOver="OnDragRecordOver">
+                                                        <dxg:TableView.RowIndicatorContentTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{Binding DataContext.RowHandle.Value, Converter={StaticResource RowHandleToIndexConverter}}" />
+                                                            </DataTemplate>
+                                                        </dxg:TableView.RowIndicatorContentTemplate>
+                                                    </dxg:TableView>
+                                                </dxg:GridControl.View>
+                                                <!--#region Result Index Row-->
+                                                <dxg:GridControl.Columns>
+                                                    <!--#region 추출항목-->
+                                                    <dxg:GridColumn Header="EXTRACT_ITEM" FieldName="COM_HDR_CD" Width="*"
+                                                                    HorizontalHeaderContentAlignment="Center" 
+                                                                    Style="{StaticResource GridColumnStringCenter}"
+                                                                    AllowEditing="False">
+                                                    </dxg:GridColumn>
+                                                    <!--#endregion-->
+                                                    <!--#region 추출항목명-->
+                                                    <dxg:GridColumn Header="EXTRACT_ITEM_NM" FieldName="COM_HDR_NM" Width="*"
+                                                                    HorizontalHeaderContentAlignment="Center" 
+                                                                    Style="{StaticResource GridColumnStringCenter}"
+                                                                    AllowEditing="False">
+                                                    </dxg:GridColumn>
+                                                    <!--#endregion-->
+                                                </dxg:GridControl.Columns>
+                                                <!--#endregion-->
+                                            </dxg:GridControl>
+
+                                            <Grid Grid.Column="3" Grid.Row="3" Margin="5">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="*" />
+                                                    <RowDefinition Height="20" />
+                                                    <RowDefinition Height="20" />
+                                                    <RowDefinition Height="20" />
+                                                    <RowDefinition Height="*" />
+                                                </Grid.RowDefinitions>
+                                                <dx:SimpleButton x:Name="btnBottomToTop" Grid.Row="1" Content="▲" Cursor="Hand" />
+                                                <dx:SimpleButton x:Name="btnTopToBottom" Grid.Row="3" Content="▼" Cursor="Hand" />
+                                            </Grid>
+                                        </Grid>
+                                        <Grid x:Name="gridAggTypeAbc" Visibility="Collapsed">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto"/>
+                                                <RowDefinition Height="10"/>
+                                                <RowDefinition Height="*"/>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="500"/>
+                                                <ColumnDefinition Width="*"/>
+                                            </Grid.ColumnDefinitions>
+                                            <StackPanel Orientation="Horizontal">
+                                                <dxe:ListBoxEdit Name="listAbcTypeCd" 
+                                                             StyleSettings="{dxe:RadioListBoxEditStyleSettings}" 
+                                                             VerticalAlignment="Center" ShowBorder="False"  >
+                                                <dxe:ListBoxEdit.Resources>
+                                                    <Style TargetType="{x:Type dxe:ListBoxEditItem}" >
+                                                        <Setter Property="FontSize" Value="18"/>
+                                                    </Style>
+                                                </dxe:ListBoxEdit.Resources>
+                                                <dxe:ListBoxEdit.ItemsPanel>
+                                                    <ItemsPanelTemplate>
+                                                        <StackPanel Orientation="Horizontal"/>
+                                                    </ItemsPanelTemplate>
+                                                </dxe:ListBoxEdit.ItemsPanel>
+                                                <dxe:ListBoxEdit.Items>
+                                                        <dxe:ListBoxEditItem berhaviors:CommonProperties.LabelCd="FREQUENCY" Margin="10, 5" Width="100" IsSelected="True" />
+                                                        <dxe:ListBoxEditItem berhaviors:CommonProperties.LabelCd="QTY" Margin="10, 5" Width="100" />                                                    
+                                                </dxe:ListBoxEdit.Items>
+                                            </dxe:ListBoxEdit>
+
+                                                <Grid Grid.Column="0" Style="{StaticResource SearchItemStyle}">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="*"/>
+                                                        <ColumnDefinition Width="10"/>
+                                                        <ColumnDefinition Width="Auto"/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <!--ABC수-->
+                                                    <TextBlock berhaviors:CommonProperties.LabelCd="ABC_CNT" 
+                                                               HorizontalAlignment="Left" 
+                                                               VerticalAlignment="Center" />
+                                                    <dxe:ComboBoxEdit x:Name="cboABCCnt" Grid.Column="2" 
+                                                                      NullText="SELECT" 
+                                                                      ValueMember="CODE" 
+                                                                      DisplayMember="NAME" 
+                                                                      Width="80" VerticalAlignment="Center"/>
+                                                </Grid>
+                                            </StackPanel>
+                                            
+                                            <dxg:GridControl x:Name="gridDetailABC" 
+                                                 SelectionMode="Cell" Grid.Row="2"
+                                                 AutoExpandAllGroups="True"
+                                                 AutoPopulateColumns="True"
+                                                 ShowBorder="True" 
+                                                 ItemsSource="{Binding AggTypeAbcList}"
+                                                 EnableSmartColumnsGeneration="False"
+                                                 AutoGenerateColumns="None">
+                                                <dxg:GridControl.View>
+                                                    <dxg:TableView x:Name="tvDetailABCGrid" 
+                                                        MultiSelectMode="Row"
+                                                        AutoWidth="False" AllowEditing="True"
+                                                        HeaderHorizontalAlignment="Center"
+                                                        ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                                        ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                                        ShowGroupPanel="False"
+                                                        NavigationStyle="Cell" 
+                                                        ShowTotalSummary="False"
+                                                        AllowPerPixelScrolling="True"
+                                                        IndicatorWidth="40" CellValueChanged="tvDetailABCGrid_CellValueChanged" >
+                                                        <dxg:TableView.RowIndicatorContentTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{Binding DataContext.RowHandle.Value, Converter={StaticResource RowHandleToIndexConverter}}" />
+                                                            </DataTemplate>
+                                                        </dxg:TableView.RowIndicatorContentTemplate>
+                                                    </dxg:TableView>
+                                                </dxg:GridControl.View>
+
+                                                <!--#region Result Index Row-->
+                                                <dxg:GridControl.Columns>
+
+                                                    <!--#region ABC 코드-->
+                                                    <dxg:GridColumn Header="ABC_CODE" FieldName="ABC_CODE" Width="*"
+                                                                    HorizontalHeaderContentAlignment="Center" 
+                                                                    Style="{StaticResource GridColumnStringCenter}"
+                                                                    AllowEditing="False">
+
+                                                    </dxg:GridColumn>
+                                                    <!--#endregion-->
+
+                                                    <!--#region FROM-->
+                                                    <dxg:GridColumn Header="FROM" FieldName="FROM_PER_RANGE" Width="*"
+                                                                    HorizontalHeaderContentAlignment="Center" 
+                                                                    Style="{StaticResource GridColumnDecimal}"
+                                                                    AllowEditing="False">
+                                                    </dxg:GridColumn>
+                                                    <!--#endregion-->
+
+                                                    <!--#region TO-->
+                                                    <dxg:GridColumn Header="TO" FieldName="TO_PER_RANGE" Width="*" 
+                                                                    HorizontalHeaderContentAlignment="Center"
+                                                                    Style="{StaticResource GridColumnDecimal}"
+                                                                    AllowEditing="True">
+                                                    </dxg:GridColumn>
+                                                    <!--#endregion-->
+
+                                                </dxg:GridControl.Columns>
+                                                <!--#endregion-->
+
+                                            </dxg:GridControl>
+                                        </Grid>
+                                    </Grid>
+                                </Border>
+                                <!--#endregion-->
+
+                            </Grid>
+                        </Border>
+                        <!--#endregion-->
+                    </Grid>
+                </Grid>
+
+                <Grid Grid.Row="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid HorizontalAlignment="Stretch" Grid.Column="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="{StaticResource ContentMargin}"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="{StaticResource ContentMargin}"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <StackPanel x:Name="stackUserBut1ton_First" Style="{StaticResource CommonPanelStyle}">
+                                <!--엑셀 다운로드-->
+                                <uButton:uSimpleButton x:Name="btnExcelDownload"
+                                           Style="{StaticResource CommButtonStyle}"
+                                           ButtonType="EXCEL_DOWNLOAD" IsIconVisibleYN="True" />
+                                
+                                <!--#region 저장 버튼-->
+                                <uButton:uSimpleButton x:Name="btnSave" Grid.Column="1"
+                                                       Style="{StaticResource CommButtonStyle}"
+                                                       ButtonType="SAVE" IsIconVisibleYN="True" />
+                                <!--#endregion-->
+
+                                <!--#region 추출 버튼-->
+                                <dx:SimpleButton x:Name="btnExtract"
+                                                 Grid.Column="1"
+                                                 Width="70"
+                                                 Height="32" 
+                                                 Cursor="Hand"
+                                                 Content="추출"  
+                                                 Margin="3,0,0,0" />
+                                <!--#endregion-->
+                            </StackPanel>
+                        </Grid>
+
+
+                        <!--#region 그리드 영역-->
+                        <Grid x:Name="gridExtCapa" Margin="{StaticResource DefaultMargin}"  Grid.Row="2" Visibility="Collapsed">
+                            <dxg:GridControl x:Name="gridObExtCapa" 
+									SelectionMode="None" 
+									AutoExpandAllGroups="True"
+									AutoPopulateColumns="True"
+									ShowBorder="True"
+									ItemsSource="{Binding ObExtCapaList}"
+									EnableSmartColumnsGeneration="False" AllowLiveDataShaping="False" >
+                                <dxg:GridControl.View>
+                                    <dxg:TableView x:Name="tvObExtCapa"
+                                                   AutoWidth="True" 
+                                                   AllowBandMultiRow="True"
+										           HeaderHorizontalAlignment="Center"
+										           ScrollViewer.VerticalScrollBarVisibility="Auto"
+										           ScrollViewer.HorizontalScrollBarVisibility="Auto"
+										           NavigationStyle="None" 
+										           AllowEditing="False"
+										           AllowPerPixelScrolling="True" />
+                                </dxg:GridControl.View>
+
+                                <dxg:GridControl.Columns>
+                                    <!-- 일자 -->
+                                    <dxg:GridColumn Header="YMD" FieldName="EXT_DATE" Width="120" 
+                                                    HorizontalHeaderContentAlignment="Center"                                                    
+                                                    AllowEditing="False" />
+                                    <!-- TYPE1 -->
+                                    <dxg:GridColumn Header="TYPE1" FieldName="AGG_TYPE_CD1" Width="120" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            Style="{StaticResource GridColumnStringLeft}"
+                                                            AllowEditing="False" />
+                                    <!-- TYPE2 -->
+                                    <dxg:GridColumn Header="TYPE2" FieldName="AGG_TYPE_CD2" Width="120" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            Style="{StaticResource GridColumnStringLeft}"
+                                                            AllowEditing="False" />
+
+                                    <!-- TYPE3 -->
+                                    <dxg:GridColumn Header="TYPE3" FieldName="AGG_TYPE_CD3" Width="120" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            Style="{StaticResource GridColumnStringLeft}"
+                                                            AllowEditing="False" />
+                                    <!-- TYPE4 -->
+                                    <dxg:GridColumn Header="TYPE4" FieldName="AGG_TYPE_CD4" Width="120" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            Style="{StaticResource GridColumnStringLeft}"
+                                                            AllowEditing="False" />
+                                    <!-- 파렛트수 -->
+                                    <dxg:GridColumn Header="PALLET_CNT" FieldName="PLT_QTY" Width="120" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            EditSettings="{StaticResource QTYSetting}"
+                                                            AllowEditing="False" />
+                                    <!-- 박스수 -->
+                                    <dxg:GridColumn Header="BOX_CNT" FieldName="BOX_QTY" Width="120" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            EditSettings="{StaticResource QTYSetting}"
+                                                            AllowEditing="False" />
+                                    <!-- 상품수 -->
+                                    <dxg:GridColumn Header="SKU_CNT" FieldName="EA_QTY" Width="120" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            EditSettings="{StaticResource QTYSetting}"
+                                                            AllowEditing="False" />
+
+                                </dxg:GridControl.Columns>
+                            </dxg:GridControl>
+                        </Grid>
+
+                        <Grid x:Name="gridExtEiq" Margin="{StaticResource DefaultMargin}" Grid.Row="2" Visibility="Visible">
+                            <dxg:GridControl x:Name="gridObExtEiq" 
+									SelectionMode="None" 
+									AutoExpandAllGroups="True"
+									AutoPopulateColumns="True"
+									ShowBorder="True"
+									ItemsSource="{Binding ObExtEiqList}"
+									EnableSmartColumnsGeneration="False" AllowLiveDataShaping="False" >
+                                <dxg:GridControl.View>
+                                    <dxg:TableView x:Name="tvObExtEiq"
+                                                   AutoWidth="True" 
+                                                   AllowBandMultiRow="True"
+										           HeaderHorizontalAlignment="Center"
+										           ScrollViewer.VerticalScrollBarVisibility="Auto"
+										           ScrollViewer.HorizontalScrollBarVisibility="Auto"
+										           NavigationStyle="None" 
+										           AllowEditing="False"
+										           AllowPerPixelScrolling="True"
+                                                   ShowColumnHeaders="False" />
+                                </dxg:GridControl.View>
+
+                                <dxg:GridControl.Bands>
+                                    
+                                    <!-- 일자 -->
+                                    <dxg:GridControlBand Header="YMD" >
+                                        <dxg:GridColumn  FieldName="EXT_DATE" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                                    AllowEditing="False" />
+                                    </dxg:GridControlBand>
+                                
+                                <!-- TYPE1 -->
+                                    <dxg:GridControlBand Header="TYPE1">
+                                        <dxg:GridColumn FieldName="AGG_TYPE_CD1" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    Style="{StaticResource GridColumnStringLeft}"
+                                                    AllowEditing="False" />
+                                </dxg:GridControlBand>
+                                
+                                    <!-- TYPE2 -->
+                                    <dxg:GridControlBand Header="TYPE2">
+                                        <dxg:GridColumn FieldName="AGG_TYPE_CD2" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    Style="{StaticResource GridColumnStringLeft}"
+                                                    AllowEditing="False" />
+                                </dxg:GridControlBand>
+                                
+                                <!-- TYPE3 -->
+                                    <dxg:GridControlBand Header="TYPE3">
+                                        <dxg:GridColumn FieldName="AGG_TYPE_CD3" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    Style="{StaticResource GridColumnStringLeft}"
+                                                    AllowEditing="False" />
+                                </dxg:GridControlBand>
+                                    
+                                <!-- TYPE4 -->
+                                <dxg:GridControlBand Header="TYPE4">
+                                        <dxg:GridColumn FieldName="AGG_TYPE_CD4" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    Style="{StaticResource GridColumnStringLeft}"
+                                                    AllowEditing="False" />
+                                </dxg:GridControlBand>
+                                    
+                                <!-- 오더수 -->
+                                <dxg:GridControlBand Header="ORD_CNT">
+                                        <dxg:GridControlBand.Bands>
+                                            <dxg:GridControlBand Header="총량">
+                                                <dxg:GridColumn FieldName="ORD_CNT" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                            </dxg:GridControlBand>
+                                            <dxg:GridControlBand Header="일평균" >
+                                                <dxg:GridColumn FieldName="ORD_DD_AVG_CNT" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    </dxg:GridControlBand>
+                                            <dxg:GridControlBand Header="일MAX" >
+                                                <dxg:GridColumn FieldName="ORD_DD_MAX_CNT" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    </dxg:GridControlBand>
+                                        </dxg:GridControlBand.Bands>
+                                    </dxg:GridControlBand>
+
+                                    <!-- 상품수 -->
+                                    <dxg:GridControlBand Header="SKU_CNT1">
+                                        <dxg:GridControlBand.Bands>
+                                            <dxg:GridControlBand Header="총량">
+                                        <dxg:GridColumn FieldName="SKU_CNT" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                            </dxg:GridControlBand>
+                                            <dxg:GridControlBand Header="일평균">
+                                                <dxg:GridColumn FieldName="SKU_DD_AVG_CNT" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    </dxg:GridControlBand>
+                                            <dxg:GridControlBand Header="일MAX">
+                                                <dxg:GridColumn FieldName="SKU_DD_MAX_CNT" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    </dxg:GridControlBand>
+                                    </dxg:GridControlBand.Bands>
+                                    </dxg:GridControlBand>
+
+                                    <!-- 주문수량 -->
+                                    <dxg:GridControlBand Header="ORDER_QTY">
+                                        <dxg:GridControlBand.Bands>
+                                            <dxg:GridControlBand Header="총량" >
+                                        <dxg:GridColumn FieldName="SUM_QTY" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                            </dxg:GridControlBand>
+                                            <dxg:GridControlBand Header="일평균" >
+                                            <dxg:GridColumn FieldName="SUM_DD_AVG_QTY" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    </dxg:GridControlBand>
+                                            <dxg:GridControlBand Header="일MAX" >
+                                    <dxg:GridColumn FieldName="SUM_DD_MAX_QTY" Width="120" Tag="A"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    </dxg:GridControlBand>
+                                    </dxg:GridControlBand.Bands>
+                                    </dxg:GridControlBand>
+
+                                    <!--주문당 평균상품수-->
+                                    <dxg:GridControlBand Header="AVG_SKU_CNT_BY_ORD" >
+                                        <dxg:GridColumn FieldName="AVG_SKU_CNT_BY_ORD" Width="150" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    </dxg:GridControlBand>
+
+                                    <!--주문당 평균상품수량-->
+                                    <dxg:GridControlBand Header="AVG_QTY_BY_ORD" >
+                                        <dxg:GridColumn FieldName="AVG_QTY_BY_ORD" Width="180"
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    </dxg:GridControlBand>
+
+                                    <!--상품당 평균 출하수량-->
+                                    <dxg:GridControlBand Header="AVG_QTY_BY_SKU">
+                                        <dxg:GridColumn FieldName="AVG_QTY_BY_SKU" Width="180" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    </dxg:GridControlBand>
+                                </dxg:GridControl.Bands>
+                                <!--<dxg:GridControl.Columns>
+                                    --><!-- 일자 --><!--
+                                    <dxg:GridColumn Header="YMD" FieldName="EXT_DATE" Width="120" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    AllowEditing="False" />
+                                    --><!-- TYPE1 --><!--
+                                    <dxg:GridColumn Header="TYPE1" FieldName="AGG_TYPE_CD1" Width="120" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    Style="{StaticResource GridColumnStringLeft}"
+                                                    AllowEditing="False" />
+                                    --><!-- TYPE2 --><!--
+                                    <dxg:GridColumn Header="TYPE2" FieldName="AGG_TYPE_CD2" Width="120" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    Style="{StaticResource GridColumnStringLeft}"
+                                                    AllowEditing="False" />
+                                    --><!-- TYPE3 --><!--
+                                    <dxg:GridColumn Header="TYPE3" FieldName="AGG_TYPE_CD3" Width="120" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    Style="{StaticResource GridColumnStringLeft}"
+                                                    AllowEditing="False" />
+                                    --><!-- TYPE4 --><!--
+                                    <dxg:GridColumn Header="TYPE4" FieldName="AGG_TYPE_CD4" Width="120" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    Style="{StaticResource GridColumnStringLeft}"
+                                                    AllowEditing="False" />
+                                    --><!-- 오더수 --><!--
+                                    <dxg:GridColumn Header="ORD_CNT" FieldName="ORD_CNT" Width="120" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    --><!-- 오더라인수 --><!--
+                                    <dxg:GridColumn Header="ORD_LINE_CNT" FieldName="ORD_LINE_CNT" Width="120" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    --><!-- 상품수 --><!--
+                                    <dxg:GridColumn Header="SKU_CNT" FieldName="SKU_CNT" Width="120" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    --><!-- 수량 --><!--
+                                    <dxg:GridColumn Header="QTY" FieldName="SUM_QTY" Width="120" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                </dxg:GridControl.Columns>-->
+                            </dxg:GridControl>
+                        </Grid>
+
+                        <Grid x:Name="gridExtAbc" Margin="{StaticResource DefaultMargin}"  Grid.Row="2" Visibility="Collapsed" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="400" />
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <dxg:GridControl x:Name="gridObExtAbc" 
+									SelectionMode="None" 
+									AutoExpandAllGroups="True"
+									AutoPopulateColumns="True"
+									ShowBorder="True"
+									ItemsSource="{Binding ObExtAbcList}"
+									EnableSmartColumnsGeneration="False" AllowLiveDataShaping="False" >
+                                <dxg:GridControl.View>
+                                    <dxg:TableView x:Name="tvObExtAbc"
+                                                   AutoWidth="True" 
+                                                   AllowBandMultiRow="True"
+										           HeaderHorizontalAlignment="Center"
+										           ScrollViewer.VerticalScrollBarVisibility="Auto"
+										           ScrollViewer.HorizontalScrollBarVisibility="Auto"
+										           NavigationStyle="None" 
+										           AllowEditing="False"
+										           AllowPerPixelScrolling="True" />
+                                </dxg:GridControl.View>
+
+                                <dxg:GridControl.Columns>
+                                    <!-- Range -->
+                                    <dxg:GridColumn Header="RANGE" FieldName="PERCENT_RANGE" Width="100" 
+                                                    HorizontalHeaderContentAlignment="Center"
+                                                    Style="{StaticResource GridColumnStringLeft}"
+                                                    AllowEditing="False" />
+                                    <!-- 수량 -->
+                                    <dxg:GridColumn Header="QTY" FieldName="QTY" Width="100" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            EditSettings="{StaticResource QTYSetting}"
+                                                            AllowEditing="False" />
+                                    <!-- 비율 -->
+                                    <dxg:GridColumn Header="RATE" FieldName="PERCENT" Width="80" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            EditSettings="{StaticResource RateSetting}"
+                                                            AllowEditing="False" />
+
+                                    <!-- 전체수량 -->
+                                    <dxg:GridColumn Header="TOT_QTY" FieldName="TOTAL_QTY" Width="100" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            EditSettings="{StaticResource QTYSetting}"
+                                                            AllowEditing="False" />
+                                </dxg:GridControl.Columns>
+                            </dxg:GridControl>
+
+                            <dxg:GridControl x:Name="gridObExtAbcDetail" Grid.Column="2"
+									SelectionMode="None" 
+									AutoExpandAllGroups="True"
+									AutoPopulateColumns="True"
+									ShowBorder="True"
+									ItemsSource="{Binding ObExtAbcDetailList}"
+									EnableSmartColumnsGeneration="False" AllowLiveDataShaping="False" >
+                                <dxg:GridControl.View>
+                                    <dxg:TableView x:Name="tvObExtAbcDetail"
+                                                   AutoWidth="True" 
+                                                   AllowBandMultiRow="True"
+										           HeaderHorizontalAlignment="Center"
+										           ScrollViewer.VerticalScrollBarVisibility="Auto"
+										           ScrollViewer.HorizontalScrollBarVisibility="Auto"
+										           NavigationStyle="None" 
+										           AllowEditing="False"
+										           AllowPerPixelScrolling="True" />
+                                </dxg:GridControl.View>
+
+                                <dxg:GridControl.Columns>
+                                    <!-- 상품코드 -->
+                                    <dxg:GridColumn Header="SKU_CODE" FieldName="SKU_CD" Width="80" 
+                                                    HorizontalHeaderContentAlignment="Center"
+                                                    Style="{StaticResource GridColumnStringLeft}"
+                                                    AllowEditing="False" />
+                                    <!-- 추출항목Rank -->
+                                    <dxg:GridColumn Header="EXTRACT_ITEM_RANK" FieldName="EXT_RANK" Width="40" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            Style="{StaticResource GridColumnDecimal}"
+                                                            AllowEditing="False" />
+                                    <!-- 수량 -->
+                                    <dxg:GridColumn Header="QTY" FieldName="EXT_QTY" Width="80" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+
+                                    <!-- 누적수량 -->
+                                    <dxg:GridColumn Header="ADD_QTY" FieldName="EXT_ACCM_QTY" Width="80" 
+                                                    HorizontalHeaderContentAlignment="Center" 
+                                                    EditSettings="{StaticResource QTYSetting}"
+                                                    AllowEditing="False" />
+                                    
+                                    <!-- 전체수량 -->
+                                    <dxg:GridColumn Header="TOT_QTY" FieldName="TOT_EXT_QTY" Width="80" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            EditSettings="{StaticResource QTYSetting}"
+                                                            AllowEditing="False" />
+
+                                    <!-- 누적수량비율 -->
+                                    <dxg:GridColumn Header="ADD_QTY_RATE" FieldName="EXT_ACCM_QTY_PER" Width="40" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            EditSettings="{StaticResource RateSetting}"
+                                                            AllowEditing="False" />
+
+                                    <!-- 누적수량비율Rank -->
+                                    <dxg:GridColumn Header="ADD_QTY_RATE_RANK" FieldName="EXT_ACCM_RANK_PER" Width="40" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            Style="{StaticResource GridColumnDecimal}"
+                                                            AllowEditing="False" />
+
+                                    <!-- ABC -->
+                                    <dxg:GridColumn Header="ABC" FieldName="ABC_CODE" Width="120" 
+                                                            HorizontalHeaderContentAlignment="Center" 
+                                                            Style="{StaticResource GridColumnStringCenter}"
+                                                            AllowEditing="False" />
+                                </dxg:GridControl.Columns>
+                            </dxg:GridControl>
+                        </Grid>
+                        <!--#endregion-->
+
+
+                    </Grid>
+
+                    <!--<Grid HorizontalAlignment="Left" Grid.Column="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="{StaticResource ContentMargin}"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="{StaticResource ContentMargin}"/>
+                        </Grid.RowDefinitions>
+
+                    </Grid>-->
+
+                </Grid>
+
+                <dx:LoadingDecorator x:Name="loadingScreen" Grid.Row="0" Grid.RowSpan="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

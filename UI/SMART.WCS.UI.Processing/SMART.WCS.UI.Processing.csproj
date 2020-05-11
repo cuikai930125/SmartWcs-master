@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AB504714-8DA9-4C7D-8F14-85EE7EDA60BB}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>SMART.WCS.UI.Processing</RootNamespace>
+    <AssemblyName>SMART.WCS.UI.Processing</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>false</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\Deploy\WCS\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\Deploy\WCS\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Mvvm.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Controls.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Grid.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.LayoutControl.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2019Colorful.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="LGCNS.ezControl">
+      <HintPath>C:\Deploy\WCS\bin\LGCNS.ezControl.dll</HintPath>
+    </Reference>
+    <Reference Include="LGCNS.ezControl.Presentation">
+      <HintPath>C:\Deploy\WCS\bin\LGCNS.ezControl.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit.Extended, Version=1.6.0.0, Culture=neutral, PublicKeyToken=3e4669d2f30244f4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Debug\WPFToolkit.Extended.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataMembers\R0000_SRT\BCDResult.cs" />
+    <Compile Include="DataMembers\R0000_SRT\BCDSample.cs" />
+    <Compile Include="DataMembers\R0000_SRT\ECS.Common\CEnum2.cs" />
+    <Compile Include="DataMembers\R0000_MIN\ECS.Common\CEnum2.cs" />
+    <Compile Include="DataMembers\R1001_SRT\RejectStatusMgmt.cs" />
+    <Compile Include="DataMembers\R1002_SRT\ReProcess.cs" />
+    <Compile Include="DataMembers\R1002_SRT\ScanResultMgmt.cs" />
+    <Compile Include="DataMembers\R1003_SRT\ChuteResultDetail.cs" />
+    <Compile Include="DataMembers\R1003_SRT\ChuteResultHeader.cs" />
+    <Compile Include="DataMembers\R1005_GAN\WrkInfo.cs" />
+    <Compile Include="DataMembers\R1006_GAN\WrkInfo.cs" />
+    <Compile Include="DataMembers\R1007_GAN\WrkInfo.cs" />
+    <Compile Include="DataMembers\R1008_GAN\StockHistInfo.cs" />
+    <Compile Include="DataMembers\R1008_GAN\StockInfo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Views\GANTRY\R1005_GAN.xaml.cs">
+      <DependentUpon>R1005_GAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GANTRY\R1006_GAN.xaml.cs">
+      <DependentUpon>R1006_GAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GANTRY\R1007_GAN.xaml.cs">
+      <DependentUpon>R1007_GAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GANTRY\R1008_GAN.xaml.cs">
+      <DependentUpon>R1008_GAN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MINILOAD\R0000_MIN.xaml.cs">
+      <DependentUpon>R0000_MIN.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SORTER\R0000_SRT.xaml.cs">
+      <DependentUpon>R0000_SRT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SORTER\R1001_SRT.xaml.cs">
+      <DependentUpon>R1001_SRT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SORTER\R1002_SRT.xaml.cs">
+      <DependentUpon>R1002_SRT.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SORTER\R1003_SRT.xaml.cs">
+      <DependentUpon>R1003_SRT.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\GANTRY\R1005_GAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GANTRY\R1006_GAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GANTRY\R1007_GAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\GANTRY\R1008_GAN.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MINILOAD\R0000_MIN.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SORTER\R0000_SRT.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SORTER\R1001_SRT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SORTER\R1002_SRT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SORTER\R1003_SRT.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\SMART.WCS.Common\SMART.WCS.Common.csproj">
+      <Project>{372a183a-873c-439d-b5a2-e95bb784a96f}</Project>
+      <Name>SMART.WCS.Common</Name>
+      <Private>False</Private>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\SMART.WCS.Control\SMART.WCS.Control.csproj">
+      <Project>{9bc0f5af-053d-4891-915b-252067182433}</Project>
+      <Name>SMART.WCS.Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMART.WCS.UI.COMMON\SMART.WCS.UI.Common.csproj">
+      <Project>{27fb7187-b771-4cda-a4cf-7071755359bf}</Project>
+      <Name>SMART.WCS.UI.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

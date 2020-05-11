@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="SMART.WCS.Control.Controls.uSearchShip"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
+             xmlns:local="clr-namespace:SMART.WCS.Control.Controls"
+             mc:Ignorable="d" DataContext="{Binding RelativeSource={RelativeSource Self}}"
+             BorderThickness="0">
+
+    <UserControl.Resources>
+        <ControlTemplate x:Key="borderTemplate" TargetType="{x:Type ContentControl}">
+            <Border BorderThickness="0" CornerRadius="0" 
+                    Background="{Binding Path=Background, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:TextEdit}}}">
+            </Border>
+        </ControlTemplate>
+    </UserControl.Resources>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition   Width="100" />
+            <ColumnDefinition   Width="Auto" />
+            <ColumnDefinition   Width="2" />
+            <ColumnDefinition   Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <dxe:TextEdit   x:Name="txtShipCode"
+                        Text="{Binding CodeCst,UpdateSourceTrigger=PropertyChanged}"
+                        Background="White"
+                        Grid.Column="0"/>
+
+        <dxe:TextEdit   x:Name="txtCstCode"     Grid.Column="0"     Background="#FFFFFF"    Visibility="Hidden" />
+        <dxe:TextEdit   x:Name="txtCstName"     Grid.Column="0"     Background="#FFFFFF"    Visibility="Hidden" />
+
+        <Image  x:Name="imgSearch"  Grid.Column="1"     Width="20"      MaxWidth="100"    Height="20"     VerticalAlignment="Center"  HorizontalAlignment="Center"    Cursor="Hand"
+                Source="/SMART.WCS.Resource;component/Image/ico_cd_search_b.png" />
+
+        <dxe:TextEdit   x:Name="txtShipName"
+                        Text="{Binding NameCst,UpdateSourceTrigger=PropertyChanged}"
+                        Grid.Column="3"
+                        Background="#D4D4D4"
+                        Foreground="Black"
+                        IsReadOnly="True"
+                        BorderThickness="0"
+                        MinWidth="100"
+                        MaxWidth="300"/>
+
+    </Grid>
+</UserControl>

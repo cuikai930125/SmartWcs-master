@@ -1,0 +1,241 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                     xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+                    xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
+                        xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys"
+                    xmlns:System="clr-namespace:System;assembly=mscorlib"
+                              xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+                      xmlns:dxrudex="http://schemas.devexpress.com/winfx/2008/xaml/reports/userdesignerextensions"
+                      xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"   
+                    xmlns:Behaviors="clr-namespace:SMART.WCS.Modules.Behaviors"
+                    xmlns:localCtrl="clr-namespace:SMART.WCS.Control">
+    <!--Gridcontrol Band-->
+    <Style TargetType="dxe:TextEdit" x:Key="{x:Type dxe:TextEdit}">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="#FFD4D4D4"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderTemplate">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ContentControl}">
+                    <Border x:Name="border"
+                        Background="{Binding RelativeSource={RelativeSource AncestorType=dxe:TextEdit}, Path=Background}"
+                        BorderBrush="{Binding RelativeSource={RelativeSource AncestorType=dxe:TextEdit}, Path=BorderBrush}"
+                        BorderThickness="{Binding RelativeSource={RelativeSource AncestorType=dxe:TextEdit}, Path=BorderThickness}">
+                        <ContentPresenter Margin="0,0,-1,0" />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="dxg:GridColumn" TargetType="{x:Type dxg:GridColumn}">
+        <Setter Property="HorizontalHeaderContentAlignment"  Value="Center"/>
+        <Setter Property="dx:ThemeManager.ThemeName" Value="Office2019Colorful"/>
+    </Style>
+    <!--Combobox-->
+    <Style x:Key="ButtonEditButtonGlyphStyle" TargetType="FrameworkElement">
+        <Setter Property="FlowDirection" Value="LeftToRight" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Height" Value="16"/>
+        <Setter Property="Width"  Value="16"/>
+    </Style>
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=DropDownGlyph, IsThemeIndependent=True}">
+        <Grid Margin="5,0,5,0" Style="{StaticResource ButtonEditButtonGlyphStyle}">
+            <Path Fill="#FF3A3A3B" Stretch="Fill" Data="F1M1284,845L1281,848 1278,845 1284,845z" Margin="0,0,0,1"  Height="9" Width="12" />
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinUpGlyph, IsThemeIndependent=true}" >
+        <Grid Margin="4,0,4,0" Height="10">
+            <Path Data="M120,75.9375 L124.99977,70.9375 129.99955,75.9375z" Fill="#FF3A3A3B" Stretch="Fill" Width="8" Height="5" />
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxet:ButtonsThemeKey ResourceKey=SpinDownGlyph, IsThemeIndependent=true}">
+        <Grid Margin="4,0,4,0"  Height="10">
+            <Path Data="M10,78 L0,78 5,83.019429z" Fill="#FF3A3A3B" Width="8" Height="5"  Stretch="Fill"/>
+        </Grid>
+    </DataTemplate>
+    <Style TargetType="dxe:ComboBoxEdit" x:Key="{x:Type dxe:ComboBoxEdit}">
+        <Setter Property="dx:ThemeManager.ThemeName" Value="Office2016WhiteSE"/>
+        <Setter Property="IsTextEditable" Value="False"/>
+    </Style>
+    <Style TargetType="dxe:ButtonEdit" x:Key="ClearTextEditStyle">
+        <Setter Property="AllowDefaultButton" Value="False"/>
+        <Setter Property="Buttons">
+            <Setter.Value>
+                <dxe:ButtonInfoCollection>
+                    <dxe:ButtonInfo ToolTipService.ToolTip="Clear value" GlyphKind="Cancel" ClickMode="Release"  
+                                    Visibility="{Binding EditValue, Converter={StaticResource EditValueToVisibilityConverter}}">
+                    </dxe:ButtonInfo>
+                </dxe:ButtonInfoCollection>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--dateEdit-->
+    <Style TargetType="dxe:DateEdit" x:Key="{x:Type dxe:DateEdit}">
+        <Setter Property="EditValue" Value="{x:Static System:DateTime.Now}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="dx:ThemeManager.ThemeName" Value="Office2016WhiteSE"/>
+    </Style>
+
+    <Style TargetType="dxg:GridControl" x:Key="{x:Type dxg:GridControl}">
+        <Setter Property="dx:ThemeManager.ThemeName" Value="Office2016WhiteSE"/>
+        <Setter Property="dx:ScrollBarExtensions.ScrollBarMode" Value="Standard"/>
+        <Setter Property="AutoExpandAllGroups" Value="True"/>
+        <Setter Property="ClipboardCopyMode" Value="ExcludeHeader"/>
+        <Setter Property="AutoGenerateColumns" Value="None"/>
+        <Setter Property="AutoPopulateColumns" Value="False"/>
+        <Setter Property="DesignTimeShowSampleData" Value="True"/>
+        <Setter Property="DesignTimeDataSourceRowCount" Value="10"/>
+        <Setter Property="EnableSmartColumnsGeneration" Value="False"/>
+        <Setter Property="SelectionMode" Value="Cell"/>
+        <Setter Property="FilterString" Value="[IsDelete] &lt;&gt; 'True' And [IsHide] &lt;&gt; 'True'"/>
+    </Style>
+    <!--<Setter Property="dx:ScrollBarExtensions.ScrollBarMode" Value="TouchOverlap"/>-->
+    <Style TargetType="dxg:TableView" x:Key="{x:Type dxg:TableView}">
+        <Setter Property="dx:ThemeManager.ThemeName" Value="Office2016WhiteSE"/>
+        <Setter Property="AllowChangeBandParent" Value="True"/>
+        <Setter Property="ShowGroupPanel" Value="False"/>
+        <Setter Property="AutoWidth" Value="True"/>
+        <Setter Property="AllowBestFit" Value="True"/>
+        <Setter Property="BestFitMode" Value="Smart"/>
+        <Setter Property="AlternationCount" Value="2"/>
+        <Setter Property="EnableImmediatePosting" Value="True"/>
+        <Setter Property="UseEvenRowBackground" Value="True"/>
+        <Setter Property="AllowScrollAnimation" Value="False"/>
+        <Setter Property="ShowAutoFilterRow" Value="False"/>
+        <Setter Property="ShowFilterPanelMode" Value="Never"/>
+        <Setter Property="ColumnFilterPopupMode" Value="Excel"/>
+        <Setter Property="BandSeparatorWidth" Value="1"/>
+        <!--<Setter Property="Behaviors:CommonProperties.Behavior">
+            <Setter.Value>
+                <dxrudex:GridReportManagerService  Name="rmsExcelStyleFiltering" />
+            </Setter.Value>
+        </Setter>-->
+        <!--<Setter Property="RowStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type dxg:RowControl}">
+                    <Style.Triggers>
+                        <Trigger Property="SelectionState" Value="Selected">
+                            <Setter Property="Background" Value="LightGoldenrodYellow" />
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Setter.Value>
+        </Setter>-->
+        <!--<Setter Property="AllowCascadeUpdate" Value="True"/>-->
+        <!--<Setter Property="EvenRowBackground" Value="AliceBlue"/>-->
+    </Style>
+    <Style TargetType="dxg:GridColumnHeader"  x:Key="DefaultColumnStyle">
+        <Setter Property="dx:ThemeManager.ThemeName" Value="Office2016WhiteSE"/>
+        <!--<Setter Property="Background" Value="{Binding Tag}"/>-->
+        <Setter Property="Background" Value="#FFEDF0F5" />
+        <Setter Property="Height" Value="28" />
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <!--<Setter Property="FontWeight" Value="Bold"/>-->
+    </Style>
+    <Style TargetType="dxg:GridColumnHeader"  x:Key="ReadOnlyColumnStyle">
+        <Setter Property="dx:ThemeManager.ThemeName" Value="Office2016WhiteSE"/>
+        <!--<Setter Property="Background" Value="{Binding Tag}"/>-->
+        <Setter Property="Height" Value="28" />
+        <Setter Property="Background" Value="#FFE3E6EB" />
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <!--<Setter Property="FontWeight" Value="Bold"/>-->
+    </Style>
+    <!--CHOO
+    2019.04.15
+    그리드 헤더 필수값 조정을 위해 주석처리-->
+    <!--<DataTemplate x:Key="AllowEditingMarkTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="* " x:Name="AllowEditingMark"/>
+            <TextBlock Text="{Binding}"></TextBlock>
+        </StackPanel>
+    </DataTemplate>-->
+    <DataTemplate x:Key="DefaultHeaderTemplate">
+            <TextBlock Text="{Binding}"></TextBlock>
+    </DataTemplate>
+    <Style TargetType="dxg:GridColumn" x:Key="{x:Type dxg:GridColumn}">
+        <Setter Property="dx:ThemeManager.ThemeName" Value="Office2016WhiteSE"/>
+        <Setter Property="HorizontalHeaderContentAlignment" Value="Center"/>
+        <!--<Style.Triggers>
+            <Trigger Property="AllowEditing" Value="True">
+                <Setter Property="HeaderStyle"  Value="{StaticResource DefaultColumnStyle}" />
+                <Setter Property="HeaderTemplate"  Value="{StaticResource AllowEditingMarkTemplate}" />
+            </Trigger>
+            <Trigger Property="AllowEditing" Value="Default">
+                <Setter Property="HeaderStyle"  Value="{StaticResource DefaultColumnStyle}" />
+                <Setter Property="HeaderTemplate"  Value="{StaticResource AllowEditingMarkTemplate}" />
+            </Trigger>
+            <Trigger Property="ReadOnly" Value="False">
+                <Setter Property="HeaderStyle"  Value="{StaticResource DefaultColumnStyle}" />
+                <Setter Property="HeaderTemplate"  Value="{StaticResource AllowEditingMarkTemplate}" />
+            </Trigger>
+            <Trigger Property="AllowEditing" Value="False">
+                <Setter Property="HeaderStyle"  Value="{StaticResource ReadOnlyColumnStyle}" />
+                <Setter Property="HeaderTemplate"  Value="{StaticResource DefaultHeaderTemplate}" />
+            </Trigger>
+            <Trigger Property="ReadOnly" Value="True">
+                <Setter Property="HeaderStyle"  Value="{StaticResource ReadOnlyColumnStyle}" />
+                <Setter Property="HeaderTemplate"  Value="{StaticResource DefaultHeaderTemplate}" />
+            </Trigger>
+        </Style.Triggers>-->
+    </Style>
+    <Style TargetType="dxg:GridControlBand"  x:Key="{x:Type dxg:GridControlBand}">
+        <Setter Property="dx:ThemeManager.ThemeName" Value="Office2016WhiteSE"/>
+        <Setter Property="HorizontalHeaderContentAlignment" Value="Center"/>
+        <Setter Property="HeaderStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type dxg:BandHeaderControl}">
+                    <Setter Property="Background" Value="#FFEDF0F5"/>
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!--<Style x:Key="{x:Type dxg:LightweightCellEditor}" TargetType="dxg:LightweightCellEditor">
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Column.ReadOnly}" Value="True">
+                <Setter Property="IsEnabled" Value="False"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>-->
+    <!--<Style TargetType="dxe:CheckEdit" x:Key="{x:Type dxe:CheckEdit}">
+        <Style.Triggers>
+            <Trigger Property="IsReadOnly" Value="True">
+                <Setter Property = "edit" Value="True"/>
+            </Trigger>
+            <Trigger Property="IsReadOnly" Value="False">
+                <Setter Property = "IsEnabled" Value="False"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>-->
+    <Style TargetType="{x:Type dxg:GridColumn}"  x:Key="HeaderBottomStyle">
+        <Setter Property="HeaderStyle">
+            <Setter.Value>
+                <Style TargetType="{x:Type  dxg:GridColumnHeader}">
+                    <Setter Property="Background" Value="#FFF19E9E"/>
+                    <Setter Property="Foreground"  Value="White"/>
+                    <Setter Property="VerticalContentAlignment"  Value="Stretch"/>
+                    <Setter Property="HorizontalContentAlignment"  Value="Stretch"/>
+                    <Setter Property="Height"       Value="25" />
+                    <Setter Property="MaxHeight"    Value="30" />
+                    <!--<Setter Property="Height"  Value="22"/>
+                    <Setter Property="FontSize"  Value="10"/>-->
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <System:String x:Key="FormatDate">
+        yyyy/MM/dd
+    </System:String>
+    <System:String x:Key="FormatDateTime">
+        yyyy/MM/dd HH:mm
+    </System:String>
+    <System:String x:Key="FormatDateTimeSe">
+        yyyy/MM/dd HH:mm:ss
+    </System:String>
+    <System:String x:Key="FormatDateTimeFull">
+        yyyy/MM/dd HH:mm:ss FFF
+    </System:String>
+    <dxe:TextEditSettings x:Key="DefaultDateEditSetting" DisplayFormat="{StaticResource FormatDateTime}"/>
+</ResourceDictionary>

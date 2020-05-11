@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9BC0F5AF-053D-4891-915B-252067182433}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>SMART.WCS.Control</RootNamespace>
+    <AssemblyName>SMART.WCS.Control</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>false</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\Deploy\WCS\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\Deploy\WCS\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Mvvm.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Themes.Office2016White.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016WhiteSE.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Themes.Office2016WhiteSE.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="LGCNS.ezControl, Version=2.0.8.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\LGCNS.ezControl.dll</HintPath>
+    </Reference>
+    <Reference Include="LGCNS.ezControl.Presentation, Version=2.0.8.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\LGCNS.ezControl.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Barcode\BarCodeReader.xaml.cs">
+      <DependentUpon>BarCodeReader.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Barcode\BarCodeReceivedEventArgs.cs" />
+    <Compile Include="Barcode\ScannerConnectResult.cs" />
+    <Compile Include="Barcode\SerialPortSettingChangeEventArgs.cs" />
+    <Compile Include="Barcode\SerialScannerConnect.cs" />
+    <Compile Include="Controls\CommentArea.xaml.cs">
+      <DependentUpon>CommentArea.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CommonCodeEditSetting.cs" />
+    <Compile Include="Controls\Kiosk\KioskBase.cs" />
+    <Compile Include="Controls\Kiosk\KioskBorder.cs" />
+    <Compile Include="Controls\Kiosk\KioskButton.cs" />
+    <Compile Include="Controls\Kiosk\KioskForm.cs" />
+    <Compile Include="Controls\Kiosk\KioskListBox.cs" />
+    <Compile Include="Controls\Kiosk\KioskListBoxItem.xaml.cs">
+      <DependentUpon>KioskListBoxItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Kiosk\KioskMessageBox.cs" />
+    <Compile Include="Controls\NavigationBar.xaml.cs">
+      <DependentUpon>NavigationBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\uDatePicker.xaml.cs">
+      <DependentUpon>uDatePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\uSearchCst.xaml.cs">
+      <DependentUpon>uSearchCst.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\uSearchShip.xaml.cs">
+      <DependentUpon>uSearchShip.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\uSearchSku.xaml.cs">
+      <DependentUpon>uSearchSku.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\uSimpleButton.xaml.cs">
+      <DependentUpon>uSimpleButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\uSimpleButtonSearch.xaml.cs">
+      <DependentUpon>uSimpleButtonSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\uTimePicker.xaml.cs">
+      <DependentUpon>uTimePicker.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\DefaultBooleanConverter.cs" />
+    <Compile Include="Converters\RowHandleToIndexConverter.cs" />
+    <Compile Include="Ctrl\FindControl.cs" />
+    <Compile Include="Ctrl\GridColumnEventInfo.cs" />
+    <Compile Include="Base\BaseApp.cs" />
+    <Compile Include="Base\BaseInfo.cs" />
+    <Compile Include="DataMembers\ContentLabelInfo.cs" />
+    <Compile Include="DataMembers\DateTimeNow.cs" />
+    <Compile Include="DataMembers\EventArgs\OpenFormEventArgs.cs" />
+    <Compile Include="DataMembers\EventArgs\SerialPortSettingChangeEventArgs.cs" />
+    <Compile Include="DataMembers\FindBIZInfo.cs" />
+    <Compile Include="DataMembers\FindSKUInfo.cs" />
+    <Compile Include="DataMembers\MainWinParam.cs" />
+    <Compile Include="DataMembers\PopupDataMembers\PopupShip.cs" />
+    <Compile Include="DataMembers\PopupDataMembers\PopupCst.cs" />
+    <Compile Include="DataMembers\PopupDataMembers\PopupSku.cs" />
+    <Compile Include="DataMembers\PopupDataMembers\PopupSkuBarcode.cs" />
+    <Compile Include="Modules\Behaviors\CommonProperties.cs" />
+    <Compile Include="Modules\Behaviors\ControlBaseBehavior.cs" />
+    <Compile Include="Modules\Behaviors\GridBehavior.cs" />
+    <Compile Include="Modules\Behaviors\GridLayoutBehavior.cs" />
+    <Compile Include="Modules\Behaviors\PropertyChangeNotifier.cs" />
+    <Compile Include="Modules\Behaviors\SelectorColumnBehavior.cs" />
+    <Compile Include="Modules\Behaviors\SpinEditSelectBehavior.cs" />
+    <Compile Include="Modules\Ctrl\CustomGrid.cs" />
+    <Compile Include="Modules\Ctrl\FindControl.cs" />
+    <Compile Include="Modules\Ctrl\GridColumnEventInfo.cs" />
+    <Compile Include="Modules\Ctrl\SelectorColumn.cs" />
+    <Compile Include="Modules\Extensions\CommonCodeExtensions.cs" />
+    <Compile Include="Modules\Extensions\CommonExtensions.cs" />
+    <Compile Include="Modules\Extensions\DataMemberExtensions.cs" />
+    <Compile Include="Modules\Extensions\EditBaseExtensions.cs" />
+    <Compile Include="Modules\Extensions\GridControlExtension.cs" />
+    <Compile Include="Modules\Extensions\GridControlHelper.cs" />
+    <Compile Include="Modules\Extensions\LambdaExpression.cs" />
+    <Compile Include="Modules\Extensions\PrimaryKeyAttribute.cs" />
+    <Compile Include="Modules\Interface\TabCloseInterface.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Utility\HelperClass.cs" />
+    <Compile Include="Utility\UCConnection.xaml.cs">
+      <DependentUpon>UCConnection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SWCS0301_01P.xaml.cs">
+      <DependentUpon>SWCS0301_01P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SWCS101_01P.xaml.cs">
+      <DependentUpon>SWCS101_01P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SWCS102_01P.xaml.cs">
+      <DependentUpon>SWCS102_01P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SWCS103_01P.xaml.cs">
+      <DependentUpon>SWCS103_01P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SWCS201_01P.xaml.cs">
+      <DependentUpon>SWCS201_01P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SWCS201_02P.xaml.cs">
+      <DependentUpon>SWCS201_02P.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="App.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SMART.WCS.Common\SMART.WCS.Common.csproj">
+      <Project>{372a183a-873c-439d-b5a2-e95bb784a96f}</Project>
+      <Name>SMART.WCS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMART.WCS.Resource\SMART.WCS.Resource.csproj">
+      <Project>{e6d6daee-5637-4f39-9549-2166aac6a74a}</Project>
+      <Name>SMART.WCS.Resource</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Barcode\BarCodeReader.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\CommentArea.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Kiosk\KioskListBoxItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\NavigationBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\uDatePicker.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\uSearchCst.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\uSearchShip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\uSearchSku.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\uSimpleButton.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\uSimpleButtonSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\uTimePicker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\BaseStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\ControlStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\DxControlStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Utility\UCConnection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\SWCS0301_01P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SWCS101_01P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SWCS102_01P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SWCS103_01P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SWCS201_01P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SWCS201_02P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_hd_cj_logistislogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_hd_wcslogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_hd_bg_right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_hd_languge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_hd_alert.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\btn_hd_logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\btn_hd_minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\btn_hd_colse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_ft_infrdiv.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_ft_netrun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_ft_nestop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_lt_tree_exp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_lt_tree_current.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_lt_tree_close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\btn_lt_winfold.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\btn_lt_winexp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\img_mainlist_left_top.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\bg_mainlist_yg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\img_mainlist_rightbottom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_hd_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_hd_location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\btn_hd_maximize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\btn_hd_restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_sms.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_lt_tree_menu_newwin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\icons8-solar-cross-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\icons8-solar-cross-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\icons8-home-24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_row_add.png" />
+    <Resource Include="_ResourcesTemp\ico_row_add_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_row_del.png" />
+    <Resource Include="_ResourcesTemp\ico_row_del_dis.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_menu-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ico_cd_search_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\btn_pop_colse_b.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\btn_pop_colse_w.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\Coupang.png" />
+    <Resource Include="_ResourcesTemp\LGCNS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\logo_autumn_login.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\_lgcns_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\icoBookmarkapply.png" />
+    <Resource Include="_ResourcesTemp\icoBookmarkCancellation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\alarm_Icon.png" />
+    <Resource Include="_ResourcesTemp\imgSmartWCS.jpg" />
+    <Resource Include="_ResourcesTemp\language_Icon.png" />
+    <Resource Include="_ResourcesTemp\Loginbutton.png" />
+    <Resource Include="_ResourcesTemp\Loginbutton_hover.png" />
+    <Resource Include="_ResourcesTemp\logout_Icon.png" />
+    <Resource Include="_ResourcesTemp\password_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\Idicon.png" />
+    <Resource Include="_ResourcesTemp\Idicon2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\CoupangLogoCycle.png" />
+    <Resource Include="_ResourcesTemp\imgCoupangLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\CoupangMainLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\SMARTWCS_Raleway.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\WCSLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="_ResourcesTemp\ID_login.png" />
+    <Resource Include="_ResourcesTemp\passwordIcon_login.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

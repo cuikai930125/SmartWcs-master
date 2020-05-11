@@ -1,0 +1,245 @@
+﻿<Window x:Class="SMART.WCS.UI.COMMON.Views.GANTRY.C1023_GAN_01P"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SMART.WCS.UI.COMMON.Views.GANTRY"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" 
+        xmlns:e="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        xmlns:localCtrl="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+        xmlns:uButton="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+        xmlns:commonMapping="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+        xmlns:berhaviors="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+        xmlns:Converters="clr-namespace:SMART.WCS.Control.Converters;assembly=SMART.WCS.Control"
+        DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}"
+        mc:Ignorable="d"
+        dx:ThemeManager.ThemeName="Office2019Colorful"
+        Title="C1023_GAN_01P" 
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" 
+        BorderThickness="1"
+        Height="310" Width="360">
+
+    <e:Interaction.Behaviors>
+        <commonMapping:ControlBaseBehavior />
+    </e:Interaction.Behaviors>
+
+    <Window.Resources>
+        <Style TargetType="dx:SimpleButton" x:Key="NormalButtonStyle">
+            <Setter Property="AllowDrop" Value="False"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="ClickMode" Value="Press"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="ContentTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Grid>
+                            <Border BorderThickness="0" Background="#31383E">
+                                <TextBlock Foreground="White" Text="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Center" HorizontalAlignment="Center" />
+                            </Border>
+                        </Grid>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <!--
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#FFEAF2FA"/>
+                </Trigger>
+            </Style.Triggers>
+            -->
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Border BorderThickness="0"
+            Margin="2"
+            Background="#ffffff">
+
+            <!--#region 폼 테두리 그림자 처리-->
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="5" 
+                              BlurRadius="10" 
+                              Color="Gray"
+                              Opacity="0.5"/>
+            </Border.Effect>
+            <!--#endregion-->
+
+            <Grid x:Name="_gridNavigation"  Background="#fcfcfc">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid   Grid.Row="0"    Background="#D4D4D4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition   Width="320" />
+                        <ColumnDefinition   Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Border>
+                        <Grid Grid.Column="0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition  Height="42" />
+                                <RowDefinition  Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid.ColumnDefinitions>
+
+                                <ColumnDefinition   Width="Auto" />
+                                <!--#endregion-->
+
+                                <!--#region 메뉴명 - 3-->
+                                <ColumnDefinition   Width="7*" />
+                                <!--#endregion-->
+
+                                <!--#region 닫기 이미지 - 4-->
+                                <ColumnDefinition   Width="3*" />
+                                <!--#endregion-->
+                            </Grid.ColumnDefinitions>
+
+                            <!--#region 네비게이션 이미지 : Column - 1-->
+
+                            <Image  Grid.Column="0"     Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_menu-button.png"
+                                    Width="10"          Margin="10,0,10,0" />
+                            <!--#endregion-->
+
+                            <!--commonMapping:CommonProperties.LabelCd="CST"-->
+                            <!--#region 2 Depth 메뉴 : Column - 6-->
+                            <TextBlock  Grid.Column="1" Text="토트박스 일괄 등록" VerticalAlignment="Center"  HorizontalAlignment="Left" />
+
+                            <!--CHOO-->
+                            <!--commonMapping:CommonProperties.LabelCd="CST_MSTR"-->
+                            <!--#endregion-->
+                        </Grid>
+                    </Border>
+                    <!--#region 메인화면 닫기 버튼-->
+                    <Grid Grid.Column="1" HorizontalAlignment="Right" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition  Height="9" />
+                            <RowDefinition  Height="*" />
+                            <RowDefinition  Height="9" />
+                        </Grid.RowDefinitions>
+
+                        <Button x:Name="btnFormClose"
+                                Grid.Row="1"
+                                Cursor="Hand"
+                                Padding="0"
+                                Background="{x:Null}"
+                                BorderThickness="0"
+                                Margin="0,0,9,0">
+                            <Button.Content>
+                                <Image Source="/SMART.WCS.Resource;component/Image/btn_pop_colse_b.png" 
+                                       Width="20" Height="20" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                    <!--#endregion-->
+                </Grid>
+
+                <Grid Grid.Row="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Style="{StaticResource SearchPanelStyle}" Grid.Row="0">
+                    <!--#region 버튼-->
+                    <Grid   Grid.Row="0" >
+                        <StackPanel     x:Name="stackUserButton_First" Style="{StaticResource CommonPanelStyle}" HorizontalAlignment="Right">
+                            <!--#region 저장 버튼-->
+                            <uButton:uSimpleButton  x:Name="btnSave" Grid.Column="1"
+											Style="{StaticResource CommButtonStyle}"
+											ButtonType="SAVE" IsIconVisibleYN="True" />
+                            <!--#endregion-->
+                            <!--#region 취소 버튼-->
+                                <dx:SimpleButton x:Name="btnCancel"
+                                                 Grid.Column="1"
+                                                 Width="70"
+                                                 Height="32" 
+                                                 Cursor="Hand"
+                                                 berhaviors:CommonProperties.LabelCd="CANL" Margin="3,0,0,0" 
+                                                  />
+                                <!--Style="{StaticResource NormalButtonStyle}"-->
+                                <!--<Button x:Name="btnCancle" Grid.Column="1" Content="취소" Margin="3,0,0,0"/>-->
+                            <!--#endregion-->
+                        </StackPanel>
+                    </Grid>
+                    <!--#endregion-->
+                    </Border>
+
+                    <!--#region 조회 조건-->
+                    <Border Style="{StaticResource SearchPanelStyle}" Grid.Row="1">
+                        <Grid Style="{StaticResource SearchItemStyle}" VerticalAlignment="Center" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="140"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="28" />
+                                <RowDefinition Height="28" />
+                                <RowDefinition Height="28" />
+                                <RowDefinition Height="28" />
+                                <RowDefinition Height="28" />
+                                <RowDefinition Height="28" />
+                                <RowDefinition Height="28" />
+                            </Grid.RowDefinitions>
+
+                            <!--#region 마지막 토트 번호-->
+                            <TextBlock Text="마지막 토트 번호" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <dxe:TextEdit x:Name="txtMaxTotBoxId" Grid.Column="2" IsReadOnly="True" VerticalAlignment="Center" />
+                            <!--#endregion-->
+
+                            <!--#region 토트박스 타입-->
+                            <TextBlock Grid.Row="1" Text="토트박스 타입" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <dxe:ComboBoxEdit Grid.Row="1" Grid.Column="2" 
+                                              x:Name="cboTotBoxType"
+                                              NullText="SELECT" 
+                                              ValueMember="BOX_TYPE_CD" 
+                                              DisplayMember="BOX_TYPE_NM" 
+                                              ItemsSource="{Binding TotBoxTypeList}"
+                                              Width="140" VerticalAlignment="Center"/>
+                            <!--#endregion-->
+
+                            <!--#region 시작 등록번호-->
+                            <TextBlock Grid.Row="2" Text="시작 등록번호" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <dxe:TextEdit x:Name="txtTotBoxFr" Grid.Row="2" Grid.Column="2" IsReadOnly="True" VerticalAlignment="Center" />
+                            <!--#endregion-->
+
+                            <!--#region 토트박스 등록수-->
+                            <TextBlock Grid.Row="3" Text="토트박스 등록수" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <dxe:TextEdit x:Name="txtTotCnt" Text="100" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center"
+                                          MaskUseAsDisplayFormat="True" MaskType="Numeric"  Mask="d" />
+                            <!--#endregion-->
+
+                            <!--#region 길이-->
+                            <TextBlock Grid.Row="4" Text="길이" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <dxe:TextEdit x:Name="txtWTH" Grid.Row="4" Grid.Column="2" IsEnabled="False" VerticalAlignment="Center" IsReadOnly="True" />
+                            <!--#endregion-->
+
+                            <!--#region 너비-->
+                            <TextBlock Grid.Row="5" Text="너비" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <dxe:TextEdit x:Name="txtVERT" Grid.Row="5" Grid.Column="2" IsEnabled="False" IsReadOnly="True" VerticalAlignment="Center" />
+                            <!--#endregion-->
+
+                            <!--#region 높이-->
+                            <TextBlock Grid.Row="6" Text="높이" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            <dxe:TextEdit x:Name="txtHGT" Grid.Row="6" Grid.Column="2" IsEnabled="False" VerticalAlignment="Center" />
+                            <!--#endregion-->
+                        </Grid>
+
+                    </Border>
+                    <!--#endregion-->
+
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

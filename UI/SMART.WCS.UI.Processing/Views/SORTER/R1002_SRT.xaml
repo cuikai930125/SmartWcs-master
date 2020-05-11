@@ -1,0 +1,561 @@
+﻿<UserControl x:Class="SMART.WCS.UI.Processing.Views.SORTER.R1002_SRT"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SMART.WCS.UI.Processing.Views.SORTER"
+             xmlns:e="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+             xmlns:localCtrl="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+             xmlns:uButton="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+             xmlns:commonMapping="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+             xmlns:berhaviors="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+             xmlns:Converters="clr-namespace:SMART.WCS.Control.Converters;assembly=SMART.WCS.Control"
+             xmlns:uButton1="clr-namespace:SMART.WCS.Control.Controls;assembly=SMART.WCS.Control"
+             DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}"
+             Background="White"
+             mc:Ignorable="d">
+
+    <!--#region 그리드 라벨 Behavior-->
+    <e:Interaction.Behaviors>
+        <commonMapping:ControlBaseBehavior />
+    </e:Interaction.Behaviors>
+    <!--#endregion-->
+
+    <!--#region 리소스-->
+    <UserControl.Resources>
+
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SMART.WCS.Control;component/Themes/BaseStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters:RowHandleToIndexConverter x:Key="RowHandleToIndexConverter"/>
+            <DataTemplate x:Key="SummaryTemplateTotal">
+                <TextBlock Text="Total"    HorizontalAlignment="Center"    VerticalAlignment="Center"     FontWeight="Bold" />
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <!--#endregion-->
+
+    <!--#region 그리드-->
+    <Grid>
+        <!--#region 그리드 정의-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+
+        <!--#region 네비게이션-->
+        <uButton:NavigationBar x:Name="NavigationBar" Grid.Row="0" />
+        <!--#endregion-->
+
+        <!--#region 메인 화면-->
+        <Grid HorizontalAlignment="Left" Grid.Row="2">
+            <!--#region 그리드 정의-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource ContentMargin}"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource ContentMargin}"/>
+                <RowDefinition Height="{StaticResource TotalCountShowMargin}"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <!--#endregion-->
+
+            <!--#region 1. 엑셀 다운로드, 조회 버튼-->
+            <Grid Grid.Row="1">
+                <uButton:CommentArea x:Name="CommentArea" />
+                
+                <StackPanel x:Name="stackUserButton_First" Style="{StaticResource CommonPanelStyle}">
+                    <!--엑셀 다운로드 버튼-->
+                    <uButton:uSimpleButton  x:Name="btnExcelDownload_First" Grid.Column="1"
+                                        Style="{StaticResource CommButtonStyle}"
+                                        ButtonType="EXCEL_DOWNLOAD"     IsIconVisibleYN="True" />
+
+                    <!--재처리 버튼-->
+                    <uButton:uSimpleButton  x:Name="btnReProcess_First" Grid.Row="11"  Grid.Column="1"
+                                            Style="{StaticResource CommButtonStyle}"
+                                            ButtonType="REPROCESS"     IsIconVisibleYN="True" />
+
+                    <!--조회 버튼-->
+                    <uButton1:uSimpleButtonSearch  x:Name="btnSEARCH"  Grid.Column="1" />
+                </StackPanel>
+            </Grid>
+            <!--#endregion-->
+            
+            <!--#region 2. 조회 조건-->
+            <Border Style="{StaticResource SearchPanelStyle}" Grid.Row="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="10"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition  Height="Auto" />
+                        <RowDefinition  Height="10" />
+                        <RowDefinition  Height="Auto" />
+
+                    </Grid.RowDefinitions>
+
+                    <!--#region 1. (*)설비 ID-->
+                    <Grid Grid.Row="0" Grid.Column="0" Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock  berhaviors:CommonProperties.LabelCd="EQP_ID_REQ"
+                                                HorizontalAlignment="Right"
+                                                VerticalAlignment="Center"/>
+                    </Grid>
+                    
+                    <Grid Grid.Row="0" Grid.Column="1" Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <dxe:ComboBoxEdit Grid.Column="2" 
+                                          x:Name="cboEqpId" 
+                                          NullText="SELECT" 
+                                          ValueMember="CODE" 
+                                          DisplayMember="NAME" 
+                                          Width="200"
+                                          HorizontalAlignment="Left"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region 2. 스캔일자-->
+                    <Grid Grid.Row="0" Grid.Column="2" Style="{StaticResource SearchItemStyle}">
+                        <TextBlock Grid.Column="0" berhaviors:CommonProperties.LabelCd="SRCH_SCAN_DT_REQ" 
+                                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="0" Grid.Column="3" Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="5"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <dxe:DateEdit x:Name="FromScanDT" Grid.Column="0" 
+                                      HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" ShowToday="True"
+                                      DisplayFormatString="yyyy-MM-dd"/>
+                        <dxe:TextEdit   x:Name="FromScanTM"  Grid.Column="4"    Mask="HH:mm"    MaskType="DateTimeAdvancingCaret"   DisplayFormatString="HH:mm"   
+                                        HorizontalContentAlignment="Center" Width="50"   />
+                         <dxe:DateEdit x:Name="ToScanDT" Grid.Column="6" 
+                                      HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" 
+                                      DisplayFormatString="yyyy-MM-dd"/>
+                        <dxe:TextEdit   x:Name="ToScanTM"  Grid.Column="10"    Mask="HH:mm"    MaskType="DateTimeAdvancingCaret"   DisplayFormatString="HH:mm"   
+                                        HorizontalContentAlignment="Center" Width="50"   />
+                    </Grid>
+                    <!--#endregion-->
+                    
+                    <!--#region 3. 소터오류코드-->
+                    <Grid Grid.Row="0" Grid.Column="5" Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" berhaviors:CommonProperties.LabelCd="SRT_ERR_CD"
+                                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                    </Grid>
+
+                    <Grid Grid.Row="0" Grid.Column="6" Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <dxe:ComboBoxEdit Grid.Column="0"
+                                          x:Name="cboSrtErrCd"
+                                          NullText="SELECT"
+                                          ValueMember="CODE"
+                                          DisplayMember="NAME"
+                                          Width="150"
+                                          HorizontalAlignment="Left"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region 4. 슈트-->
+                    <Grid Grid.Row="2" Grid.Column="0" Style="{StaticResource SearchItemStyle}">
+                        <TextBlock berhaviors:CommonProperties.LabelCd="CHUTE"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                    
+                    <Grid Grid.Row="2" Grid.Column="1" Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <dxe:TextEdit x:Name="txtRsltChute" 
+                                       HorizontalAlignment="Right"    VerticalAlignment="Center" 
+                                       Width="100"     HorizontalContentAlignment="Left"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region 5. 박스코드-->
+                    <Grid Grid.Row="2" Grid.Column="2" Style="{StaticResource SearchItemStyle}">
+                        <TextBlock berhaviors:CommonProperties.LabelCd="BOX_BCD"
+                                   HorizontalAlignment="Left"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                    <Grid Grid.Row="2" Grid.Column="3" Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <dxe:TextEdit x:Name="txtBoxBcd" 
+                                                    HorizontalAlignment="Right"    VerticalAlignment="Center" 
+                                                    Width="120"     HorizontalContentAlignment="Left"/>
+                    </Grid>
+                    <!--#endregion-->
+                    
+                    <!--#region 6. 송장바코드-->
+                    <Grid Grid.Row="2" Grid.Column="5" Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" berhaviors:CommonProperties.LabelCd="INV_BCD"
+                                   HorizontalAlignment="Right" VerticalAlignment="Center" />
+                    </Grid>
+
+                    <Grid Grid.Row="2" Grid.Column="6" Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <dxe:TextEdit x:Name="txtInvBcd" Grid.Column="2"
+                                      HorizontalAlignment="Right" VerticalAlignment="Center"
+                                      Width="150" HorizontalContentAlignment="Left"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region ZONE ID-->
+                    <Grid Style="{StaticResource SearchItemStyle}"  Grid.Row="5"    Grid.Column="0"     Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock  berhaviors:CommonProperties.LabelCd="ZONE_ID"
+                                                HorizontalAlignment="Left"
+                                                VerticalAlignment="Center"/>
+                        <dxe:ComboBoxEdit Grid.Column="2" 
+                                          x:Name="cboZoneID" 
+                                          NullText="SELECT" 
+                                          ValueMember="CODE" 
+                                          DisplayMember="NAME" 
+                                          HorizontalAlignment="Left"
+                                          Width="100"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region ZONE ID-->
+                    <Grid Style="{StaticResource SearchItemStyle}"  Grid.Row="5"    Grid.Column="2"     Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="90"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="200"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock  berhaviors:CommonProperties.LabelCd="IF_TYPE_YN"
+                                                HorizontalAlignment="Left"
+                                                VerticalAlignment="Center"/>
+                        <dxe:ComboBoxEdit Grid.Column="2" 
+                                          x:Name="cboIFTypeYN" 
+                                          NullText="SELECT" 
+                                          ValueMember="CODE" 
+                                          DisplayMember="NAME" 
+                                          HorizontalAlignment="Left"
+                                          Width="100"/>
+                    </Grid>
+                    <!--#endregion-->
+                    
+                </Grid>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region 3. 그리드 제목-->
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3"/>
+                </Grid.RowDefinitions>
+                
+                <Image Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_menu-button.png"
+                           Margin="10 0 0 0"/>
+                <TextBlock  Grid.Column="1" commonMapping:CommonProperties.LabelCd="SCAN_STATUS_MGMT"
+                                FontWeight="Bold"
+                                Margin="5 0 0 0"
+                                VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+            </Grid>
+            <!--#endregion-->
+            
+            <!--#region 4. 조회 결과-->
+            <Grid x:Name="gridArea" Margin="{StaticResource DefaultMargin}" Grid.Row="6">
+                <dxg:GridControl x:Name="gridMaster"
+                                 SelectionMode="Cell"
+                                 AutoExpandAllGroups="True"
+                                 AutoPopulateColumns="True"
+                                 ShowBorder="True"
+                                 ItemsSource="{Binding ScanResultMgmtList}"
+                                 EnableSmartColumnsGeneration="False"
+                                 AutoGenerateColumns="None">
+                    <dxg:GridControl.View>
+                        <dxg:TableView x:Name="tvMasterGrid"
+                                       local:R1002_SRT.IsEnabled="True"
+                                       MultiSelectMode="Cell"
+                                       AutoWidth="True"
+                                       HeaderHorizontalAlignment="Center"
+                                       ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                       ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                       ShowGroupPanel="False"
+                                       NavigationStyle="Cell" 
+                                       ShowTotalSummary="False"
+                                       AllowPerPixelScrolling="True"
+                                       IndicatorWidth="40">
+
+                            <dxg:TableView.RowIndicatorContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DataContext.RowHandle.Value, Converter={StaticResource RowHandleToIndexConverter}}" />
+                                </DataTemplate>
+                            </dxg:TableView.RowIndicatorContentTemplate>
+                        </dxg:TableView>
+                    </dxg:GridControl.View>
+
+                    <!--#region + 그리드 체크박스 영역-->
+                    <e:Interaction.Behaviors>
+                        <berhaviors:SelectorColumnBehavior />
+                    </e:Interaction.Behaviors>
+                    <!--#endregion-->
+                    
+                    <!--#region Result Index Row-->
+                    <dxg:GridControl.Columns>
+
+                        <!--#region 박스 바코드-->
+                        <dxg:GridColumn Header="BOX_BCD" FieldName="BOX_BCD" Width="100" Tag="A"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 분류 코드-->
+                        <dxg:GridColumn Header="RGN_BCD" FieldName="RGN_BCD" Width="100"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region PID-->
+                        <dxg:GridColumn Header="PID" FieldName="PID" Width="80"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 바코드-->
+                        <dxg:GridColumn Header="BCD_INFO" FieldName="BCD_INFO" Width="100"
+										HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringLeft}"
+										AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+                        
+                        <!--#region 송장 바코드-->
+                        <dxg:GridColumn Header="INV_BCD" FieldName="INV_BCD" Width="120"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 플랜코드-->
+                        <dxg:GridColumn Header="PLAN_CD" FieldName="PLAN_CD" Width="80"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 인덕션-->
+                        <dxg:GridColumn Header="INDT_ID" FieldName="INDT_ID" Width="60"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 계획슈트-->
+                        <dxg:GridColumn Header="PLAN_CHUTE" FieldName="PLAN_CHUTE" Width="100"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 실적슈트-->
+                        <dxg:GridColumn Header="RSLT_CHUTE_ID" FieldName="RSLT_CHUTE_ID" Width="100"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 투입 일시-->
+                        <dxg:GridColumn Header="SCAN_DT" FieldName="SCAN_DT" Width="140"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 상태-->
+                        <dxg:GridColumn Header="SRT_WRK_STAT_CD" FieldName="SRT_WRK_STAT_CD" Width="100"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 상태-->
+                        <dxg:GridColumn Header="IF_TYPE_YN" FieldName="IF_YN" Width="100"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+                        
+                        
+                        <!--#region 분류일시-->
+                        <dxg:GridColumn Header="SRT_WRK_CMPT_DT" FieldName="SRT_WRK_CMPT_DT" Width="140"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 오류 내용-->
+                        <dxg:GridColumn Header="SRT_ERR_CD" FieldName="SRT_ERR_CD" Width="100"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringLeft}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 설비 사유-->
+                        <dxg:GridColumn Header="SRT_RSN_CD" FieldName="SRT_RSN_CD" Width="100"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringLeft}"
+                                        AllowEditing="False">
+                            <dxg:GridColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                    <Setter Property="Foreground" Value="{Binding RowData.Row.ForegroundBrush}"/>
+                                </Style>
+                            </dxg:GridColumn.CellStyle>
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#endregion-->
+                    </dxg:GridControl.Columns>
+                    <!--#endregion-->
+
+                </dxg:GridControl>
+            </Grid>
+            <!--#endregion-->
+            <dx:LoadingDecorator x:Name="loadingScreen" Grid.Row="0" Grid.RowSpan="100" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+        <!--#endregion-->
+
+    </Grid>
+    <!--#endregion-->
+
+</UserControl>

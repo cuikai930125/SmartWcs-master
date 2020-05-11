@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="9d5624a4-78a9-4031-a44c-e413d1e5b15e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:51000/LiveUpdateWebService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="LiveUpdateWebService1.xsd" MetadataType="Schema" ID="2b1d4882-e31a-43e6-bc92-0ce31a568805" SourceId="1" SourceUrl="http://localhost:51000/LiveUpdateWebService.svc?xsd=xsd1" />
+    <MetadataFile FileName="LiveUpdateWebService2.xsd" MetadataType="Schema" ID="36e4f7b5-532f-4375-811e-91d29cab62c5" SourceId="1" SourceUrl="http://localhost:51000/LiveUpdateWebService.svc?xsd=xsd3" />
+    <MetadataFile FileName="LiveUpdateWebService3.xsd" MetadataType="Schema" ID="e68187df-8b45-413d-bfb9-763f6bfa1520" SourceId="1" SourceUrl="http://localhost:51000/LiveUpdateWebService.svc?xsd=xsd2" />
+    <MetadataFile FileName="LiveUpdateWebService.wsdl" MetadataType="Wsdl" ID="fdc1a55e-2ada-40ca-8f40-89bc80228282" SourceId="1" SourceUrl="http://localhost:51000/LiveUpdateWebService.svc?wsdl" />
+    <MetadataFile FileName="LiveUpdateWebService.disco" MetadataType="Disco" ID="c469bfec-4f6b-4cdb-a807-4eb130946a37" SourceId="1" SourceUrl="http://localhost:51000/LiveUpdateWebService.svc?disco" />
+    <MetadataFile FileName="LiveUpdateWebService4.xsd" MetadataType="Schema" ID="c0672fc6-d1f6-47a9-975c-c0d26e7fdf7d" SourceId="1" SourceUrl="http://localhost:51000/LiveUpdateWebService.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,279 @@
+﻿<UserControl x:Class="SMART.WCS.UI.EMS.Views.BASE_INFO.E1006"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:e="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:uButton1="clr-namespace:SMART.WCS.Control.Controls;assembly=SMART.WCS.Control"
+             xmlns:localCtrl="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+             xmlns:uButton="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+             xmlns:commonMapping="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+             xmlns:berhaviors="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+             mc:Ignorable="d" 
+             Background="White">
+
+    <UserControl.Resources>
+        <dxe:TextEditSettings x:Key="NumericEditSetting" MaskUseAsDisplayFormat="True" MaskType="Numeric" Mask="d" MaskIgnoreBlank="False" HorizontalContentAlignment="Right"/>
+        <dxe:TextEditSettings x:Key="QTYEditSetting" MaskUseAsDisplayFormat="True" MaskType="Numeric" Mask="d" MaskIgnoreBlank="False" HorizontalContentAlignment="CENTER"/>
+        <dxe:TextEditSettings x:Key="TextQTYSetting" HorizontalContentAlignment="CENTER" MaskType="Numeric" Mask="###,###,###.00" DisplayFormat="###,###,##0.##" />
+        <dxe:TextEditSettings x:Key="TextEditSetting" HorizontalContentAlignment="Left"/>
+        <dxe:TextEditSettings x:Key="TextUpEditSetting" MaskUseAsDisplayFormat="True" MaskType="RegEx" Mask="[0-9A-Z_]*" HorizontalContentAlignment="Left"/>
+        <dxe:TextEditSettings x:Key="NoEdit" HorizontalContentAlignment="Center"/>
+        <dxe:TextEditSettings x:Key="DateEditSetting" DisplayFormat="{StaticResource FormatDate}"/>
+
+        <Style x:Key="EmptyButton" TargetType="Button">
+            <Setter Property="SnapsToDevicePixels" Value="true" />
+            <Setter Property="OverridesDefaultStyle" Value="true" />
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="MinHeight" Value="10" />
+            <Setter Property="MinWidth" Value="10" />
+            <Setter Property="ClickMode" Value="Release" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <ContentPresenter Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="ButtonGray" TargetType="Button" BasedOn="{StaticResource EmptyButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid>
+                            <Border BorderThickness="0" Background="Transparent" />
+                            <Grid Width="24" Height="24"
+                            VerticalAlignment="Center" HorizontalAlignment="Center">
+                                <Polygon x:Name="Polygon"
+                                     Points="{TemplateBinding Content}" 
+                                     Fill="#f8f9fb"
+                                     Width="{TemplateBinding Width}"
+                                     Height="{TemplateBinding Height}"
+                                     Opacity="0.55"/>
+                            </Grid>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Polygon" Property="Opacity" Value="0.85" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <e:Interaction.Behaviors>
+        <berhaviors:ControlBaseBehavior />
+    </e:Interaction.Behaviors>
+
+    <Grid>
+        <!--#region Body-->
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="5" />
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <localCtrl:NavigationBar x:Name="NavigationBar"/>
+
+            <Grid Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <!--#region 상단 버튼-->
+                    <RowDefinition Height="Auto"/>
+                    <!--#endregion 상단 버튼-->
+                    <!--#region 간격-->
+                    <RowDefinition Height="{StaticResource ContentMargin}"/>
+                    <!--#endregion 간격-->
+                    <!--#region 검색조건 2-->
+                    <RowDefinition Height="Auto"/>
+                    <!--#endregion 검색조건-->
+                    <!--#region 간격-->
+                    <RowDefinition Height="{StaticResource ContentMargin}"/>
+                    <!--#endregion 간격-->
+                    <!--#region 서브 버튼 4-->
+                    <RowDefinition Height="Auto"/>
+                    <!--#region 서브 버튼-->
+                    <!--#region 그리드 5-->
+                    <RowDefinition Height="*"/>
+                    <!--#endregion 그리드-->
+                </Grid.RowDefinitions>
+
+                <!--#region 버튼-->
+                <Grid>
+                    <StackPanel Style="{StaticResource CommonPanelStyle}">
+                        <uButton:uSimpleButton Style="{StaticResource CommButtonStyle}"
+                                                x:Name="btnExcelHigh"
+                                                PreviewMouseLeftButtonUp="btnExcelDownload_PreviewMouseLeftButtonUp"
+                                                ButtonType="EXCEL_DOWNLOAD"     IsIconVisibleYN="True" />
+                        <uButton:uSimpleButton Style="{StaticResource CommButtonStyle}"
+                                                x:Name="btnRegist"
+                                                PreviewMouseLeftButtonUp="btnRegist_PreviewMouseLeftButtonUp"
+                                                ButtonType="REGIST"     IsIconVisibleYN="True" />
+                        <uButton:uSimpleButton Style="{StaticResource CommButtonStyle}"
+                                                x:Name="btnDelete"
+                                                PreviewMouseLeftButtonUp="btnDelete_PreviewMouseLeftButtonUp"
+                                                ButtonType="DELETE"     IsIconVisibleYN="True" />
+                        <uButton1:uSimpleButtonSearch   x:Name="btnSearchHigh"
+                                                        PreviewMouseLeftButtonUp="btnSearchClick" />
+                    </StackPanel>
+                </Grid>
+                <!--#endregion 버튼-->
+
+                <!--검색조건-->
+                <Border Style="{StaticResource SearchPanelStyle}" Grid.Row="2">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <!--#region 간격 0 -->
+                            <ColumnDefinition Width="50"/>
+                            <!--#endregion 간격-->
+                            <!--#region 부품분류 1 -->
+                            <ColumnDefinition Width="Auto"/>
+                            <!--#endregion 부품분류-->
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <!--#region 부품분류-->
+                        <Grid Grid.Column="1" Style="{StaticResource SearchItemStyle}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="25"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock commonMapping:CommonProperties.LabelCd="PART_CLS" HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                            <TextBox x:Name="tbxSearchPart" Grid.Column="2" Width="100" />
+                            <Image Grid.Column="3" Width="20" Height="20" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0 4 0 0" Cursor="Hand"
+                                   Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_search_black.png"
+                                   PreviewMouseLeftButtonUp="btnPopupSearchClick">
+                                <Image.RenderTransform>
+                                    <ScaleTransform ScaleX=".8" ScaleY=".8" CenterX="0.5" CenterY="0.5" />
+                                </Image.RenderTransform>
+                            </Image>
+                        </Grid>
+                        <!--#endregion 부품분류-->
+                    </Grid>
+                </Border>
+                <!--#endregion 검색조건-->
+
+                <!--#region 서브 버튼-->
+                <Grid Grid.Row="4">
+                    <StackPanel Style="{StaticResource CommonPanelStyle}">
+                       
+
+                    </StackPanel>
+
+                </Grid>
+                <!--#endregion 서브 버튼-->
+
+                <!--#region 그리드-->
+                <dxg:GridControl Grid.Row="5" x:Name="gridMainExcel"
+                                 SelectionMode="Cell" 
+                                 Height="Auto"
+                                 AutoExpandAllGroups="True"
+                                 Margin="{StaticResource DefaultMargin}"
+                                 ShowBorder="True"
+                                 EnableSmartColumnsGeneration="False">
+                    <dxg:GridControl.View>
+                        <dxg:TreeListView Name="gridMainExcelView" 
+                                          TreeColumnFieldName="PART_ID"
+                                          KeyFieldName="KEY_ID"
+                                          ParentFieldName="PARENT_ID" 
+                                          TreeDerivationMode="Selfreference"
+                                          ShowIndicator="False"/>
+                        <!--<dxg:TableView x:Name="gridMainView"
+                                   AllowChangeBandParent="True" 
+                                   AllowChangeColumnParent="True"
+                                   AllowPrintColumnHeaderImage="True" NavigationStyle="Cell"
+                                   AllowScrollAnimation="True"
+                                   ShowGroupPanel="False"
+                                   ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                   AutoWidth="False" AlternationCount="2"
+                                   ShowAutoFilterRow="False" AllowEditing="True">
+                        </dxg:TableView>-->
+                    </dxg:GridControl.View>
+
+                    <dxg:GridControl.Columns>
+                        <dxg:GridColumn Header="PART_ID" FieldName="PART_ID" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextUpEditSetting}" Width="*"/>
+                        <dxg:GridColumn Header="PART_NM" FieldName="PART_NM" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextEditSetting}" Width="2*"/>
+                        <dxg:GridColumn Header="ORDER_DEV" FieldName="ORDER_DEV" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextUpEditSetting}" Visible="False"/>
+                        <dxg:GridColumn Header="PART_MNFACT" FieldName="PART_MNFACT" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextEditSetting}" Width="2*"/>
+                        <dxg:GridColumn Header="LIFE_CLE" FieldName="LIFE_CLE" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource QTYEditSetting}" Width="*"/>
+                        <dxg:GridColumn Header="PART_STND" FieldName="PART_STND" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextEditSetting}" Width="2*"/>
+                        <dxg:GridColumn Header="PART_MODEL" FieldName="PART_MODEL" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextEditSetting}" Width="2*"/>
+                        <dxg:GridColumn Header="STOCK_QTY" FieldName="STOCK_QTY" HorizontalHeaderContentAlignment="Center"  EditSettings="{StaticResource TextQTYSetting}" Width="*">
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Header="STOCK_MNG_YN" FieldName="STOCK_MNG_YN" HorizontalHeaderContentAlignment="Center" Width="*">
+                            <dxg:GridColumn.EditSettings>
+                                <localCtrl:CommonCodeEditSetting HorizontalContentAlignment="Center" IsTextEditable="False" CommonCode="USE_YN" FirstRowEmpty="False"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+
+                        <dxg:GridColumn Header="EQP_QTY" FieldName="USE_EQP_CNT" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource QTYEditSetting}" Width="*"/>
+                    </dxg:GridControl.Columns>
+                </dxg:GridControl>
+
+                <dxg:GridControl Grid.Row="5" x:Name="gridMain"
+                                 SelectionMode="Row" 
+                                 Height="Auto"
+                                 AutoExpandAllGroups="True"
+                                 Margin="{StaticResource DefaultMargin}"
+                                 ShowBorder="True"
+                                 ItemsSource="{Binding EmsPartMngList}"
+                                 EnableSmartColumnsGeneration="False"
+                                 MouseDoubleClick="gridMain_MouseDoubleClick">
+                    <dxg:GridControl.View>
+                        <dxg:TreeListView Name="gridMainView" 
+                                          TreeColumnFieldName="PART_ID"
+                                          KeyFieldName="KEY_ID"
+                                          ParentFieldName="PARENT_ID" 
+                                          TreeDerivationMode="Selfreference"
+                                          ShowIndicator="False"/>
+                        <!--<dxg:TableView x:Name="gridMainView"
+                                   AllowChangeBandParent="True" 
+                                   AllowChangeColumnParent="True"
+                                   AllowPrintColumnHeaderImage="True" NavigationStyle="Cell"
+                                   AllowScrollAnimation="True"
+                                   ShowGroupPanel="False"
+                                   ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                   AutoWidth="False" AlternationCount="2"
+                                   ShowAutoFilterRow="False" AllowEditing="True">
+                        </dxg:TableView>-->
+                    </dxg:GridControl.View>
+
+                    <!--#region + 그리드 체크박스 영역-->
+                    <e:Interaction.Behaviors>
+                        <berhaviors:SelectorColumnBehavior />
+                    </e:Interaction.Behaviors>
+                    <!--#endregion-->
+                    
+                    <dxg:GridControl.Columns>
+                        <dxg:GridColumn Header="PART_ID_REQ" FieldName="PART_ID" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextUpEditSetting}" Width="*"/>
+                        <dxg:GridColumn Header="PART_NM" FieldName="PART_NM" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextEditSetting}" Width="2*"/>
+                        <dxg:GridColumn Header="ORDER_DEV" FieldName="ORDER_DEV" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextUpEditSetting}" Visible="False"/>
+                        <dxg:GridColumn Header="PART_MNFACT" FieldName="PART_MNFACT" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextEditSetting}" Width="2*"/>
+                        <dxg:GridColumn Header="LIFE_CLE" FieldName="LIFE_CLE" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource QTYEditSetting}" Width="*"/>
+                        <dxg:GridColumn Header="PART_STND" FieldName="PART_STND" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextEditSetting}" Width="2*"/>
+                        <dxg:GridColumn Header="PART_MODEL" FieldName="PART_MODEL" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextEditSetting}" Width="2*"/>
+                        <dxg:GridColumn Header="STOCK_QTY" FieldName="STOCK_QTY" HorizontalHeaderContentAlignment="Center"  EditSettings="{StaticResource TextQTYSetting}" Width="*">
+                        </dxg:GridColumn>
+                        <dxg:GridColumn Header="STOCK_MNG_YN" FieldName="STOCK_MNG_YN" HorizontalHeaderContentAlignment="Center" Width="*">
+                            <dxg:GridColumn.EditSettings>
+                                <localCtrl:CommonCodeEditSetting HorizontalContentAlignment="Center" IsTextEditable="False" CommonCode="USE_YN" FirstRowEmpty="False"/>
+                            </dxg:GridColumn.EditSettings>
+                        </dxg:GridColumn>
+
+                        <dxg:GridColumn Header="EQP_QTY" FieldName="USE_EQP_CNT" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource QTYEditSetting}" Width="*"/>
+                    </dxg:GridControl.Columns>
+                </dxg:GridControl>
+                <!--#endregion 그리드-->
+            </Grid>
+        </Grid>
+        <!--#endregion Body-->
+    </Grid>
+
+</UserControl>

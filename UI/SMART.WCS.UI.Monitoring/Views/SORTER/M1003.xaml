@@ -1,0 +1,310 @@
+﻿<UserControl x:Class="SMART.WCS.UI.Monitoring.Views.SORTER.M1003"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:e="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:commonMapping="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+             xmlns:Converters="clr-namespace:SMART.WCS.Control.Converters;assembly=SMART.WCS.Control"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:berhaviors="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:local="clr-namespace:SMART.WCS.UI.Monitoring.Views.SORTER"
+             xmlns:uButton1="clr-namespace:SMART.WCS.Control.Controls;assembly=SMART.WCS.Control" 
+             xmlns:uButton="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+              DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}"
+             Background="White"
+             mc:Ignorable="d" >
+
+    <!--#region 그리드 라벨 Behavior-->
+    <e:Interaction.Behaviors>
+        <commonMapping:ControlBaseBehavior />
+    </e:Interaction.Behaviors>
+    <!--#endregion-->
+
+    <!--#region 리소스-->
+    <UserControl.Resources>
+        <Converters:RowHandleToIndexConverter x:Key="RowHandleToIndexConverter"/>
+
+        <DataTemplate x:Key="SummaryTemplateTotal">
+            <TextBlock Text="Total"    HorizontalAlignment="Center"    VerticalAlignment="Center"     FontWeight="Bold" />
+        </DataTemplate>
+    </UserControl.Resources>
+    <!--#endregion-->
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="Auto" />
+            <RowDefinition  Height="5" />
+            <RowDefinition  Height="*" />
+        </Grid.RowDefinitions>
+
+        <uButton:NavigationBar x:Name="NavigationBar"   Grid.Row="0" Grid.ColumnSpan="2"/>
+
+        <Grid HorizontalAlignment="Left"    Grid.Row="2" Grid.ColumnSpan="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource ContentMargin}"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource ContentMargin}"/>
+                <RowDefinition Height="{StaticResource TotalCountShowMargin}"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <Grid   Grid.Row="1">
+                <uButton:CommentArea x:Name="CommentArea" />
+                
+                <StackPanel     x:Name="stackUserButton_First" Style="{StaticResource CommonPanelStyle}">
+
+                    <!--#region 엑셀 다운로드 버튼-->
+                    <uButton:uSimpleButton  x:Name="btnExcelDownload" Grid.Column="1"
+								Style="{StaticResource CommButtonStyle}"
+								ButtonType="EXCEL_DOWNLOAD"     IsIconVisibleYN="True" />
+                    <!--#endregion-->
+
+                    <!--#region 조회 버튼-->
+                    <uButton1:uSimpleButtonSearch  x:Name="btnSearch" Grid.Column="1" />
+                    <!--#endregion-->
+                </StackPanel>
+            </Grid>
+
+            <!--#region 2. 조회 조건-->
+            <Border Style="{StaticResource CommonSearchPanelHeightStyle}" Grid.Row="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <!--#region 1. 소터-->
+                    <Grid   Grid.Column="0"   Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock      Grid.Row="0"    Grid.Column="0"    berhaviors:CommonProperties.LabelCd="SRT"   
+                                                    HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <dxe:ComboBoxEdit Grid.Row="0"   Grid.Column="2" x:Name="CboSrt" NullText="SELECT" 
+							                ValueMember="CODE" 
+							                DisplayMember="NAME" 
+							                 Width="200"/>
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region 2. 작업일자-->
+                    <Grid Grid.Column="1" Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--작업일자-->
+                        <TextBlock Grid.Column="0" berhaviors:CommonProperties.LabelCd="OCUR_YMD"
+                                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <dxe:DateEdit x:Name="FrOcurYmd" Grid.Column="2" 
+                                      HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" />
+                        <TextBlock Grid.Column="4" Text="~"
+                                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <dxe:DateEdit x:Name="ToOcurYmd" Grid.Column="6" 
+                                      HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" />
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region 3. 알람 상태-->
+                    <Grid   Grid.Column="2"   Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <TextBlock      Grid.Row="0"    Grid.Column="0"    berhaviors:CommonProperties.LabelCd="ALARM_STAT"   
+                                                    HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <dxe:ComboBoxEdit Grid.Row="0"   Grid.Column="2" x:Name="CboAlarmStat" NullText="SELECT" 
+							                ValueMember="CODE" 
+							                DisplayMember="NAME" 
+							                 Width="100"/>
+                    </Grid>
+                    <!--#endregion-->
+                </Grid>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region 3. 버튼 - 행 추가/삭제-->
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.RowSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition   Width="20"/>
+                        <ColumnDefinition   Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_menu-button.png"
+                           Margin="10 0 0 0"/>
+                    <TextBlock  Grid.Column="1"
+                                Text="출고 작업 리스트"
+                                FontWeight="Bold"
+                                Margin="5 0 0 0"
+                                VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+                </Grid>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region 4. 조회 결과-->
+            <Grid x:Name="gridArea" Margin="{StaticResource DefaultMargin}" Grid.Row="6">
+                <dxg:GridControl x:Name="gridMaster" 
+                                 SelectionMode="None"
+                                 AutoExpandAllGroups="True"
+                                 AutoPopulateColumns="True"
+                                 ShowBorder="True"
+                                 ItemsSource="{Binding EqpAlarmInfoList}"
+                                 EnableSmartColumnsGeneration="False" 
+                                 AllowLiveDataShaping="False"
+                                 AutoGenerateColumns="None">
+                    <dxg:GridControl.View>
+                        <dxg:TableView x:Name="MasterGrid" 
+    								    MultiSelectMode="Cell"
+                                       AutoWidth="False" 
+                                       HeaderHorizontalAlignment="Center"
+                                       ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                       ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                       ShowGroupPanel="False"
+                                       NavigationStyle="Cell" 
+                                       ShowTotalSummary="False"
+                                       AllowPerPixelScrolling="True" IndicatorWidth="40">
+
+                            <dxg:TableView.RowIndicatorContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DataContext.RowHandle.Value, Converter={StaticResource RowHandleToIndexConverter}}" />
+                                </DataTemplate>
+                            </dxg:TableView.RowIndicatorContentTemplate>
+                        </dxg:TableView>
+                    </dxg:GridControl.View>
+
+                    <!--#region Result Index Row-->
+                    <dxg:GridControl.Columns>
+
+                        <!--#region 설비ID-->
+                        <dxg:GridColumn Header="EQP_ID" FieldName="EQP_ID" Tag="A" Width="80" 
+                                        HorizontalHeaderContentAlignment="Center" 
+                                        AllowEditing="False" Style="{StaticResource GridColumnStringCenter}"/>
+                        <!--#endregion-->
+
+                        <!--#region 발생일시-->
+                        <dxg:GridColumn Header="OCUR_DT" FieldName="OCUR_DT" Width="160" 
+                                        HorizontalHeaderContentAlignment="Center"  Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 모듈코드-->
+                        <dxg:GridColumn Header="MODULE_CD" FieldName="MODULE_CD" Width="100" 
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"  
+                                        AllowEditing="False" SortOrder="Ascending" SortIndex="0">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 모듈코드-->
+                        <dxg:GridColumn Header="MODULE_DTL" FieldName="MODULE_DTL_CD" Width="140" 
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"  
+                                        AllowEditing="False" SortOrder="Ascending" SortIndex="0">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+                        
+                        <!--#region 알람코드-->
+                        <dxg:GridColumn Header="ALARM_CD" FieldName="ALARM_CD" Width="100" 
+										HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+										AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 알람명-->
+                        <dxg:GridColumn Header="ALARM_NM" FieldName="ALARM_NM" Width="200" 
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringLeft}"
+                                        AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 알람상태-->
+                        <dxg:GridColumn Header="ALARM_STAT_CD" FieldName="ALARM_STAT_CD" Width="100"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}" 
+                                        AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 유닛코드-->
+                        <dxg:GridColumn Header="UNIT_CD" FieldName="UNIT_CD" Width="100"
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 알람설명-->
+                        <dxg:GridColumn Header="ALARM_DESC" FieldName="ALARM_DESC" Width="200" 
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringLeft}"
+                                        AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 알람원인-->
+                        <dxg:GridColumn Header="ALARM_RSN" FieldName="ALARM_RSN" Width="200" 
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringLeft}"
+                                        AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 알람해제방법-->
+                        <dxg:GridColumn Header="ALARM_RCVRY" FieldName="ALARM_RCVRY" Width="250" 
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringLeft}"
+                                        AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 종료일시-->
+                        <dxg:GridColumn Header="END_DT" FieldName="END_DT" Width="160" 
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 처리시간-->
+                        <dxg:GridColumn Header="DIFF_HM" FieldName="DIFF_HM" Width="100" 
+                                        HorizontalHeaderContentAlignment="Center" Style="{StaticResource GridColumnStringCenter}"
+                                        AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#endregion-->
+                    </dxg:GridControl.Columns>
+                    <!--#endregion-->
+
+                </dxg:GridControl>
+            </Grid>
+            <!--#endregion-->
+            <dx:LoadingDecorator x:Name="loadingScreen"  Grid.Row="0" Grid.RowSpan="100"  HorizontalAlignment="Center"    VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</UserControl>

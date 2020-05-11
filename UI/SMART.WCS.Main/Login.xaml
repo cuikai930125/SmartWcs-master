@@ -1,0 +1,169 @@
+﻿<Window x:Class="SMART.WCS.Main.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SMART.WCS.Main"
+        xmlns:uc="clr-namespace:SMART.WCS.Control.Controls;assembly=SMART.WCS.Control"
+        xmlns:Barcode="clr-namespace:SMART.WCS.Control.Barcode;assembly=SMART.WCS.Control"
+        mc:Ignorable="d"
+        dx:ThemeManager.ThemeName="Office2019Colorful"
+        WindowStartupLocation="CenterScreen" 
+        WindowState="Maximized"
+        Background="#FFF9F9F9" 
+        MinWidth="1024"     MinHeight="768"
+        Width="1024"    Height="768"
+        Title="로그인" 
+        x:Name="window">
+    
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="3*" />
+            <RowDefinition  Height="5*" />
+            <RowDefinition  Height="2*" />
+            <RowDefinition  Height="2*" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition   Width="4*" />
+            <ColumnDefinition   Width="2*" />
+            <ColumnDefinition   Width="4*" />
+        </Grid.ColumnDefinitions>
+
+        <Barcode:BarCodeReader x:Name="bcScanner"   IsSerialPortMode="True"     HandScanner="True"
+                               InputParent="{Binding ElementName=window, Mode=OneWay}"
+                               BarCodeReceived="bcScanner_BarCodeReceived" />
+        
+        <Grid   Grid.Row="1"    Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="Auto" />
+                <RowDefinition  Height="30" />
+                <RowDefinition  Height="40" />
+                <RowDefinition  Height="30" />
+                <RowDefinition  Height="10" />
+                <RowDefinition  Height="30" />
+                <RowDefinition  Height="10" />
+                <RowDefinition  Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Image  x:Name="imgLogo" Stretch="Fill" Source="/SMART.WCS.Resource;component/Image/CoupangMainLogo.png"    Grid.Row="0"   Grid.Column="0"  Margin="0"/>
+            <!--<Image Source="/SMART.WCS.Resource;component/Image/WCSLogo.png"    Grid.Row="1"   Grid.Column="0"  HorizontalAlignment="Right"
+                    VerticalAlignment="Top" Width="90"/>-->
+            <Image Source="/SMART.WCS.Resource;component/Image/logo_smartSMS.png"   Grid.Row="1"    Grid.Column="0" 
+                   HorizontalAlignment="Right"  VerticalAlignment="Top" />
+
+            <Grid   Grid.Row="3">
+                <!--<Grid.ColumnDefinitions>
+                    <ColumnDefinition   Width="1*" />
+                    <ColumnDefinition   Width="10" />
+                    <ColumnDefinition   Width="9*" />
+                </Grid.ColumnDefinitions>-->
+                
+                <dxe:TextEdit   x:Name="txtUserID"  Grid.Column="2" NullText="User Id"  Padding="25,0,0,0"/>
+                <Image  Grid.Column="0"    Width="Auto"    Stretch="None"   VerticalAlignment="Center"  HorizontalAlignment="Left"
+                        Source="/SMART.WCS.Resource;component/Image/ID_login.png" 
+                        Margin="8,0,0,0"/>
+            </Grid>
+
+            <Grid   Grid.Row="5">
+                <!--<Grid.ColumnDefinitions>
+                    <ColumnDefinition   Width="1*" />
+                    <ColumnDefinition   Width="10" />
+                    <ColumnDefinition   Width="9*" />
+                </Grid.ColumnDefinitions>-->
+
+                <dxe:PasswordBoxEdit   x:Name="txtPwd"     Grid.Column="2" NullText="" Padding="25,0,0,0" />
+                <Image  Grid.Column="0"    Width="Auto"    Stretch="None"   VerticalAlignment="Center"  HorizontalAlignment="Left"
+                        Source="/SMART.WCS.Resource;component/Image/passwordIcon_login.png"
+                        Margin="8,0,0,0"/>
+            </Grid>
+
+            <Grid   Grid.Row="7"    Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition   Width="5*" />
+                    <ColumnDefinition   Width="10" />
+                    <ColumnDefinition   Width="5*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="30" />
+                    <RowDefinition  Height="5" />
+                    <RowDefinition  Height="30" />
+                </Grid.RowDefinitions>
+
+                <dxe:ComboBoxEdit   x:Name="cboCenter"  Grid.Row="0"          Grid.Column="0" NullText="SELECT"   ValueMember="CODE"  DisplayMember="NAME" />
+                <!--<Button x:Name="btnLogin"   Content="로그인"   Grid.Row="0"    Grid.Column="2" />-->
+                
+                <Image  x:Name="imgLoginBtn"    Grid.Column="2"    Width="Auto"    Stretch="Fill"   Cursor="Hand"
+                        Source="/SMART.WCS.Resource;component/Image/Loginbutton.png" />
+                <TextBlock  x:Name="lblLogin"   Grid.Column="2" FontWeight="Bold"   FontSize="13"   Width="Auto"    Cursor="Hand"
+                            />
+                
+
+                <dxe:CheckEdit  x:Name="chkRememberID"  Grid.Row="2"    Grid.Column="0"
+                                Content="Remember ID"   HorizontalAlignment="Left"  />
+
+                <!--<dxe:ListBoxEdit  x:Name="lbRadio"  Grid.Row="2"  Grid.Column="2"     ValueMember="Content"   SelectedIndex="0"    VerticalAlignment="Center"  HorizontalAlignment="Right"     Padding="0" ShowBorder="False"  Visibility="Visible">
+                    <dxe:ListBoxEdit.StyleSettings>
+                        <dxe:RadioListBoxEditStyleSettings />
+                    </dxe:ListBoxEdit.StyleSettings>
+                    <dxe:ListBoxEdit.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Horizontal"  />
+                        </ItemsPanelTemplate>
+                    </dxe:ListBoxEdit.ItemsPanel>
+                    <dxe:ListBoxEdit.Items>
+                        <dxe:ListBoxEditItem    x:Name="rdoREAL"    Padding="0"   Margin="0"    Content="운영"    VerticalAlignment="Center"      HorizontalAlignment="Center"/>
+                        <dxe:ListBoxEditItem    x:Name="rdoDEV"     Padding="0"   Margin="0"    Content="개발"    VerticalAlignment="Center"      HorizontalAlignment="Center"/>
+                    </dxe:ListBoxEdit.Items>
+                </dxe:ListBoxEdit>-->
+            </Grid>
+        </Grid>
+
+        <Grid   Grid.Row="3"    Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition  Height="0.1" />
+                <RowDefinition  Height="10" />
+                <RowDefinition  Height="30" />
+                <RowDefinition  Height="10" />
+                <RowDefinition  Height="20" />
+            </Grid.RowDefinitions>
+
+            <Grid   Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition   Width="10" />
+                    <ColumnDefinition   Width="*" />
+                    <ColumnDefinition   Width="10" />
+                </Grid.ColumnDefinitions>
+
+                <Grid   Grid.Column="1"   Background="#959595">
+                    
+                </Grid>
+            </Grid>
+
+            <Grid   Grid.Row="2"    HorizontalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition   Width="20"  />
+                    <ColumnDefinition   Width="5"  />
+                    <ColumnDefinition   Width="100"  />
+                </Grid.ColumnDefinitions>
+
+                
+
+                <Image  Grid.Column="0"    Width="20"   Height="20"    Stretch="Fill"
+                        Source="/SMART.WCS.Resource;component/Image/language_Icon.png" />
+                <dxe:ComboBoxEdit   x:Name="cboLang"  Grid.Row="0"  Grid.Column="2" 
+                            NullText="SELECT"   ValueMember="CODE"  DisplayMember="NAME"/>
+
+                <!--<dxe:TextEdit Mask="HH:mm" MaskType="DateTimeAdvancingCaret" DisplayFormatString="HH:mm"    Grid.Column="2" />-->
+                
+            </Grid>
+
+            <Image  Grid.Column="0"     Grid.Row="4"    Width="60"   Height="15"    Stretch="Fill"
+                        Source="/SMART.WCS.Resource;component/Image/lgcns_small.png" />
+        </Grid>
+    </Grid>
+</Window>

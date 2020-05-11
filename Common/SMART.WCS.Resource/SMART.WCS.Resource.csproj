@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E6D6DAEE-5637-4F39-9549-2166AAC6A74A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMART.WCS.Resource</RootNamespace>
+    <AssemblyName>SMART.WCS.Resource</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>false</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\Deploy\WCS\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>C:\Deploy\WCS\release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Language\LanguageResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageResource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Language\LanguageResource.ko-KR.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LanguageResource.ko-KR.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="Resources\usearchship.xaml.cs">
+      <DependentUpon>usearchship.xaml</DependentUpon>
+    </None>
+    <Compile Include="Utility\HelperClass.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\alarm_Icon.png" />
+    <Resource Include="Image\bg_mainlist_yg.png" />
+    <Resource Include="Image\btn_hd_colse.png" />
+    <Resource Include="Image\btn_hd_logout.png" />
+    <Resource Include="Image\btn_hd_maximize.png" />
+    <Resource Include="Image\btn_hd_minimize.png" />
+    <Resource Include="Image\btn_hd_restore.png" />
+    <Resource Include="Image\btn_lt_winexp.png" />
+    <Resource Include="Image\btn_lt_winfold.png" />
+    <Resource Include="Image\btn_pop_colse_b.png" />
+    <Resource Include="Image\btn_pop_colse_w.png" />
+    <Resource Include="Image\Coupang.png" />
+    <Resource Include="Image\CoupangLogoCycle.png" />
+    <Resource Include="Image\CoupangMainLogo.png" />
+    <Resource Include="Image\icoBookmarkapply.png" />
+    <Resource Include="Image\icoBookmarkCancellation.png" />
+    <Resource Include="Image\icons8-home-24.png" />
+    <Resource Include="Image\icons8-solar-cross-24.png" />
+    <Resource Include="Image\icons8-solar-cross-48.png" />
+    <Resource Include="Image\ico_cd_search_b.png" />
+    <Resource Include="Image\ico_delete.png" />
+    <Resource Include="Image\ico_ft_infrdiv.png" />
+    <Resource Include="Image\ico_ft_nestop.png" />
+    <Resource Include="Image\ico_ft_netrun.png" />
+    <Resource Include="Image\ico_hd_alert.png" />
+    <Resource Include="Image\ico_hd_bg_right.png" />
+    <Resource Include="Image\ico_hd_cj_logistislogo.png" />
+    <Resource Include="Image\ico_hd_languge.png" />
+    <Resource Include="Image\ico_hd_location.png" />
+    <Resource Include="Image\ico_hd_user.png" />
+    <Resource Include="Image\ico_hd_wcslogo.png" />
+    <Resource Include="Image\ico_lt_tree_close.png" />
+    <Resource Include="Image\ico_lt_tree_current.png" />
+    <Resource Include="Image\ico_lt_tree_exp.png" />
+    <Resource Include="Image\ico_lt_tree_menu_newwin.png" />
+    <Resource Include="Image\ico_menu-button.png" />
+    <Resource Include="Image\ico_row_add.png" />
+    <Resource Include="Image\ico_row_add_dis.png" />
+    <Resource Include="Image\ico_row_del.png" />
+    <Resource Include="Image\ico_row_del_dis.png" />
+    <Resource Include="Image\ico_sms.ico" />
+    <Resource Include="Image\Idicon.png" />
+    <Resource Include="Image\Idicon2.png" />
+    <Resource Include="Image\ID_login.png" />
+    <Resource Include="Image\imgCoupangLogo.png" />
+    <Resource Include="Image\imgSmartWCS.jpg" />
+    <Resource Include="Image\img_mainlist_left_top.png" />
+    <Resource Include="Image\img_mainlist_rightbottom.png" />
+    <Resource Include="Image\language_Icon.png" />
+    <Resource Include="Image\LGCNS.png" />
+    <Resource Include="Image\lgcns_small.png" />
+    <Resource Include="Image\Loginbutton.png" />
+    <Resource Include="Image\Loginbutton_hover.png" />
+    <Resource Include="Image\logout_Icon.png" />
+    <Resource Include="Image\logo_autumn_login.png" />
+    <Resource Include="Image\passwordIcon_login.png" />
+    <Resource Include="Image\password_Icon.png" />
+    <Resource Include="Image\SMARTWCS_Raleway.png" />
+    <Resource Include="Image\WCSLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Language\LanguageResource.ko-KR.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanguageResource.ko-KR.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Language\LanguageResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanguageResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\logo_smartSMS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usearchship.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ico_search_black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ico_question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ico_question2.png" />
+    <Resource Include="Image\ico_question3.png" />
+    <Resource Include="Image\ico_question4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\ico-forward.png" />
+    <Resource Include="Image\ico_rewind.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\lgcns_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\lgcns_img.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\logo_lgcns_large.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LiveUpdateWebService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://218.50.155.206:7101/LiveUpdate/LiveUpdateWebService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://218.50.155.206:7101/LiveUpdate/LiveUpdateWebService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://218.50.155.206:7101/LiveUpdate/LiveUpdateWebService.svc?xsd=xsd2" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://218.50.155.206:7101/LiveUpdate/LiveUpdateWebService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/SMART.WCS.WebService.LiveUpdate" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILiveUpdateWebService_GetServerDeployList_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerDeployList" />
+  </wsdl:message>
+  <wsdl:message name="ILiveUpdateWebService_GetServerDeployList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetServerDeployListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveUpdateWebService_CompressionBackupFile_InputMessage">
+    <wsdl:part name="parameters" element="tns:CompressionBackupFile" />
+  </wsdl:message>
+  <wsdl:message name="ILiveUpdateWebService_CompressionBackupFile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CompressionBackupFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveUpdateWebService_CheckServerDeployDirectory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckServerDeployDirectory" />
+  </wsdl:message>
+  <wsdl:message name="ILiveUpdateWebService_CheckServerDeployDirectory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckServerDeployDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveUpdateWebService_GetDeployServerFileInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeployServerFileInfo" />
+  </wsdl:message>
+  <wsdl:message name="ILiveUpdateWebService_GetDeployServerFileInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeployServerFileInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveUpdateWebService_GetData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetData" />
+  </wsdl:message>
+  <wsdl:message name="ILiveUpdateWebService_GetData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="ILiveUpdateWebService_GetDataUsingDataContract_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContract" />
+  </wsdl:message>
+  <wsdl:message name="ILiveUpdateWebService_GetDataUsingDataContract_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDataUsingDataContractResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ILiveUpdateWebService">
+    <wsdl:operation name="GetServerDeployList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveUpdateWebService/GetServerDeployList" message="tns:ILiveUpdateWebService_GetServerDeployList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveUpdateWebService/GetServerDeployListResponse" message="tns:ILiveUpdateWebService_GetServerDeployList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CompressionBackupFile">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveUpdateWebService/CompressionBackupFile" message="tns:ILiveUpdateWebService_CompressionBackupFile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveUpdateWebService/CompressionBackupFileResponse" message="tns:ILiveUpdateWebService_CompressionBackupFile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckServerDeployDirectory">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveUpdateWebService/CheckServerDeployDirectory" message="tns:ILiveUpdateWebService_CheckServerDeployDirectory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveUpdateWebService/CheckServerDeployDirectoryResponse" message="tns:ILiveUpdateWebService_CheckServerDeployDirectory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDeployServerFileInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveUpdateWebService/GetDeployServerFileInfo" message="tns:ILiveUpdateWebService_GetDeployServerFileInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveUpdateWebService/GetDeployServerFileInfoResponse" message="tns:ILiveUpdateWebService_GetDeployServerFileInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveUpdateWebService/GetData" message="tns:ILiveUpdateWebService_GetData_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveUpdateWebService/GetDataResponse" message="tns:ILiveUpdateWebService_GetData_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILiveUpdateWebService/GetDataUsingDataContract" message="tns:ILiveUpdateWebService_GetDataUsingDataContract_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILiveUpdateWebService/GetDataUsingDataContractResponse" message="tns:ILiveUpdateWebService_GetDataUsingDataContract_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ILiveUpdateWebService" type="tns:ILiveUpdateWebService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetServerDeployList">
+      <soap:operation soapAction="http://tempuri.org/ILiveUpdateWebService/GetServerDeployList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CompressionBackupFile">
+      <soap:operation soapAction="http://tempuri.org/ILiveUpdateWebService/CompressionBackupFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckServerDeployDirectory">
+      <soap:operation soapAction="http://tempuri.org/ILiveUpdateWebService/CheckServerDeployDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDeployServerFileInfo">
+      <soap:operation soapAction="http://tempuri.org/ILiveUpdateWebService/GetDeployServerFileInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetData">
+      <soap:operation soapAction="http://tempuri.org/ILiveUpdateWebService/GetData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetDataUsingDataContract">
+      <soap:operation soapAction="http://tempuri.org/ILiveUpdateWebService/GetDataUsingDataContract" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LiveUpdateWebService">
+    <wsdl:port name="BasicHttpBinding_ILiveUpdateWebService" binding="tns:BasicHttpBinding_ILiveUpdateWebService">
+      <soap:address location="http://218.50.155.206:7101/LiveUpdate/LiveUpdateWebService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

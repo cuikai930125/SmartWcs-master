@@ -1,0 +1,13 @@
+﻿<SMART:BaseApp      xmlns:SMART="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"  
+                    x:Class="SMART.WCS.Main.App"
+                    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:SMART.WCS.Main">
+    <SMART:BaseApp.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SMART.WCS.Control;component/Themes/BaseStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </SMART:BaseApp.Resources>
+</SMART:BaseApp>

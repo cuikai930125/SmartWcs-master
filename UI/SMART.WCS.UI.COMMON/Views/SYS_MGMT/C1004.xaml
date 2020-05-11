@@ -1,0 +1,419 @@
+﻿<UserControl    x:Class="SMART.WCS.UI.COMMON.Views.SYS_MGMT.C1004"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+                xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+                xmlns:local="clr-namespace:SMART.WCS.UI.COMMON.Views.SYS_MGMT"
+                xmlns:e="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+                xmlns:uButton1="clr-namespace:SMART.WCS.Control.Controls;assembly=SMART.WCS.Control"
+                xmlns:Converters="clr-namespace:SMART.WCS.Control.Converters;assembly=SMART.WCS.Control"
+                xmlns:uButton="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+                xmlns:commonMapping="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+                xmlns:berhaviors="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+                DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}"
+                Background="White"
+                mc:Ignorable="d">
+
+
+    <!--#region 그리드 라벨 Behavior-->
+    <e:Interaction.Behaviors>
+        <commonMapping:ControlBaseBehavior />
+    </e:Interaction.Behaviors>
+    <!--#endregion-->
+
+    <!--#region 리소스-->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SMART.WCS.Control;component/Themes/BaseStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters:RowHandleToIndexConverter x:Key="RowHandleToIndexConverter"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <!--#endregion-->
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="Auto" />
+            <RowDefinition  Height="5" />
+            <RowDefinition  Height="*" />
+        </Grid.RowDefinitions>
+
+        <uButton:NavigationBar x:Name="NavigationBar"   Grid.Row="0" />
+
+        <Grid HorizontalAlignment="Left"    Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource ContentMargin}"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource ContentMargin}"/>
+                <RowDefinition Height="{StaticResource TotalCountShowMargin}"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+
+            <!--#region 버튼-->
+            <Grid   Grid.Row="1">
+                <uButton:CommentArea x:Name="CommentArea" />
+                
+                <StackPanel     x:Name="stackUserButton_First" Style="{StaticResource CommonPanelStyle}">
+                    <!--#region 엑셀 다운로드 버튼-->
+                    <uButton:uSimpleButton  x:Name="btnExcelDownload" Grid.Column="1"
+								Style="{StaticResource CommButtonStyle}"
+								ButtonType="EXCEL_DOWNLOAD"     IsIconVisibleYN="True" />
+                    <!--#endregion-->
+
+                    <!--#region 저장 버튼-->
+                    <uButton:uSimpleButton  x:Name="btnSave" Grid.Column="1"
+								Style="{StaticResource CommButtonStyle}"
+								ButtonType="SAVE"     IsIconVisibleYN="True" />
+                    <!--#endregion-->
+
+                    <!--#region 조회 버튼-->
+                    <uButton1:uSimpleButtonSearch  x:Name="btnSearch" Grid.Column="1"/>
+                    <!--#endregion-->
+                </StackPanel>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region 조회 조건 영역-->
+            <Border Style="{StaticResource SearchPanelStyle}" Grid.Row="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <!--#region 메뉴ID - MENU_ID (조회 조건)-->
+                    <Grid   Grid.Row="0" Grid.Column="0"    Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock      Grid.Row="0"    Grid.Column="0"    berhaviors:CommonProperties.LabelCd="MENU_ID"   
+										HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <dxe:TextEdit   x:Name="txtMenuID"     Grid.Row="1"   Grid.Column="2" 
+										HorizontalAlignment="Right"    VerticalAlignment="Center" 
+										Width="100"     HorizontalContentAlignment="Left" />
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region 메뉴명 - MENU_NM (조회 조건)-->
+                    <Grid   Grid.Row="0" Grid.Column="1"    Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock      Grid.Row="0"    Grid.Column="0"    berhaviors:CommonProperties.LabelCd="MENU_NM"   
+										HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <dxe:TextEdit   x:Name="txtMenuNM"     Grid.Row="1"   Grid.Column="2" 
+										HorizontalAlignment="Right"    VerticalAlignment="Center" 
+										Width="100"     HorizontalContentAlignment="Left" />
+                    </Grid>
+                    <!--#endregion-->
+
+                    <!--#region  3. 사용 여부 (조회 조건)-->
+                    <Grid Style="{StaticResource SearchItemStyle}"  Grid.Row="0"    Grid.Column="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock  berhaviors:CommonProperties.LabelCd="USE_YN"
+									HorizontalAlignment="Right"
+									VerticalAlignment="Center"/>
+                        <dxe:ComboBoxEdit Grid.Column="2" 
+							                          x:Name="cboUseYN" 
+							                          NullText="SELECT" 
+							                          ValueMember="CODE" 
+							                          DisplayMember="NAME" 
+							                          Width="100"/>
+                    </Grid>
+                    <!--#endregion-->
+                </Grid>
+            </Border>
+            <!--#endregion-->
+
+            <!--#region 그리드 위 버튼 & 데이터 수 영역-->
+            <Grid   Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition   Width="200" />
+                    <ColumnDefinition   Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition  Height="*" />
+                    <RowDefinition  Height="3" />
+                </Grid.RowDefinitions>
+                <!--<TextBlock  x:Name="lblTotalRowCount_First"   Grid.Column="0"   HorizontalAlignment="Left"  VerticalAlignment="Center"  Margin="20 0 0 0" 
+							            Text="{Binding TabFirstGridRowCount, UpdateSourceTrigger=PropertyChanged}" />-->
+
+                <!--<Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition   Width="20" />
+                        <ColumnDefinition   Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image  Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_menu-button.png" 
+                                        Margin="10 0 0 0"/>
+                    <TextBlock  Grid.Column="1" commonMapping:CommonProperties.LabelCd="ORD_LIST"     
+                                            FontWeight="Bold"
+                                            Margin="5 0 0 0"
+                                            VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+                </Grid>-->
+
+                <Grid   Grid.Column="1"     HorizontalAlignment="Right"     Margin="0,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition   Width="Auto" />
+                        <ColumnDefinition   Width="Auto" />
+                        <ColumnDefinition   Width="Auto" />
+                        <ColumnDefinition   Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <!--전체 닫힘-->
+                    <uButton:uSimpleButton  x:Name="btnAllOpen"    Grid.Row="0"  Grid.Column="0"  Padding="0" 
+											Height="20"     Cursor="Hand"       BorderBrush="Black" BorderThickness="1"
+											ButtonType="ALL_OPEN"     IsIconVisibleYN="True"    Margin="0">
+                    </uButton:uSimpleButton>
+
+                    <!--전체 닫힘-->
+                    <uButton:uSimpleButton  x:Name="btnAllClose"    Grid.Row="0"  Grid.Column="1"  Padding="0" 
+											Height="20"     Cursor="Hand"       BorderBrush="Black" BorderThickness="1"
+											ButtonType="ALL_CLOSE"     IsIconVisibleYN="True"    Margin="5,0,0,0">
+                    </uButton:uSimpleButton>
+
+                    <!--행추가 버튼-->
+                    <!--<uButton:uSimpleButton  x:Name="btnRowAdd"    Grid.Row="0"  Grid.Column="2"  Padding="0" 
+											Width="20"  Height="20"     Cursor="Hand"       BorderBrush="Black" BorderThickness="1"
+											ButtonType="ROW_ADD"     IsIconVisibleYN="True" Margin="5,0,0,0">
+                        <Image  Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_lt_tree_exp.png" />
+                    </uButton:uSimpleButton>-->
+                    <!--행삭제 버튼-->
+                    <!--<uButton:uSimpleButton  x:Name="btnRowDelete"     Grid.Row="0"  Grid.Column="3"   Padding="0"
+											Width="20"  Height="20"         Cursor="Hand"   BorderBrush="Black"     BorderThickness="1"
+											ButtonType="ROW_DEL"     IsIconVisibleYN="True" Margin="5,0,0,0">
+                        <Image  Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_lt_tree_close.png" />
+                    </uButton:uSimpleButton>-->
+
+
+                </Grid>
+
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region 그리드 영역-->
+            <Grid x:Name="gridAreaTreeControl" Grid.Row="6" Margin="10,0,10,0">
+                <!--<dxl:LayoutControl  x:Name="layout"
+                                    Orientation="Horizontal" 
+                                    VerticalAlignment="Top"
+                                    Padding="0" Height="{Binding ActualHeight, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}}}">
+                    <dxl:LayoutGroup    Name="layoutGrpTree" 
+                                        VerticalAlignment="Stretch"
+                                        HorizontalAlignment="Left" MinWidth="200"                             
+                                        dxl:LayoutControl.AllowHorizontalSizing="True">-->
+                <dxg:TreeListControl    Name="treeListControl" 
+                                        Height="{Binding ActualHeight,ElementName=gridTreeControl,Mode=OneWay}"
+                                        VerticalAlignment="Top"
+                                        SelectionMode="Cell"
+                                        ShowBorder="True"
+                                        BorderThickness="10"
+                                        ItemsSource="{Binding MenuMgntList}">
+                    <dxg:TreeListControl.View>
+                        <dxg:TreeListView   Name="treeListView"
+                                            KeyFieldName="TREE_ID"
+                                            ParentFieldName="PARENT_ID" 
+                                            local:C1004.IsEnabled="True"
+                                            IndicatorWidth="0"
+                                            AutoWidth="True"
+                                            AllowEditing="True"
+                                            dx:ScrollBarExtensions.ScrollBarMode="Standard"
+                                            AutoExpandAllNodes="True">
+                            <dxg:TreeListView.RowIndicatorContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DataContext.RowHandle.Value, Converter={StaticResource RowHandleToIndexConverter}}" />
+                                </DataTemplate>
+                            </dxg:TreeListView.RowIndicatorContentTemplate>
+                            <dxg:TreeListView.RowStyle>
+                                <Style TargetType="{x:Type dxg:RowControl}">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding Row.MENU_URL}" Value="">
+                                            <Setter Property="FontWeight" Value="Bold"/>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </dxg:TreeListView.RowStyle>
+
+                            <dxg:TreeListView.ContextMenu>
+                                <ContextMenu>
+                                    <MenuItem   x:Name="menuItemRowAdd" />
+                                    <MenuItem   x:Name="menuItemRowDelete" />
+                                </ContextMenu>
+                            </dxg:TreeListView.ContextMenu>
+                            <!-- 20180911 hj.kim Bold 처리 end -->
+                        </dxg:TreeListView>
+                    </dxg:TreeListControl.View>
+
+                    <!--Margin="0,0.8,0,-1"-->
+                    <dxg:TreeListControl.Columns>
+                        <dxg:TreeListColumn FieldName="MENU_ID"   Header="MENU_ID_REQ"  IsEnabled="False"   Width="100"     HorizontalHeaderContentAlignment="Center"
+                                            Style="{StaticResource TreeColumnStringCenter}"
+                                            AllowEditing="True">
+                            <!--<dxg:TreeListColumn.CellTemplate>
+                                <DataTemplate>
+                                    <DockPanel>
+                                        <dxe:TextEdit x:Name="PART_Editor" ShowBorder="False"/>
+                                        <dxe:ImageEdit x:Name="imgApp" HorizontalAlignment="Left" DockPanel.Dock="Left"
+                                                                       Visibility="Collapsed" VerticalAlignment="Center" 
+                                                                       Width="15" Height="15" Margin="0,1,0,0" ShowBorder="False" IsReadOnly="True"/>
+                                    </DockPanel>
+
+                                </DataTemplate>
+                            </dxg:TreeListColumn.CellTemplate>-->
+
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#region 메뉴명 - MENU_NM-->
+                        <dxg:TreeListColumn FieldName="MENU_NM"     Header="MENU_NM_REQ"    Width="150"     HorizontalHeaderContentAlignment="Center"
+                                                    Style="{StaticResource TreeColumnStringLeft}">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BaseBackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 메뉴 상세 - MENU_DESC-->
+                        <dxg:TreeListColumn FieldName="MENU_DESC"   Header="MENU_DESC"      Width="300"     HorizontalHeaderContentAlignment="Center"
+                                                    Style="{StaticResource TreeColumnStringLeft}">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BaseBackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 메뉴 레벨 - MENU_LVL-->
+                        <dxg:TreeListColumn FieldName="MENU_LVL"  Header="MENU_LEVEL"     Width="150"     HorizontalHeaderContentAlignment="Center"   Visible="True"
+                                            AllowEditing="False">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 메뉴 타입 - MENU_TYPE-->
+                        <dxg:TreeListColumn FieldName="MENU_TYPE"   Header="MENU_TYPE"      Width="120"     HorizontalHeaderContentAlignment="Center"
+                                                    Style="{StaticResource TreeColumnStringCenter}">
+                            <dxg:TreeListColumn.EditSettings>
+                                <uButton:CommonCodeEditSetting  CommonCode="MENU_TYPE_CD" />
+                            </dxg:TreeListColumn.EditSettings>
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BaseBackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 메뉴 URL - MENU_URL-->
+                        <dxg:TreeListColumn FieldName="MENU_URL"    Header="MENU_URL"       Width="300"     HorizontalHeaderContentAlignment="Center"
+                                                    Style="{StaticResource TreeColumnStringLeft}">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BaseBackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 메뉴 아이콘 - MENU_ICON-->
+                        <dxg:TreeListColumn FieldName="MENU_ICON"   Header="MENU_ICON"      Width="170"     HorizontalHeaderContentAlignment="Center"
+                                            Visible="False"         Style="{StaticResource TreeColumnStringLeft}">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BaseBackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 트리 ID - TREE_ID-->
+                        <dxg:TreeListColumn FieldName="TREE_ID"     Header="TREE_ID"        Width="170"     HorizontalHeaderContentAlignment="Center"   Visible="True"
+                                            Style="{StaticResource TreeColumnStringCenter}" AllowEditing="False">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 부모 ID - PARENT_ID-->
+                        <dxg:TreeListColumn FieldName="PARENT_ID"   Header="PARENT_MENU_ID"      Width="150"     HorizontalHeaderContentAlignment="Center"   Visible="True"
+                                            Style="{StaticResource TreeColumnStringCenter}" AllowEditing="False">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 사용 여부 - USE_YN-->
+                        <dxg:TreeListColumn FieldName="USE_YN"      Header="USE_YN"         Width="100"     HorizontalHeaderContentAlignment="Center"
+                                                    Style="{StaticResource TreeColumnStringCenter}">
+                            <dxg:TreeListColumn.CellTemplate>
+                                <DataTemplate>
+                                    <dxe:CheckEdit  x:Name="PART_Editor"    EditValue="{Binding RowData.Row.USE_YN_CHECKED, Mode=TwoWay}"  ClickMode="Release" />
+                                </DataTemplate>
+                            </dxg:TreeListColumn.CellTemplate>
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BaseBackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                        <!--#region 정렬 순서 - SORT_SEQ-->
+                        <dxg:TreeListColumn FieldName="SORT_SEQ"    Header="SORT_SEQ"       Width="80"     HorizontalHeaderContentAlignment="Center"
+                                                    Style="{StaticResource TreeColumnStringRight}"  AllowEditing="True">
+                            <dxg:TreeListColumn.CellStyle>
+                                <Style TargetType="{x:Type dxg:LightweightCellEditor}" BasedOn="{StaticResource {dxgt:GridRowThemeKey ResourceKey=LightweightCellStyle}}">
+                                    <Setter Property="Background" Value="{Binding RowData.Row.BaseBackgroundBrush}"/>
+                                </Style>
+                            </dxg:TreeListColumn.CellStyle>
+                        </dxg:TreeListColumn>
+                        <!--#endregion-->
+
+                    </dxg:TreeListControl.Columns>
+                </dxg:TreeListControl>
+                <!--</dxl:LayoutGroup>
+                </dxl:LayoutControl>-->
+            </Grid>
+            <!--#endregion-->
+
+        </Grid>
+
+        <dx:LoadingDecorator x:Name="loadingScreen" Grid.Row="0" Grid.RowSpan="99"  HorizontalAlignment="Center"    VerticalAlignment="Center"/>
+    </Grid>
+</UserControl>

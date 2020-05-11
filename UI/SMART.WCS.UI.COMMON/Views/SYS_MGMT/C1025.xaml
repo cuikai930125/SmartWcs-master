@@ -1,0 +1,260 @@
+﻿<UserControl x:Class="SMART.WCS.UI.COMMON.Views.SYS_MGMT.C1025"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:SMART.WCS.UI.COMMON.Views.SYS_MGMT"
+             xmlns:e="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys"
+             xmlns:localCtrl="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+             xmlns:uButton="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+             xmlns:commonMapping="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+             xmlns:berhaviors="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+             xmlns:Converters="clr-namespace:SMART.WCS.Control.Converters;assembly=SMART.WCS.Control"
+             xmlns:uButton1="clr-namespace:SMART.WCS.Control.Controls;assembly=SMART.WCS.Control"
+             DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}"
+             Background="White"
+             mc:Ignorable="d">
+
+    <!--#region 그리드 라벨 Behavior-->
+    <e:Interaction.Behaviors>
+        <commonMapping:ControlBaseBehavior />
+    </e:Interaction.Behaviors>
+    <!--#endregion-->
+
+    <!--#region 리소스-->
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/SMART.WCS.Control;component/Themes/BaseStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <Converters:RowHandleToIndexConverter x:Key="RowHandleToIndexConverter"/>
+
+            <DataTemplate x:Key="SummaryTemplateTotal">
+                <TextBlock Text="Total"    HorizontalAlignment="Center"    VerticalAlignment="Center"     FontWeight="Bold" />
+            </DataTemplate>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <!--#endregion-->
+
+    <!--#region 그리드-->
+    <Grid>
+        <!--#region 그리드 정의-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="5"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <!--#endregion-->
+
+        <!--#region 네비게이션-->
+        <uButton:NavigationBar x:Name="NavigationBar" Grid.Row="0"/>
+        <!--#endregion-->
+
+        <!--#region 메인 화면-->
+        <Grid HorizontalAlignment="Left" Grid.Row="2">
+            <!--#region 그리드 정의-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource ContentMargin}"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="{StaticResource ContentMargin}"/>
+                <RowDefinition Height="{StaticResource TotalCountShowMargin}"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <!--#endregion-->
+
+            <!--#region 1. 버튼 - 저장,다운로드,조회-->
+            <Grid   Grid.Row="1">
+                <uButton:CommentArea x:Name="CommentArea" />
+                
+                <StackPanel     x:Name="stackUserButton_First" Style="{StaticResource CommonPanelStyle}">
+                    <!--엑셀 다운로드 버튼-->
+                    <uButton:uSimpleButton  x:Name="btnExcelDownload_First" Grid.Column="1"
+                                            Style="{StaticResource CommButtonStyle}"
+                                            ButtonType="EXCEL_DOWNLOAD"     IsIconVisibleYN="True" />
+
+                    <!--저장 버튼-->
+                    <uButton:uSimpleButton  x:Name="btnSave_First" Grid.Column="1"
+                                            Style="{StaticResource CommButtonStyle}"
+                                            ButtonType="SAVE"     IsIconVisibleYN="True" />
+
+                    <!--조회 버튼-->
+                    <uButton1:uSimpleButtonSearch  x:Name="btnSEARCH" Grid.Row="11"  Grid.Column="1" />
+
+                </StackPanel>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region 2. 조회 조건-->
+            <Border Style="{StaticResource CommonSearchPanelHeightStyle}" Grid.Row="3">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Column="0" Style="{StaticResource SearchItemStyle}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" berhaviors:CommonProperties.LabelCd="IP_NO"
+                                   HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                        <dxe:TextEdit x:Name="txtIpNo" Grid.Row="0" Grid.Column="2"
+                                      HorizontalAlignment="Right" VerticalAlignment="Center"
+                                      Width="200" HorizontalContentAlignment="Left"/>
+                    </Grid>
+                </Grid>
+            </Border>
+
+            <!--#region 3. 버튼 - 행 추가/삭제-->
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="3"/>
+                </Grid.RowDefinitions>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition   Width="20"/>
+                        <ColumnDefinition   Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_menu-button.png"
+                           Margin="10 0 0 0"/>
+                    <TextBlock  Grid.Column="1" commonMapping:CommonProperties.LabelCd="IP_MGMT_LIST"
+                                FontWeight="Bold"
+                                Margin="5 0 0 0"
+                                VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+                </Grid>
+
+                <Grid Grid.Column="1"   HorizontalAlignment="Right"     Margin="0,0,10,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <!--행추가 버튼-->
+                    <uButton:uSimpleButton  x:Name="btnRowAdd_First" Grid.Row="0"   Grid.Column="0"     Padding="0"     Margin="0"
+                                            Width="20"  Height="20" Cursor="Hand"   ButtonType="ROW_ADD"     
+                                            IsIconVisibleYN="True"   BorderBrush="Black"     BorderThickness="1">
+                        <Image  Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_lt_tree_exp.png" />
+                    </uButton:uSimpleButton>
+                    <!--행삭제 버튼-->
+                    <uButton:uSimpleButton  x:Name="btnRowDelete_First" Grid.Row="0"  Grid.Column="1"   Padding="0"
+                                            Width="20"  Height="20" Cursor="Hand"   ButtonType="ROW_DEL"    Margin="5,0,0,0"     
+                                            IsIconVisibleYN="True"   BorderBrush="Black"     BorderThickness="1">
+                        <Image  Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_lt_tree_close.png" />
+                    </uButton:uSimpleButton>
+                </Grid>
+            </Grid>
+            <!--#endregion-->
+
+            <!--#region 4. 조회 결과-->
+            <Grid x:Name="gridArea" Margin="{StaticResource DefaultMargin}" Grid.Row="6">
+                <dxg:GridControl    x:Name="gridMaster"
+                                    SelectionMode="Cell"
+                                    AutoExpandAllGroups="True"
+                                    AutoPopulateColumns="True"
+                                    ShowBorder="True"
+                                    ItemsSource="{Binding IPMgmtList}"
+                                    EnableSmartColumnsGeneration="False"
+                                    AutoGenerateColumns="None">
+
+                    <dxg:GridControl.View>
+                        <dxg:TableView x:Name="tvMasterGrid"
+                                       local:C1025.IsEnabled="True"
+                                       MultiSelectMode="Cell"
+                                       AutoWidth="True"
+                                       HeaderHorizontalAlignment="Center"
+                                       ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                       ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                       ShowGroupPanel="False"
+                                       NavigationStyle="Cell" 
+                                       ShowTotalSummary="False"
+                                       AllowPerPixelScrolling="True"
+                                       IndicatorWidth="40">
+
+                            <dxg:TableView.RowIndicatorContentTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding DataContext.RowHandle.Value, Converter={StaticResource RowHandleToIndexConverter}}" />
+                                </DataTemplate>
+                            </dxg:TableView.RowIndicatorContentTemplate>
+
+                        </dxg:TableView>
+                    </dxg:GridControl.View>
+
+                    <!--#region + 그리드 체크박스 영역-->
+                    <e:Interaction.Behaviors>
+                        <berhaviors:SelectorColumnBehavior />
+                    </e:Interaction.Behaviors>
+                    <!--#endregion-->
+
+                    <!--#region 조회 결과 내용-->
+                    <dxg:GridControl.Columns>
+                        <!--#region IP-->
+                        <dxg:GridColumn     Header="IP_NO"     FieldName="IP_NO"  Width="150"     Tag="A"
+                                            HorizontalHeaderContentAlignment="Center"   Style="{StaticResource GridColumnStringCenter}"
+                                            AllowEditing="True">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 비고-->
+                        <dxg:GridColumn     Header="RMK"     FieldName="RMK"  Width="150"     
+                                            HorizontalHeaderContentAlignment="Center"   Style="{StaticResource GridColumnStringLeft}"
+                                            AllowEditing="True">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 등록자-->
+                        <dxg:GridColumn     Header="REG_ID"     FieldName="REG_ID"  Width="80"    
+                                            HorizontalHeaderContentAlignment="Center"   Style="{StaticResource GridColumnStringLeft}"
+                                            AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 등록일시-->
+                        <dxg:GridColumn     Header="REG_DT"     FieldName="REG_DT"  Width="150"     
+                                            HorizontalHeaderContentAlignment="Center"   Style="{StaticResource GridColumnStringCenter}"
+                                            AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 수정자-->
+                        <dxg:GridColumn     Header="UPD_ID"     FieldName="UPD_ID"  Width="80"   
+                                            HorizontalHeaderContentAlignment="Center"   Style="{StaticResource GridColumnStringLeft}"
+                                            AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+
+                        <!--#region 수정일시-->
+                        <dxg:GridColumn     Header="UPD_DT"     FieldName="UPD_DT"  Width="150" 
+                                            HorizontalHeaderContentAlignment="Center"   Style="{StaticResource GridColumnStringCenter}"
+                                            AllowEditing="False">
+                        </dxg:GridColumn>
+                        <!--#endregion-->
+                    </dxg:GridControl.Columns>
+                    <!--#endregion-->
+                </dxg:GridControl>
+            </Grid>
+            <!--#endregion-->
+            <dx:LoadingDecorator x:Name="loadingScreen"  Grid.Row="0" HorizontalAlignment="Center"    VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+    <!--#endregion-->
+</UserControl>

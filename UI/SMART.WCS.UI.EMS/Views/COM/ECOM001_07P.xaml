@@ -1,0 +1,153 @@
+﻿<Window x:Class="SMART.WCS.UI.EMS.Views.COM.ECOM001_07P"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns:e="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SMART.WCS.UI.EMS.Views.COM"
+        xmlns:commonMapping="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+        xmlns:berhaviors="clr-namespace:SMART.WCS.Modules.Behaviors;assembly=SMART.WCS.Control"
+        xmlns:uButton="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+        DataContext="{Binding Mode=OneWay, RelativeSource={RelativeSource Self}}"
+        mc:Ignorable="d"
+        dx:ThemeManager.ThemeName="Office2016WhiteSE"
+        Title="ECOM001_07P" 
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen" 
+        Height="700" 
+        Width="1120"
+        BorderThickness="1">
+
+    <Window.Resources>
+        <dxe:TextEditSettings x:Key="NumericEditSetting" MaskUseAsDisplayFormat="True" MaskType="Numeric" Mask="d" MaskIgnoreBlank="False" HorizontalContentAlignment="Right"/>
+        <dxe:TextEditSettings x:Key="TextEditSetting" HorizontalContentAlignment="Left"/>
+        <dxe:TextEditSettings x:Key="TextUpEditSetting" MaskUseAsDisplayFormat="True" MaskType="RegEx" Mask="[0-9A-Z_]*" HorizontalContentAlignment="Left"/>
+        <dxe:TextEditSettings x:Key="NoEdit" HorizontalContentAlignment="Center"/>
+        <dxe:TextEditSettings x:Key="DateEditSetting" DisplayFormat="{StaticResource FormatDate}"/>
+    </Window.Resources>
+
+    <e:Interaction.Behaviors>
+        <berhaviors:ControlBaseBehavior />
+    </e:Interaction.Behaviors>
+
+    <Grid>
+        <Border BorderThickness="0" Margin="2" Background="#ffffff">
+            <!--#region 폼 테두리 그림자 처리-->
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="5" 
+                              BlurRadius="10" 
+                              Color="Gray"
+                              Opacity="0.5"/>
+            </Border.Effect>
+            <!--#endregion-->
+
+            <Grid x:Name="_gridNavigation" Background="#fcfcfc">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="42" />
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border PreviewMouseDown="Border_PreviewMouseDown">
+                    <Grid Background="#D4D4D4">
+                        <Grid.ColumnDefinitions>
+                            <!--#region 공백 - 0-->
+                            <ColumnDefinition   Width="10" />
+                            <!--#endregion-->
+
+                            <!--#region 이미지 - 1-->
+                            <ColumnDefinition   Width="47" />
+                            <!--#endregion-->
+
+                            <!--#region 공백 - 2-->
+                            <ColumnDefinition   Width="3" />
+                            <!--#endregion-->
+
+                            <!--#region 메뉴명 - 3-->
+                            <ColumnDefinition   Width="7*" />
+                            <!--#endregion-->
+
+                            <!--#region 닫기 이미지 - 4-->
+                            <ColumnDefinition   Width="3*" />
+                            <!--#endregion-->
+                        </Grid.ColumnDefinitions>
+
+                        <!--#region 네비게이션 이미지 : Column - 1-->
+
+                        <Image  Grid.Column="1" Source="pack://application:,,,/SMART.WCS.Resource;component/Image/ico_menu-button.png"
+                                    Width="10"          Margin="10,0,10,0" />
+                        <!--#endregion-->
+
+                        <!--#region 2 Depth 메뉴 : Column - 6-->
+                        <TextBlock  Grid.Column="3" berhaviors:CommonProperties.LabelCd="EMS_EQP_MNGR_LST" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                        <!--#endregion-->
+                    </Grid>
+                </Border>
+                <!--#region 화면 닫기 버튼-->
+                <Grid  HorizontalAlignment="Right">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="9" />
+                        <RowDefinition  Height="*" />
+                        <RowDefinition  Height="9" />
+                    </Grid.RowDefinitions>
+                    <Button x:Name="btnFormClose"
+                             Grid.Row="1"
+                             Cursor="Hand"
+                             Padding="0"
+                             Background="#01ffffff"
+                             BorderThickness="0"
+                             Margin="0,0,9,0">
+                        <Button.Content>
+                            <Image  Source="pack://application:,,,/SMART.WCS.Resource;component/Image/btn_pop_colse_b.png" Width="20" Height="20"/>
+                        </Button.Content>
+                    </Button>
+                </Grid>
+                <!--#endregion-->
+
+                <Grid Grid.Row="2" Margin="-10,10,10,-10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition  Height="15" />
+                        <RowDefinition Height="*"/>
+                        <RowDefinition  Height="15" />
+                    </Grid.RowDefinitions>
+
+                    <!--#region 그리드-->
+                    <dxg:GridControl Grid.Row="1" x:Name="gridMngrLst"
+                                     SelectionMode="Row" 
+                                     Height="Auto"
+                                     AutoExpandAllGroups="True"
+                                     Margin="15 0 0 5"
+                                     ShowBorder="True"
+                                     EnableSmartColumnsGeneration="False"
+                                     MouseDoubleClick="gridMngrLst_MouseDoubleClick">
+                        <dxg:GridControl.View>
+                            <dxg:TableView x:Name="gridMngrLstView"
+                                   AllowChangeBandParent="True" 
+                                   AllowChangeColumnParent="True"
+                                   AllowPrintColumnHeaderImage="True" NavigationStyle="Cell"
+                                   AllowScrollAnimation="True"
+                                   ShowGroupPanel="False"
+                                   ScrollViewer.VerticalScrollBarVisibility="Auto" ScrollViewer.HorizontalScrollBarVisibility="Auto"
+                                   AutoWidth="False" AlternationCount="2"
+                                   ShowAutoFilterRow="False" AllowEditing="True">
+                            </dxg:TableView>
+                        </dxg:GridControl.View>
+
+                        <dxg:GridControl.Columns>
+                            <dxg:GridColumn Header="EQP_MNGR_ID" FieldName="EQP_MNGR_ID" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextUpEditSetting}"/>
+                            <dxg:GridColumn Header="MNGR_NM" FieldName="MNGR_NM" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextEditSetting}" Width="*"/>
+                            <dxg:GridColumn Header="VNDR_NM" FieldName="VNDR_NM" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextEditSetting}"/>
+                            <dxg:GridColumn Header="MNGR_TEL_NO" FieldName="MNGR_TEL_NO" HorizontalHeaderContentAlignment="Center" EditSettings="{StaticResource TextEditSetting}" Width="*"/>
+                        </dxg:GridControl.Columns>
+                    </dxg:GridControl>
+                    <!--#endregion 그리드-->
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+
+</Window>

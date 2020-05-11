@@ -1,0 +1,84 @@
+﻿<Window x:Class="SMART.WCS.Main._Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SMART.WCS.Main"
+        mc:Ignorable="d"
+        dx:ThemeManager.ThemeName="Office2019Colorful"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:uButton="clr-namespace:SMART.WCS.Control;assembly=SMART.WCS.Control"
+        WindowStartupLocation="CenterScreen" 
+        Title="Login" Height="500" Width="400">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="20" />
+            <RowDefinition  Height="30" />
+            <RowDefinition  Height="5" />
+            <RowDefinition  Height="30" />
+            <RowDefinition  Height="5" />
+            <RowDefinition  Height="30" />
+            <RowDefinition  Height="30" />
+            <RowDefinition  Height="5" />
+            <RowDefinition  Height="30" />
+            <RowDefinition  Height="5" />
+            <RowDefinition  Height="150" />
+            <RowDefinition  Height="30" />
+            <RowDefinition  Height="50" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition   Width="100" />
+            <ColumnDefinition   Width="*" />
+            <ColumnDefinition   Width="100" />
+        </Grid.ColumnDefinitions>
+
+        <dxe:ComboBoxEdit   x:Name="cboLang"  Grid.Row="1"    Grid.Column="1"
+                            NullText="SELECT"   ValueMember="CODE"  DisplayMember="NAME"/>
+
+        <dxe:ComboBoxEdit   x:Name="cboCenter"  Grid.Row="3"    Grid.Column="1"
+                            NullText="SELECT"   ValueMember="CODE"  DisplayMember="NAME" />
+
+        <dxe:TextEdit   x:Name="txtUserID"      Grid.Row="5"    Grid.Column="1" />
+
+        <dxe:CheckEdit  x:Name="chkRememberID"  Grid.Row="6"    Grid.Column="1"
+                        Content="Remember ID"   HorizontalAlignment="Left"  />
+
+        <dxe:ListBoxEdit  x:Name="lbRadio"  Grid.Row="8"  Grid.Column="1"     ValueMember="Content"   SelectedIndex="0"    VerticalAlignment="Center"  HorizontalAlignment="Center"     Padding="0" ShowBorder="False"  Visibility="Visible">
+            <dxe:ListBoxEdit.StyleSettings>
+                <dxe:RadioListBoxEditStyleSettings />
+            </dxe:ListBoxEdit.StyleSettings>
+            <dxe:ListBoxEdit.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"  />
+                </ItemsPanelTemplate>
+            </dxe:ListBoxEdit.ItemsPanel>
+            <dxe:ListBoxEdit.Items>
+                <dxe:ListBoxEditItem    x:Name="rdoREAL"    Padding="0"   Margin="0"    Content="운영"    VerticalAlignment="Center"      HorizontalAlignment="Center"/>
+                <dxe:ListBoxEditItem    x:Name="rdoDEV"     Padding="0"   Margin="0"    Content="개발"    VerticalAlignment="Center"      HorizontalAlignment="Center"/>
+            </dxe:ListBoxEdit.Items>
+        </dxe:ListBoxEdit>
+
+        <!--<uButton:uSimpleButton  x:Name="btnLogin" Grid.Row="11"  Grid.Column="1"    
+                                ButtonType="EXCEL_DOWNLOAD"     IsIconVisibleYN="True" 
+                                Content="로그인"   HorizontalAlignment="Center"    VerticalAlignment="Center"
+                                PreviewMouseLeftButtonUp="BtnLogin_PreviewMouseLeftButtonUp"/>-->
+
+        <dx:SimpleButton    x:Name="btnLogin" Grid.Row="11"  Grid.Column="1"    
+                            Content="로그인"
+                            PreviewMouseLeftButtonUp="BtnLogin_PreviewMouseLeftButtonUp" />
+
+        <Button Background="Red" Content="Button 1" Margin="10,0,10,10" Width="100" HorizontalAlignment="Left"
+                Grid.Row="11"/>
+        <!--<Button x:Name="btnLogin"   Content="로그인"   Grid.Row="11"   Grid.Column="1" Background="Red" />-->
+
+        <dx:SimpleButton    x:Name="btnTest" Grid.Row="11"  Grid.Column="2"      
+                            Content="팝업 샘플"
+                            PreviewMouseLeftButtonUp="BtnTest_PreviewMouseLeftButtonUp" 
+                            Visibility="Visible"/>
+
+
+    </Grid>
+</Window>

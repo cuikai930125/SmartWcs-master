@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BD92D680-A945-4B14-BCA1-ABC5E6C87357}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMART.WCS.Library</RootNamespace>
+    <AssemblyName>SMART.WCS.Library</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Library\DevExpress.Xpf.Themes.Office2016White.v19.1.dll" />
+    <Content Include="Library\DevExpress.Xpf.Themes.Office2016WhiteSE.v19.1.dll" />
+    <Content Include="Library\DevExpress.Xpf.Themes.Office2019Colorful.v19.1.dll" />
+    <Content Include="Library\LGCNS.ezControl.dll" />
+    <Content Include="Library\LGCNS.ezControl.Presentation.dll" />
+    <Content Include="Library\MySql.Data.dll" />
+    <Content Include="Library\Newtonsoft.Json.dll" />
+    <Content Include="Library\Oracle.ManagedDataAccess.dll" />
+    <Resource Include="Library\SmartWCS.ico" />
+    <Content Include="Library\WPFToolkit.Extended.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>C:\Windows\System32\xcopy "$(ProjectDir)Library\Oracle.ManagedDataAccess.dll" "C:\Deploy\WCS\bin\*" /f /y
+C:\Windows\System32\xcopy "$(ProjectDir)Library\MySql.Data.dll" "C:\Deploy\WCS\bin\*" /f /y
+C:\Windows\System32\xcopy "$(ProjectDir)Library\WPFToolkit.Extended.dll" "C:\Deploy\WCS\bin\*" /f /y
+C:\Windows\System32\xcopy "$(ProjectDir)Library\LGCNS.ezControl.dll" "C:\Deploy\WCS\bin\*" /f /y
+C:\Windows\System32\xcopy "$(ProjectDir)Library\LGCNS.ezControl.Presentation.dll" "C:\Deploy\WCS\bin\*" /f /y
+C:\Windows\System32\xcopy "$(ProjectDir)Library\DevExpress.Xpf.Themes.Office2016White.v19.1.dll" "C:\Deploy\WCS\bin\*" /f /y
+C:\Windows\System32\xcopy "$(ProjectDir)Library\DevExpress.Xpf.Themes.Office2016WhiteSE.v19.1.dll" "C:\Deploy\WCS\bin\*" /f /y
+C:\Windows\System32\xcopy "$(ProjectDir)Library\DevExpress.Xpf.Themes.Office2019Colorful.v19.1.dll" "C:\Deploy\WCS\bin\*" /f /y
+C:\Windows\System32\xcopy "$(ProjectDir)Library\SmartWCS.ico" "C:\Deploy\WCS\*" /f /y
+</PreBuildEvent>
+  </PropertyGroup>
+</Project>

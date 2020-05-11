@@ -1,0 +1,3210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="(MENU)A1001" xml:space="preserve">
+    <value>설비별 시간대별 처리현황</value>
+  </data>
+  <data name="(MENU)A1002" xml:space="preserve">
+    <value>Reject율 현황</value>
+  </data>
+  <data name="(MENU)ANL" xml:space="preserve">
+    <value>Analysis</value>
+  </data>
+  <data name="(MENU)ANL01" xml:space="preserve">
+    <value>Sorter</value>
+  </data>
+  <data name="(MENU)C1002" xml:space="preserve">
+    <value>사용자 관리</value>
+  </data>
+  <data name="(MENU)C1003" xml:space="preserve">
+    <value>센터 관리</value>
+  </data>
+  <data name="(MENU)C1004" xml:space="preserve">
+    <value>메뉴 관리</value>
+  </data>
+  <data name="(MENU)C1005" xml:space="preserve">
+    <value>사용자별 권한 관리</value>
+  </data>
+  <data name="(MENU)C1006" xml:space="preserve">
+    <value>게시판 관리</value>
+  </data>
+  <data name="(MENU)C1007" xml:space="preserve">
+    <value>배포관리</value>
+  </data>
+  <data name="(MENU)C1010" xml:space="preserve">
+    <value>공통코드 관리</value>
+  </data>
+  <data name="(MENU)C1011" xml:space="preserve">
+    <value>고객사관리</value>
+  </data>
+  <data name="(MENU)C1012" xml:space="preserve">
+    <value>SKU관리</value>
+  </data>
+  <data name="(MENU)C1013" xml:space="preserve">
+    <value>거래처관리</value>
+  </data>
+  <data name="(MENU)C1014" xml:space="preserve">
+    <value>설비관리</value>
+  </data>
+  <data name="(MENU)C1015" xml:space="preserve">
+    <value>송장대역대관리</value>
+  </data>
+  <data name="(MENU)C1016" xml:space="preserve">
+    <value>박스유형관리</value>
+  </data>
+  <data name="(MENU)C1017" xml:space="preserve">
+    <value>검수기준관리</value>
+  </data>
+  <data name="(MENU)C1018_SRT" xml:space="preserve">
+    <value>권역관리</value>
+  </data>
+  <data name="(MENU)C1019_SRT" xml:space="preserve">
+    <value>슈트관리</value>
+  </data>
+  <data name="(MENU)C1020_SRT" xml:space="preserve">
+    <value>슈트/권역 매핑관리</value>
+  </data>
+  <data name="(MENU)C1021_QPS" xml:space="preserve">
+    <value>셀관리</value>
+  </data>
+  <data name="(MENU)C1022_GAN" xml:space="preserve">
+    <value>Ground 셀 관리</value>
+  </data>
+  <data name="(MENU)C1023_GAN" xml:space="preserve">
+    <value>토트박스관리</value>
+  </data>
+  <data name="(MENU)COM" xml:space="preserve">
+    <value>공통관리</value>
+  </data>
+  <data name="(MENU)COM01" xml:space="preserve">
+    <value>시스템관리</value>
+  </data>
+  <data name="(MENU)COM02" xml:space="preserve">
+    <value>기준정보관리</value>
+  </data>
+  <data name="(MENU)COM03" xml:space="preserve">
+    <value>Sorter</value>
+  </data>
+  <data name="(MENU)COM04" xml:space="preserve">
+    <value>QPS</value>
+  </data>
+  <data name="(MENU)COM05" xml:space="preserve">
+    <value>Smart Gantry</value>
+  </data>
+  <data name="(MENU)FVRT" xml:space="preserve">
+    <value>즐겨찾기</value>
+  </data>
+  <data name="(MENU)O1001_QPS" xml:space="preserve">
+    <value>기준옵션설정관리</value>
+  </data>
+  <data name="(MENU)O1002_QPS" xml:space="preserve">
+    <value>ROC 최적화 수행 관리</value>
+  </data>
+  <data name="(MENU)O1003_QPS" xml:space="preserve">
+    <value>ROC 최적화 검증 관리</value>
+  </data>
+  <data name="(MENU)O1004_QPS" xml:space="preserve">
+    <value>셀 기준정보 관리</value>
+  </data>
+  <data name="(MENU)O1005_QPS" xml:space="preserve">
+    <value>셀 시뮬레이션 관리</value>
+  </data>
+  <data name="(MENU)O1006_QPS" xml:space="preserve">
+    <value>셀 최적화 수행관리</value>
+  </data>
+  <data name="(MENU)O1007_QPS" xml:space="preserve">
+    <value>최적화 오더 생성</value>
+  </data>
+  <data name="(MENU)OPT" xml:space="preserve">
+    <value>Optimization</value>
+  </data>
+  <data name="(MENU)OPT01" xml:space="preserve">
+    <value>QPS</value>
+  </data>
+  <data name="(MENU)P1001" xml:space="preserve">
+    <value>오더관리</value>
+  </data>
+  <data name="(MENU)P1002" xml:space="preserve">
+    <value>설비별 오더대비 작업물량 조회</value>
+  </data>
+  <data name="(MENU)P1003" xml:space="preserve">
+    <value>배치관리</value>
+  </data>
+  <data name="(MENU)P1004" xml:space="preserve">
+    <value>슈트작업계획관리</value>
+  </data>
+  <data name="(MENU)P1005_GAN" xml:space="preserve">
+    <value>입고 계획관리</value>
+  </data>
+  <data name="(MENU)P1006_GAN" xml:space="preserve">
+    <value>재적치 계획관리</value>
+  </data>
+  <data name="(MENU)P1007_GAN" xml:space="preserve">
+    <value>출고 계획관리</value>
+  </data>
+  <data name="(MENU)PLN" xml:space="preserve">
+    <value>Plan</value>
+  </data>
+  <data name="(MENU)PLN01" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="(MENU)PLN02" xml:space="preserve">
+    <value>Job Plan</value>
+  </data>
+  <data name="(MENU)PRS" xml:space="preserve">
+    <value>Processing</value>
+  </data>
+  <data name="(MENU)PRS01" xml:space="preserve">
+    <value>Sorter</value>
+  </data>
+  <data name="(MENU)PRS02" xml:space="preserve">
+    <value>Smart Gantry</value>
+  </data>
+  <data name="(MENU)R1001_SRT" xml:space="preserve">
+    <value>Reject 조회 및 처리관리</value>
+  </data>
+  <data name="(MENU)R1002_SRT" xml:space="preserve">
+    <value>스캔현황조회</value>
+  </data>
+  <data name="(MENU)R1003_SRT" xml:space="preserve">
+    <value>분류실적 관리</value>
+  </data>
+  <data name="(MENU)R1004_SRT" xml:space="preserve">
+    <value>현황판 조회</value>
+  </data>
+  <data name="(MENU)R1005_GAN" xml:space="preserve">
+    <value>입고 작업조회</value>
+  </data>
+  <data name="(MENU)R1006_GAN" xml:space="preserve">
+    <value>재적치 작업조회</value>
+  </data>
+  <data name="(MENU)R1007_GAN" xml:space="preserve">
+    <value>출고 작업조회</value>
+  </data>
+  <data name="(MENU)R1008_GAN" xml:space="preserve">
+    <value>재고 현황 조회</value>
+  </data>
+  <data name="(MENU)SCA" xml:space="preserve">
+    <value>Monitoring</value>
+  </data>
+  <data name="(MENU)SCA01" xml:space="preserve">
+    <value>1층설비</value>
+  </data>
+  <data name="(MENU)SCA0101" xml:space="preserve">
+    <value>SCADA</value>
+  </data>
+  <data name="(MSG)ASK_ADD_ROW_DELETE" xml:space="preserve">
+    <value>추가된 행을 삭제하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_APPLY" xml:space="preserve">
+    <value>적용 슈트 PLAN이 변경됩니다. 변경하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_CANCEL_BTCH_SAVE" xml:space="preserve">
+    <value>배치를 취소하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_CELL_MAX_CBM_EXISTS" xml:space="preserve">
+    <value>CELL 최대 CBM보다 큰 오더 CBM이 존재합니다.|계속하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_CELL_OPTI" xml:space="preserve">
+    <value>셀 Optimization을 수행하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_CELL_SIMUL" xml:space="preserve">
+    <value>셀 시뮬레이션을 수행하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_CHANGE_DATA_SAVE" xml:space="preserve">
+    <value>변경된 내용을 저장하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_CHECK_WRK_BTCH_CREATE" xml:space="preserve">
+    <value>체크된 {0}건으로 배치를 생성하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_CONF" xml:space="preserve">
+    <value>확정 처리를 하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_CONNECT" xml:space="preserve">
+    <value>연결하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_DATA_EXTRACT" xml:space="preserve">
+    <value>데이터 추출작업을 진행하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_DEL_FVRT" xml:space="preserve">
+    <value>즐겨찾기를 해제하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_DISCONNECT" xml:space="preserve">
+    <value>연결을 해제하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_EQP_MAPP_DEL" xml:space="preserve">
+    <value>설비 매핑을 삭제하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_EQP_MAPP_INS" xml:space="preserve">
+    <value>설비 매핑을 추가하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_EXCEL_DOWNLOAD" xml:space="preserve">
+    <value>엑셀 다운로드를 하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_EXISTS_NO_SAVE_TO_SEARCH" xml:space="preserve">
+    <value>저장되지 않은 데이터가 있습니다.|계속 조회하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_PWD_CHG" xml:space="preserve">
+    <value>비밀번호를 재설정하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_PWD_CHK_NOT_LOGIN" xml:space="preserve">
+    <value>비밀번호를 변경하지 않으셨습니다.|비밀번호를 변경하지 않으면 로그인 할 수 없습니다.|창을 종료하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_REG_FVRT" xml:space="preserve">
+    <value>즐겨찾기 등록을 하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_SAVE" xml:space="preserve">
+    <value>저장하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_SELECT_ROW_DELETE" xml:space="preserve">
+    <value>선택된 행을 삭제하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_TOT_BOX_BATCH_SAVE" xml:space="preserve">
+    <value>토트박스 일괄 등록을 진행하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_TOT_BOX_BATCH_SAVE_CANCEL" xml:space="preserve">
+    <value>토트박스 일괄 등록을 취소하시겠습니까?</value>
+  </data>
+  <data name="(MSG)CMPT" xml:space="preserve">
+    <value>완료되었습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_APPLIED" xml:space="preserve">
+    <value>변경되었습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_CELL_OPTI" xml:space="preserve">
+    <value>셀 Optimization 처리가 완료되었습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_CELL_SIMUL" xml:space="preserve">
+    <value>셀 시뮬레이션 처리가 완료되었습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_CONF" xml:space="preserve">
+    <value>확정처리 되었습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_CONNECT" xml:space="preserve">
+    <value>연결되었습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_DATA_EXTRACT" xml:space="preserve">
+    <value>데이터 추출 완료되었습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_DISCONNECT" xml:space="preserve">
+    <value>연결이 해제되었습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_EQP_MAPP_DEL" xml:space="preserve">
+    <value>설비 매핑이 삭제되었습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_EQP_MAPP_INS" xml:space="preserve">
+    <value>설비 매핑이 추가되었습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_PWD_CHK" xml:space="preserve">
+    <value>비밀번호가 재설정 되었습니다.|확인 버튼을 클릭하면 메인 화면이 열립니다.</value>
+  </data>
+  <data name="(MSG)CMPT_ROC_EXEC" xml:space="preserve">
+    <value>ROC 수행이 완료되었습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_SAVE" xml:space="preserve">
+    <value>저장되었습니다.</value>
+  </data>
+  <data name="(MSG)ERR_BTCH_SAVE" xml:space="preserve">
+    <value>배치생성중 오류가 발생했습니다.</value>
+  </data>
+  <data name="(MSG)ERR_CELL_OPTI_PROC" xml:space="preserve">
+    <value>셀 Optimization 처리중 오류가 발생했습니다.</value>
+  </data>
+  <data name="(MSG)ERR_CELL_SIMUL_PROC" xml:space="preserve">
+    <value>셀 시뮬레이션 처리중 오류가 발생했습니다.</value>
+  </data>
+  <data name="(MSG)ERR_CONF" xml:space="preserve">
+    <value>확정 처리중 오류가 발생했습니다.</value>
+  </data>
+  <data name="(MSG)ERR_DATA_EXTRACT" xml:space="preserve">
+    <value>데이터 추출중 오류가 발생했습니다.</value>
+  </data>
+  <data name="(MSG)ERR_DATA_SEND" xml:space="preserve">
+    <value>데이터 전송 중 오류가 발생했습니다.</value>
+  </data>
+  <data name="(MSG)ERR_DELETE" xml:space="preserve">
+    <value>이미 저장된 데이터는 삭제할 수 없습니다.</value>
+  </data>
+  <data name="(MSG)ERR_EMPTY_EXCEL_UPLOAD_FILE" xml:space="preserve">
+    <value>엑셀 업로드 대상 파일을 선택해주세요.</value>
+  </data>
+  <data name="(MSG)ERR_EMPTY_USER_ID" xml:space="preserve">
+    <value>사용자 ID를 입력하세요.</value>
+  </data>
+  <data name="(MSG)ERR_EMPTY_USER_NM" xml:space="preserve">
+    <value>사용자명을 입력하세요.</value>
+  </data>
+  <data name="(MSG)ERR_EXISTS_NO_SAVE" xml:space="preserve">
+    <value>저장되지 않은 데이터가 있습니다.|종료하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ERR_EXISTS_NO_SAVE_INQ" xml:space="preserve">
+    <value>저장되지 않은 데이터가 있습니다.|조회 하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ERR_EXISTS_NO_SAVE_TAB" xml:space="preserve">
+    <value>{0} 탭의 {1}의 데이터가 저장되지 않았습니다.|종료하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ERR_INQ" xml:space="preserve">
+    <value>조회 중 오류가 발생했습니다.</value>
+  </data>
+  <data name="(MSG)ERR_ISAPPLIED" xml:space="preserve">
+    <value>이미 적용중인 PLAN입니다.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_EXIST_DATABASE_CONNECT_STRING" xml:space="preserve">
+    <value>데이터베이스 연결 문자열이 존재하지 않습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_INPUT" xml:space="preserve">
+    <value>{0}(이)가 입력되지 않았습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_INPUT_1" xml:space="preserve">
+    <value>{0}이(가) {1}에 입력되지 않았습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_MENU_DATA" xml:space="preserve">
+    <value>메뉴 데이터가 없습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_SELECT" xml:space="preserve">
+    <value>{0}이(가) 선택되지 않았습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_USER_INFO" xml:space="preserve">
+    <value>일치하는 사용자 정보가 없습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NO_HDR_INFO" xml:space="preserve">
+    <value>대분류 코드에 대한 정보가 없어|저장할 수 없습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NO_SELECT" xml:space="preserve">
+    <value>선택된 데이터가 없습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NO_SELECT_1" xml:space="preserve">
+    <value>1개의 행만 선택할 수 있습니다.</value>
+  </data>
+  <data name="(MSG)ERR_OVER_DATE" xml:space="preserve">
+    <value>조회 기간은 30일이 넘을 수 없습니다.</value>
+  </data>
+  <data name="(MSG)ERR_SAVE" xml:space="preserve">
+    <value>저장 중 오류가 발생 했습니다.</value>
+  </data>
+  <data name="(MSG)ERR_TOT_BOX_COUNT_NOT_INPUT" xml:space="preserve">
+    <value>등록하려는 토트박스 수를 입력하세요.</value>
+  </data>
+  <data name="(MSG)ERR_TOT_BOX_NO_NOT_INPUT" xml:space="preserve">
+    <value>등록 토트번호를 입력하세요.</value>
+  </data>
+  <data name="(MSG)ERR_TOT_BOX_TYPE_NOT_INPUT" xml:space="preserve">
+    <value>등록하려는 토트박스 타입을 선택하세요.</value>
+  </data>
+  <data name="(MSG)INFO_NOT_INQ" xml:space="preserve">
+    <value>조회된 데이터가 없습니다.</value>
+  </data>
+  <data name="(MSG)INFO_PASSWORD_RESETTING_OPEN_WINDOW" xml:space="preserve">
+    <value>비밀번호 재설정이 필요합니다.|창이 오픈되면 비밀번호를 재설정해주세요.</value>
+  </data>
+  <data name="ABC" xml:space="preserve">
+    <value>ABC</value>
+  </data>
+  <data name="ABC_CNT" xml:space="preserve">
+    <value>ABC수</value>
+  </data>
+  <data name="ABC_CODE" xml:space="preserve">
+    <value>ABC 코드</value>
+  </data>
+  <data name="ABC_TYPE" xml:space="preserve">
+    <value>ABC TYPE</value>
+  </data>
+  <data name="ADDR" xml:space="preserve">
+    <value>주소</value>
+  </data>
+  <data name="ADD_QTY" xml:space="preserve">
+    <value>누적수량</value>
+  </data>
+  <data name="ADD_QTY_RATE" xml:space="preserve">
+    <value>누적수량비율</value>
+  </data>
+  <data name="ADD_QTY_RATE_RANK" xml:space="preserve">
+    <value>누적수량비율Rank</value>
+  </data>
+  <data name="ADD_SKU_CNT" xml:space="preserve">
+    <value>누적 SKU 개수</value>
+  </data>
+  <data name="ADD_SKU_SUPP" xml:space="preserve">
+    <value>누적 SKU보충</value>
+  </data>
+  <data name="AGG_YMD" xml:space="preserve">
+    <value>일자</value>
+  </data>
+  <data name="ALARM_CD" xml:space="preserve">
+    <value>알람코드</value>
+  </data>
+  <data name="ALARM_DESC" xml:space="preserve">
+    <value>알람설명</value>
+  </data>
+  <data name="ALARM_NM" xml:space="preserve">
+    <value>알람명</value>
+  </data>
+  <data name="ALARM_RCVRY" xml:space="preserve">
+    <value>알람해제방법</value>
+  </data>
+  <data name="ALARM_RSN" xml:space="preserve">
+    <value>알람원인</value>
+  </data>
+  <data name="ALARM_STAT" xml:space="preserve">
+    <value>알람상태</value>
+  </data>
+  <data name="ALARM_STAT_CD" xml:space="preserve">
+    <value>알람상태</value>
+  </data>
+  <data name="ALL" xml:space="preserve">
+    <value>ALL</value>
+  </data>
+  <data name="ALL_CLOSE" xml:space="preserve">
+    <value>전체 닫힘</value>
+  </data>
+  <data name="ALL_OPEN" xml:space="preserve">
+    <value>전체 펼침</value>
+  </data>
+  <data name="ALL_SCAN_CEHCK" xml:space="preserve">
+    <value>All Scan</value>
+  </data>
+  <data name="ALL_SCAN_TIME" xml:space="preserve">
+    <value>스캔 횟수</value>
+  </data>
+  <data name="ASK_PWD_CHG" xml:space="preserve">
+    <value>비밀번호를 재설정하시겠습니까?</value>
+  </data>
+  <data name="ATTR01" xml:space="preserve">
+    <value>속성 01</value>
+  </data>
+  <data name="ATTR02" xml:space="preserve">
+    <value>속성 02</value>
+  </data>
+  <data name="ATTR03" xml:space="preserve">
+    <value>속성 03</value>
+  </data>
+  <data name="ATTR04" xml:space="preserve">
+    <value>속성 04</value>
+  </data>
+  <data name="ATTR05" xml:space="preserve">
+    <value>속성 05</value>
+  </data>
+  <data name="ATTR06" xml:space="preserve">
+    <value>속성 06</value>
+  </data>
+  <data name="ATTR07" xml:space="preserve">
+    <value>속성 07</value>
+  </data>
+  <data name="ATTR08" xml:space="preserve">
+    <value>속성 08</value>
+  </data>
+  <data name="ATTR09" xml:space="preserve">
+    <value>속성 09</value>
+  </data>
+  <data name="ATTR10" xml:space="preserve">
+    <value>속성 10</value>
+  </data>
+  <data name="AVG_QTY_BY_ORD" xml:space="preserve">
+    <value>주문당 평균상품수량</value>
+  </data>
+  <data name="AVG_QTY_BY_SKU" xml:space="preserve">
+    <value>상품당 평균 출하수량</value>
+  </data>
+  <data name="AVG_SKU_CNT_BY_ORD" xml:space="preserve">
+    <value>주문당 평균상품수</value>
+  </data>
+  <data name="BARCODE_LIST" xml:space="preserve">
+    <value>샘플 바코드 리스트</value>
+  </data>
+  <data name="BASIC_CELL_HGT" xml:space="preserve">
+    <value>셀기본높이</value>
+  </data>
+  <data name="BATCH_DETAIL_LIST" xml:space="preserve">
+    <value>Batch Job 모니터링 디테일 리스트</value>
+  </data>
+  <data name="BATCH_HEADER_LIST" xml:space="preserve">
+    <value>Batch Job 모니터링 헤더 리스트</value>
+  </data>
+  <data name="BATCH_NO" xml:space="preserve">
+    <value>배치번호</value>
+  </data>
+  <data name="BATCH_NO1" xml:space="preserve">
+    <value>배치번호</value>
+  </data>
+  <data name="BCD_INFO" xml:space="preserve">
+    <value>바코드 정보</value>
+  </data>
+  <data name="BCD_SAMPLE" xml:space="preserve">
+    <value>바코드 샘플</value>
+  </data>
+  <data name="BCD_SAMPLE_ERR" xml:space="preserve">
+    <value>샘플 바코드를 입력해주세요.</value>
+  </data>
+  <data name="BCR_CD" xml:space="preserve">
+    <value>바코드 입력</value>
+  </data>
+  <data name="BCR_INFO" xml:space="preserve">
+    <value>바코드 정보</value>
+  </data>
+  <data name="BCR_NO" xml:space="preserve">
+    <value>바코드 번호</value>
+  </data>
+  <data name="BCR_NO_REQ" xml:space="preserve">
+    <value>(*)바코드 번호</value>
+  </data>
+  <data name="BCR_SPR_CD" xml:space="preserve">
+    <value>바코드 분류 코드</value>
+  </data>
+  <data name="BEAM_MV_SEQ" xml:space="preserve">
+    <value>Beam이동순서</value>
+  </data>
+  <data name="BOX_BCD" xml:space="preserve">
+    <value>박스 바코드</value>
+  </data>
+  <data name="BOX_BCD_REGEX" xml:space="preserve">
+    <value>박스바코드</value>
+  </data>
+  <data name="BOX_CBM" xml:space="preserve">
+    <value>박스 체적</value>
+  </data>
+  <data name="BOX_CNT" xml:space="preserve">
+    <value>박스수</value>
+  </data>
+  <data name="BOX_HGT_LEN" xml:space="preserve">
+    <value>박스 높이 길이</value>
+  </data>
+  <data name="BOX_IN_QTY" xml:space="preserve">
+    <value>박스당 제품 수량</value>
+  </data>
+  <data name="BOX_IN_QTY1" xml:space="preserve">
+    <value>입수수량</value>
+  </data>
+  <data name="BOX_TYPE_CD" xml:space="preserve">
+    <value>박스 유형 코드</value>
+  </data>
+  <data name="BOX_TYPE_CD_REQ" xml:space="preserve">
+    <value>(*) 박스 유형 코드</value>
+  </data>
+  <data name="BOX_TYPE_DESC" xml:space="preserve">
+    <value>박스 유형 설명</value>
+  </data>
+  <data name="BOX_TYPE_GRP_CD" xml:space="preserve">
+    <value>박스 그룹 코드</value>
+  </data>
+  <data name="BOX_TYPE_LIST" xml:space="preserve">
+    <value>박스 유형 리스트</value>
+  </data>
+  <data name="BOX_TYPE_NM" xml:space="preserve">
+    <value>박스 유형 명</value>
+  </data>
+  <data name="BOX_TYPE_NM_REQ" xml:space="preserve">
+    <value>(*) 박스 유형 명</value>
+  </data>
+  <data name="BOX_VERT_LEN" xml:space="preserve">
+    <value>박스 세로 길이</value>
+  </data>
+  <data name="BOX_WGT" xml:space="preserve">
+    <value>박스 중량</value>
+  </data>
+  <data name="BOX_WTH_LEN" xml:space="preserve">
+    <value>박스 가로 길이</value>
+  </data>
+  <data name="BTCH_DIV_CNT" xml:space="preserve">
+    <value>배치분할갯수</value>
+  </data>
+  <data name="BTCH_DIV_LIM" xml:space="preserve">
+    <value>배치분배차수</value>
+  </data>
+  <data name="BTCH_DIV_SEQ" xml:space="preserve">
+    <value>배치분배차수</value>
+  </data>
+  <data name="BTCH_DIV_TOT_PICK_LIST" xml:space="preserve">
+    <value>배치 분할 총량 피킹 SKU</value>
+  </data>
+  <data name="BTCH_JOB_TYPE" xml:space="preserve">
+    <value>Batch Job 구분</value>
+  </data>
+  <data name="BTCH_SEQ" xml:space="preserve">
+    <value>배치순번</value>
+  </data>
+  <data name="BTN10" xml:space="preserve">
+    <value>Import Load</value>
+  </data>
+  <data name="BTN11" xml:space="preserve">
+    <value>Import Unload</value>
+  </data>
+  <data name="BTN12" xml:space="preserve">
+    <value>Release Load</value>
+  </data>
+  <data name="BTN13" xml:space="preserve">
+    <value>Release Unload</value>
+  </data>
+  <data name="BTN99" xml:space="preserve">
+    <value>AI Scan</value>
+  </data>
+  <data name="BTN1" xml:space="preserve">
+    <value>Inducted</value>
+  </data>
+  <data name="BTN2" xml:space="preserve">
+    <value>IPSSCan</value>
+  </data>
+  <data name="BTN3" xml:space="preserve">
+    <value>Discharged</value>
+  </data>
+  <data name="BTN4" xml:space="preserve">
+    <value>SortedConfirm</value>
+  </data>
+  <data name="CANL" xml:space="preserve">
+    <value>취소</value>
+  </data>
+  <data name="CAPA" xml:space="preserve">
+    <value>CAPA</value>
+  </data>
+  <data name="CART_CNT" xml:space="preserve">
+    <value>카트수량</value>
+  </data>
+  <data name="CART_NO" xml:space="preserve">
+    <value>카트번호</value>
+  </data>
+  <data name="CBM" xml:space="preserve">
+    <value>CBM</value>
+  </data>
+  <data name="CBM_UOM" xml:space="preserve">
+    <value>CBM 단위</value>
+  </data>
+  <data name="CELL_CBM" xml:space="preserve">
+    <value>CBM</value>
+  </data>
+  <data name="CELL_DROP_BOX_QTY" xml:space="preserve">
+    <value>CELL 드롭수량</value>
+  </data>
+  <data name="CELL_ID" xml:space="preserve">
+    <value>CELL ID</value>
+  </data>
+  <data name="CELL_OPTI" xml:space="preserve">
+    <value>셀 Optmization</value>
+  </data>
+  <data name="CELL_OPT_SEQ" xml:space="preserve">
+    <value>셀 최적화 차수</value>
+  </data>
+  <data name="CELL_PICK_BOX_QTY" xml:space="preserve">
+    <value>CELL 피킹수량</value>
+  </data>
+  <data name="CELL_QTY" xml:space="preserve">
+    <value>셀 수</value>
+  </data>
+  <data name="CELL_SIMUL" xml:space="preserve">
+    <value>셀 시뮬레이션</value>
+  </data>
+  <data name="CELL_TYPE" xml:space="preserve">
+    <value>셀 유형</value>
+  </data>
+  <data name="CELL_TYPE_1" xml:space="preserve">
+    <value>셀유형</value>
+  </data>
+  <data name="CELL_TYPE_CD" xml:space="preserve">
+    <value>셀 유형 코드</value>
+  </data>
+  <data name="CELL_TYPE_CD_REQ" xml:space="preserve">
+    <value>(*) 셀 유형코드</value>
+  </data>
+  <data name="CELL_TYPE_MGT" xml:space="preserve">
+    <value>셀 유형관리</value>
+  </data>
+  <data name="CELL_TYPE_NM" xml:space="preserve">
+    <value>셀 타입명</value>
+  </data>
+  <data name="CELL_WRK_BOX_QTY" xml:space="preserve">
+    <value>CELL 작업수량</value>
+  </data>
+  <data name="CHARG_EQP" xml:space="preserve">
+    <value>담당 설비</value>
+  </data>
+  <data name="CHUTE" xml:space="preserve">
+    <value>슈트</value>
+  </data>
+  <data name="CHUTE_ALLOC_PRTY" xml:space="preserve">
+    <value>슈트 할당 우선 순위</value>
+  </data>
+  <data name="CHUTE_DTL_USE_CD" xml:space="preserve">
+    <value>슈트 상세 용도 코드</value>
+  </data>
+  <data name="CHUTE_ID" xml:space="preserve">
+    <value>슈트 ID</value>
+  </data>
+  <data name="CHUTE_ID_REQ" xml:space="preserve">
+    <value>(*) 슈트 ID</value>
+  </data>
+  <data name="CHUTE_MGMT_LIST" xml:space="preserve">
+    <value>슈트 리스트</value>
+  </data>
+  <data name="CHUTE_NM" xml:space="preserve">
+    <value>슈트 명</value>
+  </data>
+  <data name="CHUTE_PLAN_HEADER_LIST" xml:space="preserve">
+    <value>슈트작업계획 헤더</value>
+  </data>
+  <data name="CHUTE_RSLT_DETAIL" xml:space="preserve">
+    <value>분류실적 디테일 리스트</value>
+  </data>
+  <data name="CHUTE_RSLT_HEADER" xml:space="preserve">
+    <value>분류실적 헤더 리스트</value>
+  </data>
+  <data name="CHUTE_USE_CD" xml:space="preserve">
+    <value>슈트 용도 코드</value>
+  </data>
+  <data name="CHUTE_USE_CD_REQ" xml:space="preserve">
+    <value>(*) 슈트 용도 코드</value>
+  </data>
+  <data name="CMPT_PWD_CHK" xml:space="preserve">
+    <value>비밀번호가 재설정 되었습니다.|확인 버튼을 클릭하면 메인 화면이 열립니다.</value>
+  </data>
+  <data name="CNTR_CD" xml:space="preserve">
+    <value>센터 코드</value>
+  </data>
+  <data name="CNTR_CD_REQ" xml:space="preserve">
+    <value>(*) 센터 코드</value>
+  </data>
+  <data name="CNTR_NM" xml:space="preserve">
+    <value>센터 명</value>
+  </data>
+  <data name="CNT_LIST" xml:space="preserve">
+    <value>센터 리스트</value>
+  </data>
+  <data name="CODE_DETAIL_LIST" xml:space="preserve">
+    <value>코드 상세 리스트</value>
+  </data>
+  <data name="CODE_HEADER_LIST" xml:space="preserve">
+    <value>코드 대분류 리스트</value>
+  </data>
+  <data name="COL" xml:space="preserve">
+    <value>열</value>
+  </data>
+  <data name="COMPANY" xml:space="preserve">
+    <value>회사</value>
+  </data>
+  <data name="COM_DTL_CD" xml:space="preserve">
+    <value>상세 코드</value>
+  </data>
+  <data name="COM_DTL_CD_REQ" xml:space="preserve">
+    <value>(*) 상세 코드</value>
+  </data>
+  <data name="COM_DTL_NM" xml:space="preserve">
+    <value>상세 코드 이름</value>
+  </data>
+  <data name="COM_DTL_NM_REQ" xml:space="preserve">
+    <value>(*) 상세 코드 이름</value>
+  </data>
+  <data name="COM_HDR_CD" xml:space="preserve">
+    <value>코드 대분류</value>
+  </data>
+  <data name="COM_HDR_CD_REQ" xml:space="preserve">
+    <value>(*) 코드 대분류</value>
+  </data>
+  <data name="COM_HDR_NM" xml:space="preserve">
+    <value>코드 대분류 이름</value>
+  </data>
+  <data name="COM_HDR_NM_REQ" xml:space="preserve">
+    <value>(*) 코드 대분류 이름</value>
+  </data>
+  <data name="CONFR" xml:space="preserve">
+    <value>확정</value>
+  </data>
+  <data name="CONNECT" xml:space="preserve">
+    <value>연결</value>
+  </data>
+  <data name="CO_CD" xml:space="preserve">
+    <value>회사 코드</value>
+  </data>
+  <data name="CO_NM" xml:space="preserve">
+    <value>회사명</value>
+  </data>
+  <data name="CREATE" xml:space="preserve">
+    <value>생성</value>
+  </data>
+  <data name="CRT_SPR_CD" xml:space="preserve">
+    <value>시스템 코드</value>
+  </data>
+  <data name="CST" xml:space="preserve">
+    <value>고객사</value>
+  </data>
+  <data name="CST_CD" xml:space="preserve">
+    <value>고객사 코드</value>
+  </data>
+  <data name="CST_CD_REQ" xml:space="preserve">
+    <value>(*) 고객사 코드</value>
+  </data>
+  <data name="CST_MGMT" xml:space="preserve">
+    <value>고객사 관리</value>
+  </data>
+  <data name="CST_MGT" xml:space="preserve">
+    <value>고객사 관리</value>
+  </data>
+  <data name="CST_NM" xml:space="preserve">
+    <value>고객사 이름</value>
+  </data>
+  <data name="CST_NM_REQ" xml:space="preserve">
+    <value>(*) 고객사 이름</value>
+  </data>
+  <data name="CST_ORD_NO" xml:space="preserve">
+    <value>고객사 오더번호</value>
+  </data>
+  <data name="DATA_INQ" xml:space="preserve">
+    <value>건의 데이터가 조회되었습니다.</value>
+  </data>
+  <data name="DATA_SET_ID" xml:space="preserve">
+    <value>데이터 그룹</value>
+  </data>
+  <data name="DATA_SET_ID_REQ" xml:space="preserve">
+    <value>(*) 데이터 그룹</value>
+  </data>
+  <data name="DATE" xml:space="preserve">
+    <value>기간</value>
+  </data>
+  <data name="DAY" xml:space="preserve">
+    <value>일</value>
+  </data>
+  <data name="DB_CONN_TYPE" xml:space="preserve">
+    <value>DB 접속 타입</value>
+  </data>
+  <data name="DB_CONN_TYPE_REQ" xml:space="preserve">
+    <value>(*) DB 접속 타입</value>
+  </data>
+  <data name="DD_AVG" xml:space="preserve">
+    <value>일평균</value>
+  </data>
+  <data name="DD_MAX" xml:space="preserve">
+    <value>일MAX</value>
+  </data>
+  <data name="DELETE" xml:space="preserve">
+    <value>삭제</value>
+  </data>
+  <data name="DESCRIPTION" xml:space="preserve">
+    <value>설명</value>
+  </data>
+  <data name="DIFF_HM" xml:space="preserve">
+    <value>처리시간 (분)</value>
+  </data>
+  <data name="DISCONNECT" xml:space="preserve">
+    <value>연결해제</value>
+  </data>
+  <data name="DISP_AGG_HM" xml:space="preserve">
+    <value>시간대</value>
+  </data>
+  <data name="DLV_CD_NM" xml:space="preserve">
+    <value>택배사 명</value>
+  </data>
+  <data name="DLV_CO_CD" xml:space="preserve">
+    <value>택배사 코드</value>
+  </data>
+  <data name="DLV_CO_NM" xml:space="preserve">
+    <value>택배사명</value>
+  </data>
+  <data name="DLV_CO_RGN_CD" xml:space="preserve">
+    <value>택배사 지역 코드</value>
+  </data>
+  <data name="DLV_CO_RGN_NM" xml:space="preserve">
+    <value>택배사 지역명</value>
+  </data>
+  <data name="DR_HGT_HGT" xml:space="preserve">
+    <value>드롭대상높이</value>
+  </data>
+  <data name="ECS_COMM_NO" xml:space="preserve">
+    <value>설비 ECS 통신 번호</value>
+  </data>
+  <data name="ECS_JOB_NO" xml:space="preserve">
+    <value>ECS JOB NO</value>
+  </data>
+  <data name="ㅁㄷㄷ" xml:space="preserve">
+    <value>ECS 로그 리스트</value>
+  </data>
+  <data name="EIQ" xml:space="preserve">
+    <value>EIQ</value>
+  </data>
+  <data name="END_DT" xml:space="preserve">
+    <value>종료일시</value>
+  </data>
+  <data name="EQP_DESC" xml:space="preserve">
+    <value>설비 부가설명</value>
+  </data>
+  <data name="EQP_ID" xml:space="preserve">
+    <value>설비 ID</value>
+  </data>
+  <data name="EQP_ID1" xml:space="preserve">
+    <value>설비ID</value>
+  </data>
+  <data name="EQP_ID_REQ" xml:space="preserve">
+    <value>(*) 설비 ID</value>
+  </data>
+  <data name="EQP_MGMT_LIST" xml:space="preserve">
+    <value>설비 리스트</value>
+  </data>
+  <data name="EQP_NM" xml:space="preserve">
+    <value>설비 명</value>
+  </data>
+  <data name="EQP_NM1" xml:space="preserve">
+    <value>설비명</value>
+  </data>
+  <data name="EQP_NM_1" xml:space="preserve">
+    <value>설비명</value>
+  </data>
+  <data name="EQP_NM_2" xml:space="preserve">
+    <value>설비</value>
+  </data>
+  <data name="EQP_NM_REQ" xml:space="preserve">
+    <value>(*) 설비 명</value>
+  </data>
+  <data name="EQP_TYPE_CD" xml:space="preserve">
+    <value>설비 종류 코드</value>
+  </data>
+  <data name="EQP_TYPE_CD_REQ" xml:space="preserve">
+    <value>(*) 설비 종류 코드</value>
+  </data>
+  <data name="ERR" xml:space="preserve">
+    <value>오류</value>
+  </data>
+  <data name="ERROR_CODE" xml:space="preserve">
+    <value>에러코드</value>
+  </data>
+  <data name="ERROR_NAME" xml:space="preserve">
+    <value>에러코드명</value>
+  </data>
+  <data name="ERR_CONT" xml:space="preserve">
+    <value>에러 내용</value>
+  </data>
+  <data name="(MSG)ERR_NOT_INPUT_PWD" xml:space="preserve">
+    <value>비밀번호가 입력되지 않았습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_INPUT_PWD_CONF" xml:space="preserve">
+    <value>비밀번호 확인값이 입력되지 않았습니다.</value>
+  </data>
+  <data name="ERR_NR_QTY" xml:space="preserve">
+    <value>NO READ</value>
+  </data>
+  <data name="ERR_OVF_QTY" xml:space="preserve">
+    <value>만재 오류</value>
+  </data>
+  <data name="(MSG)ERR_PWD_EQUAL" xml:space="preserve">
+    <value>입력하신 비밀번호가 일치하지 않습니다.</value>
+  </data>
+  <data name="(MSG)ERR_PWD_ROLE" xml:space="preserve">
+    <value>비밀번호 규칙이 잘못되었습니다.</value>
+  </data>
+  <data name="ERR_QTY" xml:space="preserve">
+    <value>오분류</value>
+  </data>
+  <data name="ERR_RATIO_CHRT" xml:space="preserve">
+    <value>에러별 점유율</value>
+  </data>
+  <data name="ERR_RGN_QTY" xml:space="preserve">
+    <value>권역코드오류</value>
+  </data>
+  <data name="ETC_ERR_QTY" xml:space="preserve">
+    <value>기타</value>
+  </data>
+  <data name="EXCEL_DOWNLOAD" xml:space="preserve">
+    <value>엑셀 다운로드</value>
+  </data>
+  <data name="EXCEL_UPLOAD" xml:space="preserve">
+    <value>엑셀 업로드</value>
+  </data>
+  <data name="EXCEL_UPLOAD_COMMENT" xml:space="preserve">
+    <value>엑셀 업로드 대상 파일을 선택해주세요.</value>
+  </data>
+  <data name="EXTRACTION" xml:space="preserve">
+    <value>추출</value>
+  </data>
+  <data name="EXTRACT_ITEM" xml:space="preserve">
+    <value>추출항목</value>
+  </data>
+  <data name="EXTRACT_ITEM_CNT" xml:space="preserve">
+    <value>추출항목수</value>
+  </data>
+  <data name="EXTRACT_ITEM_NM" xml:space="preserve">
+    <value>추출항목명</value>
+  </data>
+  <data name="EXTRACT_ITEM_RANK" xml:space="preserve">
+    <value>추출항목Rank</value>
+  </data>
+  <data name="EXTRACT_RSLT_CONF" xml:space="preserve">
+    <value>추출결과 확인</value>
+  </data>
+  <data name="EXTRACT_TYPE" xml:space="preserve">
+    <value>추출타입</value>
+  </data>
+  <data name="EXTRACT_YMD" xml:space="preserve">
+    <value>추출일자</value>
+  </data>
+  <data name="EXTRACT_YMD_TYPE" xml:space="preserve">
+    <value>추출일자타입</value>
+  </data>
+  <data name="FAIL_CNT" xml:space="preserve">
+    <value>실패건수</value>
+  </data>
+  <data name="FILE_SELE" xml:space="preserve">
+    <value>파일 선택</value>
+  </data>
+  <data name="FILL_RT" xml:space="preserve">
+    <value>충진율</value>
+  </data>
+  <data name="FLTR" xml:space="preserve">
+    <value>필터</value>
+  </data>
+  <data name="FLTR_DEL" xml:space="preserve">
+    <value>필터 삭제</value>
+  </data>
+  <data name="FLTR_DEL_YN_EXCPT" xml:space="preserve">
+    <value>필터 삭제건 제외</value>
+  </data>
+  <data name="FLTR_INQ_SCRN" xml:space="preserve">
+    <value>필터 조회 화면</value>
+  </data>
+  <data name="FREQUENCY" xml:space="preserve">
+    <value>빈도</value>
+  </data>
+  <data name="FROM" xml:space="preserve">
+    <value>FROM</value>
+  </data>
+  <data name="FR_CELL_ID" xml:space="preserve">
+    <value>FROM CEILL ID</value>
+  </data>
+  <data name="FVRT" xml:space="preserve">
+    <value>즐겨찾기</value>
+  </data>
+  <data name="GAN_CYCLE_NO" xml:space="preserve">
+    <value>갠트리순환번호</value>
+  </data>
+  <data name="GAN_JOB_IDCT_TYPE" xml:space="preserve">
+    <value>갠트리작업유형</value>
+  </data>
+  <data name="GAN_TASK_TYPE" xml:space="preserve">
+    <value>갠트리TASK유형</value>
+  </data>
+  <data name="GAN_WRK_CMPT_DATE" xml:space="preserve">
+    <value>ECS 작업완료일시</value>
+  </data>
+  <data name="GAN_WRK_IDCT_DATE" xml:space="preserve">
+    <value>ECS 작업지시일시</value>
+  </data>
+  <data name="GUBUN" xml:space="preserve">
+    <value>구분</value>
+  </data>
+  <data name="HGT" xml:space="preserve">
+    <value>높이</value>
+  </data>
+  <data name="IB_WORK_PLAN_LIST" xml:space="preserve">
+    <value>입고 계획 리스트</value>
+  </data>
+  <data name="INCLD_ORD" xml:space="preserve">
+    <value>포함 오더</value>
+  </data>
+  <data name="INDT_ID" xml:space="preserve">
+    <value>인덕션</value>
+  </data>
+  <data name="INDT_YMD_HMS" xml:space="preserve">
+    <value>투입 시간</value>
+  </data>
+  <data name="INIT_YN" xml:space="preserve">
+    <value>초기화 여부</value>
+  </data>
+  <data name="INTVL" xml:space="preserve">
+    <value>Interval</value>
+  </data>
+  <data name="INV_BCD" xml:space="preserve">
+    <value>송장 바코드</value>
+  </data>
+  <data name="INV_NO_REGEX" xml:space="preserve">
+    <value>Invoice 바코드</value>
+  </data>
+  <data name="IN_PLAN_YMD" xml:space="preserve">
+    <value>입고예정일자</value>
+  </data>
+  <data name="IN_WORK" xml:space="preserve">
+    <value>입고</value>
+  </data>
+  <data name="IPS_ELEMENT_NO" xml:space="preserve">
+    <value>IPS Element No</value>
+  </data>
+  <data name="JOB_ID" xml:space="preserve">
+    <value>Job ID</value>
+  </data>
+  <data name="JOB_NM" xml:space="preserve">
+    <value>Job 명</value>
+  </data>
+  <data name="JOB_NO" xml:space="preserve">
+    <value>Job 번호</value>
+  </data>
+  <data name="JOB_SEQ" xml:space="preserve">
+    <value>Job 순번</value>
+  </data>
+  <data name="JOB_YMD" xml:space="preserve">
+    <value>작업일자</value>
+  </data>
+  <data name="LEN" xml:space="preserve">
+    <value>길이</value>
+  </data>
+  <data name="LEN_UOM" xml:space="preserve">
+    <value>길이 단위</value>
+  </data>
+  <data name="LINK_EQP_ID" xml:space="preserve">
+    <value>연결설비ID</value>
+  </data>
+  <data name="LOC" xml:space="preserve">
+    <value>로케이션</value>
+  </data>
+  <data name="LOC_BAL" xml:space="preserve">
+    <value>Location Balance</value>
+  </data>
+  <data name="LOC_BTCH_INFO" xml:space="preserve">
+    <value>로케이션 배치관리</value>
+  </data>
+  <data name="LOC_CD" xml:space="preserve">
+    <value>위치 코드</value>
+  </data>
+  <data name="LOC_CD_REQ" xml:space="preserve">
+    <value>(*) 위치 코드</value>
+  </data>
+  <data name="LOC_REQ" xml:space="preserve">
+    <value>(*) 로케이션</value>
+  </data>
+  <data name="LOG_IN" xml:space="preserve">
+    <value>로그인</value>
+  </data>
+  <data name="LST_TOT_NO" xml:space="preserve">
+    <value>마지막 토트 번호</value>
+  </data>
+  <data name="MAGNI" xml:space="preserve">
+    <value>배율</value>
+  </data>
+  <data name="MAST_STAND_SKU_QTY" xml:space="preserve">
+    <value>마스터 기준 SKU수</value>
+  </data>
+  <data name="MAX_CELL_HGT" xml:space="preserve">
+    <value>셀최대높이</value>
+  </data>
+  <data name="MAX_CELL_QTY" xml:space="preserve">
+    <value>최대 점유 셀 수</value>
+  </data>
+  <data name="MENU_DESC" xml:space="preserve">
+    <value>메뉴 상세</value>
+  </data>
+  <data name="MENU_ICON" xml:space="preserve">
+    <value>메뉴 아이콘</value>
+  </data>
+  <data name="MENU_ID" xml:space="preserve">
+    <value>메뉴 ID</value>
+  </data>
+  <data name="MENU_ID_REQ" xml:space="preserve">
+    <value>(*) 메뉴 ID</value>
+  </data>
+  <data name="MENU_LEVEL" xml:space="preserve">
+    <value>메뉴 레벨</value>
+  </data>
+  <data name="MENU_LIST_BY_ROLE" xml:space="preserve">
+    <value>권한별 메뉴 리스트</value>
+  </data>
+  <data name="MENU_NM" xml:space="preserve">
+    <value>메뉴명</value>
+  </data>
+  <data name="MENU_NM_REQ" xml:space="preserve">
+    <value>(*) 메뉴명</value>
+  </data>
+  <data name="MENU_ROLE" xml:space="preserve">
+    <value>메뉴 권한</value>
+  </data>
+  <data name="MENU_TYPE" xml:space="preserve">
+    <value>메뉴 타입</value>
+  </data>
+  <data name="MENU_URL" xml:space="preserve">
+    <value>메뉴 URL</value>
+  </data>
+  <data name="MESSAGE" xml:space="preserve">
+    <value>ECS 호출 로그</value>
+  </data>
+  <data name="MIN_SUP_SKU_UNIT" xml:space="preserve">
+    <value>보충 SKU 최소단위</value>
+  </data>
+  <data name="MODULE_CD" xml:space="preserve">
+    <value>모듈코드</value>
+  </data>
+  <data name="MONTH" xml:space="preserve">
+    <value>월</value>
+  </data>
+  <data name="MR_CONN_STR" xml:space="preserve">
+    <value>Maria DB 접속 정보</value>
+  </data>
+  <data name="MS_CONN_STR" xml:space="preserve">
+    <value>MS SQL 접속 정보</value>
+  </data>
+  <data name="NEW" xml:space="preserve">
+    <value>신규</value>
+  </data>
+  <data name="NML_PROC" xml:space="preserve">
+    <value>정상 처리</value>
+  </data>
+  <data name="NML_QTY" xml:space="preserve">
+    <value>정상분류</value>
+  </data>
+  <data name="NML_RSLT_QTY" xml:space="preserve">
+    <value>정상분류</value>
+  </data>
+  <data name="NML_SRT_QTY" xml:space="preserve">
+    <value>정상 분류</value>
+  </data>
+  <data name="NML_SRT_RT" xml:space="preserve">
+    <value>정상분류율 (%)</value>
+  </data>
+  <data name="NOTI_FROM_DT" xml:space="preserve">
+    <value>공지사항 시작일</value>
+  </data>
+  <data name="NOTI_INFO_LIST" xml:space="preserve">
+    <value>공지사항 리스트</value>
+  </data>
+  <data name="NOTI_SEQ" xml:space="preserve">
+    <value>공지사항 순번</value>
+  </data>
+  <data name="NOTI_TITLE" xml:space="preserve">
+    <value>공지사항 제목</value>
+  </data>
+  <data name="NOTI_TO_DT" xml:space="preserve">
+    <value>공지사항 종료일</value>
+  </data>
+  <data name="NOT_CHARG_EQP" xml:space="preserve">
+    <value>미담당 설비</value>
+  </data>
+  <data name="OB_WORK_PLAN_LIST" xml:space="preserve">
+    <value>출고 계획 리스트</value>
+  </data>
+  <data name="OCCUP_CELL_CNT" xml:space="preserve">
+    <value>점유 셀수</value>
+  </data>
+  <data name="OCUR_DT" xml:space="preserve">
+    <value>발생일시</value>
+  </data>
+  <data name="OCUR_YMD" xml:space="preserve">
+    <value>발생기간</value>
+  </data>
+  <data name="OPT0105_SUB_TITL" xml:space="preserve">
+    <value>보충 진행에 따른 시뮬레이션 결과</value>
+  </data>
+  <data name="OPT0106_SUB_TITL" xml:space="preserve">
+    <value>결과 화면</value>
+  </data>
+  <data name="OPT_DATE" xml:space="preserve">
+    <value>날짜선택</value>
+  </data>
+  <data name="OPT_ORD_SEQ" xml:space="preserve">
+    <value>최적화 오더순번</value>
+  </data>
+  <data name="OPT_RSLT" xml:space="preserve">
+    <value>최적화 결과</value>
+  </data>
+  <data name="OPT_SET" xml:space="preserve">
+    <value>옵션 변경</value>
+  </data>
+  <data name="OPT_SKU_SEQ" xml:space="preserve">
+    <value>최적화 SKU순번</value>
+  </data>
+  <data name="OPT_STAN" xml:space="preserve">
+    <value>최적화 기준</value>
+  </data>
+  <data name="ORCL_CONN_STR" xml:space="preserve">
+    <value>Oracle 접속 정보</value>
+  </data>
+  <data name="ORD" xml:space="preserve">
+    <value>오더</value>
+  </data>
+  <data name="ORDER_CNT" xml:space="preserve">
+    <value>주문수</value>
+  </data>
+  <data name="ORDER_NO" xml:space="preserve">
+    <value>주문번호</value>
+  </data>
+  <data name="ORDER_QTY" xml:space="preserve">
+    <value>주문수량</value>
+  </data>
+  <data name="ORDER_YMD" xml:space="preserve">
+    <value>주문일자</value>
+  </data>
+  <data name="ORD_CNT" xml:space="preserve">
+    <value>오더수</value>
+  </data>
+  <data name="ORD_DTL_SEQ" xml:space="preserve">
+    <value>오더 상세 순번</value>
+  </data>
+  <data name="ORD_LEN" xml:space="preserve">
+    <value>오더 LEN</value>
+  </data>
+  <data name="ORD_LINE_CNT" xml:space="preserve">
+    <value>오더라인수</value>
+  </data>
+  <data name="ORD_LINE_NO" xml:space="preserve">
+    <value>오더 라인번호</value>
+  </data>
+  <data name="ORD_LINE_NO_REQ" xml:space="preserve">
+    <value>(*) 오더 라인번호</value>
+  </data>
+  <data name="ORD_LIST" xml:space="preserve">
+    <value>오더 리스트</value>
+  </data>
+  <data name="ORD_NO" xml:space="preserve">
+    <value>오더 번호</value>
+  </data>
+  <data name="ORD_NO_REQ" xml:space="preserve">
+    <value>(*) 오더 번호</value>
+  </data>
+  <data name="ORD_SEQ" xml:space="preserve">
+    <value>오더 순번</value>
+  </data>
+  <data name="ORD_STAT_CD" xml:space="preserve">
+    <value>오더 상태코드</value>
+  </data>
+  <data name="OUT_WORK" xml:space="preserve">
+    <value>출고</value>
+  </data>
+  <data name="P1_ACCS_YN" xml:space="preserve">
+    <value>피커1 가용여부</value>
+  </data>
+  <data name="P2_ACCS_YN" xml:space="preserve">
+    <value>피커2 가용여부</value>
+  </data>
+  <data name="PALLET_CNT" xml:space="preserve">
+    <value>파렛트수</value>
+  </data>
+  <data name="PARAM1" xml:space="preserve">
+    <value>Parameter1</value>
+  </data>
+  <data name="PARAM2" xml:space="preserve">
+    <value>Parameter2</value>
+  </data>
+  <data name="PARENT_MENU_ID" xml:space="preserve">
+    <value>상위 메뉴 ID</value>
+  </data>
+  <data name="PA_STK_HGT" xml:space="preserve">
+    <value>적재스택높이</value>
+  </data>
+  <data name="PCL_TYPE_CD" xml:space="preserve">
+    <value>화물유형 코드</value>
+  </data>
+  <data name="PC_IP" xml:space="preserve">
+    <value>PC IP</value>
+  </data>
+  <data name="PICK_SKU_CNT" xml:space="preserve">
+    <value>피킹 SKU수</value>
+  </data>
+  <data name="PID" xml:space="preserve">
+    <value>PID</value>
+  </data>
+  <data name="PKR_ID" xml:space="preserve">
+    <value>피커ID</value>
+  </data>
+  <data name="PKR_MV_SEQ" xml:space="preserve">
+    <value>피커이동순서</value>
+  </data>
+  <data name="PKR_PRIORITY_NO" xml:space="preserve">
+    <value>피커우선순위</value>
+  </data>
+  <data name="PLAN_CD" xml:space="preserve">
+    <value>PLAN코드</value>
+  </data>
+  <data name="PLAN_CHUTE" xml:space="preserve">
+    <value>계획 슈트</value>
+  </data>
+  <data name="PLAN_CHUTE_ID1" xml:space="preserve">
+    <value>계획 슈트1</value>
+  </data>
+  <data name="PLAN_CHUTE_ID2" xml:space="preserve">
+    <value>계획 슈트2</value>
+  </data>
+  <data name="PLAN_CHUTE_ID3" xml:space="preserve">
+    <value>계획 슈트3</value>
+  </data>
+  <data name="PLAN_NM" xml:space="preserve">
+    <value>PLAN명</value>
+  </data>
+  <data name="PLAN_ORD_SEQ" xml:space="preserve">
+    <value>계획 오더순번</value>
+  </data>
+  <data name="PLAN_QTY" xml:space="preserve">
+    <value>계획 수량</value>
+  </data>
+  <data name="PLAN_QTY1" xml:space="preserve">
+    <value>출고수량</value>
+  </data>
+  <data name="PLAN_QTY_BOX" xml:space="preserve">
+    <value>출고수량(BOX)</value>
+  </data>
+  <data name="PLAN_QTY_REQ" xml:space="preserve">
+    <value>(*) 계획 수량</value>
+  </data>
+  <data name="PLAN_QTY_TOTAL" xml:space="preserve">
+    <value>출고수량(Total)</value>
+  </data>
+  <data name="PLAN_SKU_SEQ" xml:space="preserve">
+    <value>계획 SKU순번</value>
+  </data>
+  <data name="PLC_CHUTE_ID" xml:space="preserve">
+    <value>PLC 슈트 ID</value>
+  </data>
+  <data name="POS_X" xml:space="preserve">
+    <value>열좌표</value>
+  </data>
+  <data name="POS_Y" xml:space="preserve">
+    <value>행좌표</value>
+  </data>
+  <data name="PRC_ID" xml:space="preserve">
+    <value>프로세스 ID</value>
+  </data>
+  <data name="PROC_CD" xml:space="preserve">
+    <value>처리결과</value>
+  </data>
+  <data name="PROC_CNT" xml:space="preserve">
+    <value>성공건수</value>
+  </data>
+  <data name="PROC_MSG" xml:space="preserve">
+    <value>처리 메시지</value>
+  </data>
+  <data name="PU_TGT_HGT" xml:space="preserve">
+    <value>픽업대상높이</value>
+  </data>
+  <data name="PWD" xml:space="preserve">
+    <value>비밀번호</value>
+  </data>
+  <data name="(MSG)PWD_CHG_SWCS201_02_FIRST" xml:space="preserve">
+    <value>암호는 14자 이상이어야 합니다.</value>
+  </data>
+  <data name="PWD_CHG_SWCS201_02_SECOND" xml:space="preserve">
+    <value>최소한 하나의 숫자를 제공해야합니다.</value>
+  </data>
+  <data name="PWD_CHG_SWCS201_02_THIRD" xml:space="preserve">
+    <value>하나 이상의 대문자를 제공합니다.</value>
+  </data>
+  <data name="PWD_CONF" xml:space="preserve">
+    <value>비밀번호 확인</value>
+  </data>
+  <data name="PYSI_CELL_QTY" xml:space="preserve">
+    <value>물리적 셀 수</value>
+  </data>
+  <data name="QPS_OPT_SET" xml:space="preserve">
+    <value>QPS Option Setting</value>
+  </data>
+  <data name="QTY" xml:space="preserve">
+    <value>수량</value>
+  </data>
+  <data name="RANGE" xml:space="preserve">
+    <value>Range</value>
+  </data>
+  <data name="RATE" xml:space="preserve">
+    <value>비율</value>
+  </data>
+  <data name="RECIRC_CNT" xml:space="preserve">
+    <value>순환횟수</value>
+  </data>
+  <data name="REGEX_LIST" xml:space="preserve">
+    <value>적용중</value>
+  </data>
+  <data name="REGEX_LIST_BEF" xml:space="preserve">
+    <value>이전</value>
+  </data>
+  <data name="REGEX_TEST" xml:space="preserve">
+    <value>정규식 테스트</value>
+  </data>
+  <data name="REG_DT" xml:space="preserve">
+    <value>등록일시</value>
+  </data>
+  <data name="REG_ID" xml:space="preserve">
+    <value>등록자 ID</value>
+  </data>
+  <data name="REJECT_PRCT" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="REJECT_QTY" xml:space="preserve">
+    <value>건수</value>
+  </data>
+  <data name="REJECT_TYPE" xml:space="preserve">
+    <value>Reject 유형</value>
+  </data>
+  <data name="REPROCESS" xml:space="preserve">
+    <value>재처리</value>
+  </data>
+  <data name="RESULT_BY_TIME" xml:space="preserve">
+    <value>시간대별 처리 현황</value>
+  </data>
+  <data name="RESULT_LIST" xml:space="preserve">
+    <value>결과 리스트</value>
+  </data>
+  <data name="RGN_BCD" xml:space="preserve">
+    <value>분류 코드</value>
+  </data>
+  <data name="RGN_BCD_REGEX" xml:space="preserve">
+    <value>Sorting 바코드</value>
+  </data>
+  <data name="RGN_CD" xml:space="preserve">
+    <value>권역 코드</value>
+  </data>
+  <data name="RGN_LIST" xml:space="preserve">
+    <value>권역 리스트</value>
+  </data>
+  <data name="RGN_MGMT_LIST" xml:space="preserve">
+    <value>권역 리스트</value>
+  </data>
+  <data name="RGN_NM" xml:space="preserve">
+    <value>권역 명</value>
+  </data>
+  <data name="RJT_PRCS_STATUS" xml:space="preserve">
+    <value>Reject 처리 현황</value>
+  </data>
+  <data name="RJT_STATUS_LIST" xml:space="preserve">
+    <value>Reject 현황 리스트</value>
+  </data>
+  <data name="ROC_EXEC" xml:space="preserve">
+    <value>ROC 수행</value>
+  </data>
+  <data name="ROC_OPT_RSLT" xml:space="preserve">
+    <value>ROC 최적화 결과</value>
+  </data>
+  <data name="ROC_OPT_SEQ" xml:space="preserve">
+    <value>ROC 최적화 차수</value>
+  </data>
+  <data name="ROC_OPT_SET" xml:space="preserve">
+    <value>ROC Option Setting</value>
+  </data>
+  <data name="ROLE_CD" xml:space="preserve">
+    <value>권한코드</value>
+  </data>
+  <data name="ROLE_CD_REQ" xml:space="preserve">
+    <value>(*) 권한코드</value>
+  </data>
+  <data name="ROLE_LIST" xml:space="preserve">
+    <value>권한 리스트</value>
+  </data>
+  <data name="ROLE_NM" xml:space="preserve">
+    <value>권한명</value>
+  </data>
+  <data name="ROLE_NM_REQ" xml:space="preserve">
+    <value>(*) 권한명</value>
+  </data>
+  <data name="ROW" xml:space="preserve">
+    <value>행</value>
+  </data>
+  <data name="ROW_ADD" xml:space="preserve">
+    <value>행 추가</value>
+  </data>
+  <data name="ROW_DEL" xml:space="preserve">
+    <value>행 삭제</value>
+  </data>
+  <data name="RSLT" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="RSLT_BY_CHUTE" xml:space="preserve">
+    <value>슈트별 처리현황</value>
+  </data>
+  <data name="RSLT_BY_RGN" xml:space="preserve">
+    <value>권역별 처리현황 리스트</value>
+  </data>
+  <data name="RSLT_BY_TIME" xml:space="preserve">
+    <value>시간대별 처리 갯수</value>
+  </data>
+  <data name="RSLT_CHUTE_ID" xml:space="preserve">
+    <value>실적 슈트</value>
+  </data>
+  <data name="RSLT_INQ_SCRN" xml:space="preserve">
+    <value>결과 조회 화면</value>
+  </data>
+  <data name="RSLT_PRCT" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="RSLT_QTY" xml:space="preserve">
+    <value>결과 수량</value>
+  </data>
+  <data name="RSLT_QTY_A1003" xml:space="preserve">
+    <value>물량</value>
+  </data>
+  <data name="RT_TOT_QTY" xml:space="preserve">
+    <value>비율 (%)</value>
+  </data>
+  <data name="SAVE" xml:space="preserve">
+    <value>저장</value>
+  </data>
+  <data name="SCAN_DT" xml:space="preserve">
+    <value>투입일시</value>
+  </data>
+  <data name="SCAN_STATUS_MGMT" xml:space="preserve">
+    <value>스캔 현황 리스트</value>
+  </data>
+  <data name="SEARCH" xml:space="preserve">
+    <value>조회</value>
+  </data>
+  <data name="SER_COMM_NO" xml:space="preserve">
+    <value>시리얼 통신 번호</value>
+  </data>
+  <data name="SHIP_TO_CD" xml:space="preserve">
+    <value>거래처 코드</value>
+  </data>
+  <data name="SHIP_TO_CD_REQ" xml:space="preserve">
+    <value>(*)거래처 코드</value>
+  </data>
+  <data name="SHIP_TO_LIST" xml:space="preserve">
+    <value>거래처 리스트</value>
+  </data>
+  <data name="SHIP_TO_NM" xml:space="preserve">
+    <value>거래처 명</value>
+  </data>
+  <data name="SHIP_TO_NM_REQ" xml:space="preserve">
+    <value>(*)거래처 명</value>
+  </data>
+  <data name="SKU" xml:space="preserve">
+    <value>SKU</value>
+  </data>
+  <data name="SKU_BCR_INFO" xml:space="preserve">
+    <value>BCR 리스트</value>
+  </data>
+  <data name="SKU_CBM" xml:space="preserve">
+    <value>SKU체적</value>
+  </data>
+  <data name="SKU_CD" xml:space="preserve">
+    <value>SKU 코드</value>
+  </data>
+  <data name="SKU_CD_REQ" xml:space="preserve">
+    <value>(*)SKU 코드</value>
+  </data>
+  <data name="SKU_CELL_TYPE" xml:space="preserve">
+    <value>SKU별 셀 유형</value>
+  </data>
+  <data name="SKU_CELL_TYPE_MGT" xml:space="preserve">
+    <value>SKU 셀 유형관리</value>
+  </data>
+  <data name="SKU_CLS" xml:space="preserve">
+    <value>상품분류</value>
+  </data>
+  <data name="SKU_CNT" xml:space="preserve">
+    <value>SKU 수</value>
+  </data>
+  <data name="SKU_CNT1" xml:space="preserve">
+    <value>상품수</value>
+  </data>
+  <data name="SKU_CODE" xml:space="preserve">
+    <value>상품코드</value>
+  </data>
+  <data name="SKU_HGT_LEN" xml:space="preserve">
+    <value>SKU높이길이</value>
+  </data>
+  <data name="SKU_INFO" xml:space="preserve">
+    <value>SKU 리스트</value>
+  </data>
+  <data name="SKU_LEN" xml:space="preserve">
+    <value>SKU LEN</value>
+  </data>
+  <data name="SKU_NAME" xml:space="preserve">
+    <value>상품명</value>
+  </data>
+  <data name="SKU_NM" xml:space="preserve">
+    <value>SKU 명</value>
+  </data>
+  <data name="SKU_NM_REQ" xml:space="preserve">
+    <value>(*)SKU명</value>
+  </data>
+  <data name="SKU_SUP" xml:space="preserve">
+    <value>SKU 보충</value>
+  </data>
+  <data name="SKU_TMPT_TYPE_CD" xml:space="preserve">
+    <value>상품 온도 유형</value>
+  </data>
+  <data name="SKU_VERT_LEN" xml:space="preserve">
+    <value>SKU세로길이</value>
+  </data>
+  <data name="SKU_WGT" xml:space="preserve">
+    <value>SKU 중량</value>
+  </data>
+  <data name="SKU_WTH_LEN" xml:space="preserve">
+    <value>SKU가로길이</value>
+  </data>
+  <data name="SORTER_ELEMENT_NO" xml:space="preserve">
+    <value>Sorter Element No</value>
+  </data>
+  <data name="SORTER_RSLT_BY_DAY" xml:space="preserve">
+    <value>일자별 처리현황 리스트</value>
+  </data>
+  <data name="SORTER_RSLT_BY_DAY_CHRT" xml:space="preserve">
+    <value>일자별 처리현황 도표</value>
+  </data>
+  <data name="SORT_DT" xml:space="preserve">
+    <value>분류일자</value>
+  </data>
+  <data name="SORT_MODE" xml:space="preserve">
+    <value>Sorting Mode</value>
+  </data>
+  <data name="SORT_SEQ" xml:space="preserve">
+    <value>정렬순서</value>
+  </data>
+  <data name="SRCH_SCAN_DT_REQ" xml:space="preserve">
+    <value>(*) 스캔일자</value>
+  </data>
+  <data name="SRT" xml:space="preserve">
+    <value>소터</value>
+  </data>
+  <data name="SRT_ERR_CD" xml:space="preserve">
+    <value>소터 오류 코드</value>
+  </data>
+  <data name="SRT_ERR_NM" xml:space="preserve">
+    <value>소터 오류 명</value>
+  </data>
+  <data name="SRT_RATIO_CHRT" xml:space="preserve">
+    <value>권역별 처리현황 도표</value>
+  </data>
+  <data name="SRT_RSN_CD" xml:space="preserve">
+    <value>소터 사유 코드</value>
+  </data>
+  <data name="SRT_RSN_NM" xml:space="preserve">
+    <value>소터 Reject 사유</value>
+  </data>
+  <data name="SRT_WRK_CMPT_DT" xml:space="preserve">
+    <value>분류일시</value>
+  </data>
+  <data name="SRT_WRK_STAT_CD" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="START_REG_NO" xml:space="preserve">
+    <value>시작 등록번호</value>
+  </data>
+  <data name="STATE" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="STK_HGT" xml:space="preserve">
+    <value>적재단</value>
+  </data>
+  <data name="STK_NO" xml:space="preserve">
+    <value>적재순번</value>
+  </data>
+  <data name="STOCK" xml:space="preserve">
+    <value>재고</value>
+  </data>
+  <data name="STOCK_QTY" xml:space="preserve">
+    <value>적재수량</value>
+  </data>
+  <data name="STRT_DT" xml:space="preserve">
+    <value>시작일시</value>
+  </data>
+  <data name="SUCC_TYPE" xml:space="preserve">
+    <value>결과</value>
+  </data>
+  <data name="SUCC_YN" xml:space="preserve">
+    <value>성공 여부</value>
+  </data>
+  <data name="SUM_HM" xml:space="preserve">
+    <value>시간대</value>
+  </data>
+  <data name="SUM_QTY" xml:space="preserve">
+    <value>총량</value>
+  </data>
+  <data name="SUM_YMD" xml:space="preserve">
+    <value>기간</value>
+  </data>
+  <data name="SUPP_SKU_CNT" xml:space="preserve">
+    <value>보충 SKU수</value>
+  </data>
+  <data name="SUP_BTCH_DIV_CNT" xml:space="preserve">
+    <value>보충배치 분할 갯수</value>
+  </data>
+  <data name="TASK_CNT" xml:space="preserve">
+    <value>대상건수</value>
+  </data>
+  <data name="TASK_WRK_BOX_QTY" xml:space="preserve">
+    <value>TASK 작업수량</value>
+  </data>
+  <data name="TEL_NO" xml:space="preserve">
+    <value>연락처</value>
+  </data>
+  <data name="TEMPLATE_DOWN" xml:space="preserve">
+    <value>Template 다운</value>
+  </data>
+  <data name="TIME" xml:space="preserve">
+    <value>시간</value>
+  </data>
+  <data name="TM_STAMP" xml:space="preserve">
+    <value>로그일시</value>
+  </data>
+  <data name="TM_STAMP_REQ" xml:space="preserve">
+    <value>(*)로그일시</value>
+  </data>
+  <data name="TO" xml:space="preserve">
+    <value>TO</value>
+  </data>
+  <data name="TOT" xml:space="preserve">
+    <value>전체</value>
+  </data>
+  <data name="TOT_BOX_BTCH_REG" xml:space="preserve">
+    <value>토트박스 일괄 등록</value>
+  </data>
+  <data name="TOT_BOX_LIST" xml:space="preserve">
+    <value>토트박스 리스트</value>
+  </data>
+  <data name="TOT_BOX_NO" xml:space="preserve">
+    <value>토트박스 번호</value>
+  </data>
+  <data name="TOT_BOX_NO1" xml:space="preserve">
+    <value>토트박스번호</value>
+  </data>
+  <data name="TOT_BOX_REG_CNT" xml:space="preserve">
+    <value>토트박스 등록수</value>
+  </data>
+  <data name="TOT_BOX_STATE" xml:space="preserve">
+    <value>토트박스 상태</value>
+  </data>
+  <data name="TOT_BOX_TYPE" xml:space="preserve">
+    <value>토트박스 타입</value>
+  </data>
+  <data name="TOT_DATA_CNT" xml:space="preserve">
+    <value>전체 데이터 수</value>
+  </data>
+  <data name="TOT_QTY" xml:space="preserve">
+    <value>합계</value>
+  </data>
+  <data name="TOT_QTY1" xml:space="preserve">
+    <value>전체수량</value>
+  </data>
+  <data name="TO_CELL_ID" xml:space="preserve">
+    <value>TO CELL ID</value>
+  </data>
+  <data name="TREE_ID" xml:space="preserve">
+    <value>트리 ID</value>
+  </data>
+  <data name="TYPE" xml:space="preserve">
+    <value>유형</value>
+  </data>
+  <data name="TYPE1" xml:space="preserve">
+    <value>TYPE1</value>
+  </data>
+  <data name="TYPE2" xml:space="preserve">
+    <value>TYPE2</value>
+  </data>
+  <data name="TYPE3" xml:space="preserve">
+    <value>TYPE3</value>
+  </data>
+  <data name="TYPE4" xml:space="preserve">
+    <value>TYPE4</value>
+  </data>
+  <data name="UNIT_CD" xml:space="preserve">
+    <value>유닛코드</value>
+  </data>
+  <data name="UPDATE" xml:space="preserve">
+    <value>수정</value>
+  </data>
+  <data name="UPD_DT" xml:space="preserve">
+    <value>수정날짜</value>
+  </data>
+  <data name="UPD_DT_LAST" xml:space="preserve">
+    <value>최종수신일자</value>
+  </data>
+  <data name="UPD_ID" xml:space="preserve">
+    <value>수정자</value>
+  </data>
+  <data name="UPD_TIME" xml:space="preserve">
+    <value>수정 일시</value>
+  </data>
+  <data name="USER_ID" xml:space="preserve">
+    <value>사용자 ID</value>
+  </data>
+  <data name="USER_ID_REQ" xml:space="preserve">
+    <value>(*) 사용자 ID</value>
+  </data>
+  <data name="USER_LIST" xml:space="preserve">
+    <value>사용자 리스트</value>
+  </data>
+  <data name="USER_NM" xml:space="preserve">
+    <value>사용자명</value>
+  </data>
+  <data name="USER_NM_REQ" xml:space="preserve">
+    <value>(*) 사용자명</value>
+  </data>
+  <data name="USER_PER_CHARG_EQP" xml:space="preserve">
+    <value>사용자 별 담당설비</value>
+  </data>
+  <data name="USE_YN" xml:space="preserve">
+    <value>사용 여부</value>
+  </data>
+  <data name="USE_YN_1" xml:space="preserve">
+    <value>사용여부</value>
+  </data>
+  <data name="USE_YN_DTL" xml:space="preserve">
+    <value>상세 코드 사용여부</value>
+  </data>
+  <data name="USE_YN_HDR" xml:space="preserve">
+    <value>대분류 코드 사용여부</value>
+  </data>
+  <data name="VERT" xml:space="preserve">
+    <value>세로</value>
+  </data>
+  <data name="WAVE_NO" xml:space="preserve">
+    <value>차수</value>
+  </data>
+  <data name="WAV_NO" xml:space="preserve">
+    <value>Wave 번호</value>
+  </data>
+  <data name="WGT_UOM" xml:space="preserve">
+    <value>중량 단위</value>
+  </data>
+  <data name="WID" xml:space="preserve">
+    <value>너비</value>
+  </data>
+  <data name="WORK_STATE" xml:space="preserve">
+    <value>작업상태</value>
+  </data>
+  <data name="WORK_YMD" xml:space="preserve">
+    <value>작업일자</value>
+  </data>
+  <data name="WRK_DT" xml:space="preserve">
+    <value>작업 일시</value>
+  </data>
+  <data name="WRK_PLAN_YMD" xml:space="preserve">
+    <value>출고일자</value>
+  </data>
+  <data name="WRK_STAT_NAME" xml:space="preserve">
+    <value>작업처리상태</value>
+  </data>
+  <data name="WRK_TYPE" xml:space="preserve">
+    <value>작업 유형</value>
+  </data>
+  <data name="WRK_YMD" xml:space="preserve">
+    <value>작업 일자</value>
+  </data>
+  <data name="WTH" xml:space="preserve">
+    <value>가로</value>
+  </data>
+  <data name="YEAR" xml:space="preserve">
+    <value>년</value>
+  </data>
+  <data name="YMD" xml:space="preserve">
+    <value>일자</value>
+  </data>
+  <data name="ZIP_CD" xml:space="preserve">
+    <value>ZIP 코드</value>
+  </data>
+  <data name="ZONE_ID" xml:space="preserve">
+    <value>Zone ID</value>
+  </data>
+  <data name="BTN5" xml:space="preserve">
+    <value>Reset</value>
+  </data>
+  <data name="PROG_KIND" xml:space="preserve">
+    <value>프로그램 종류</value>
+  </data>
+  <data name="DEPLOY" xml:space="preserve">
+    <value>배포</value>
+  </data>
+  <data name="ORD_LINE_NO_2" xml:space="preserve">
+    <value>주문상세번호</value>
+  </data>
+  <data name="LOCAL_LIST" xml:space="preserve">
+    <value>로컬 리스트</value>
+  </data>
+  <data name="SERVER_LIST" xml:space="preserve">
+    <value>서버 리스트</value>
+  </data>
+  <data name="LOCAL_FILE" xml:space="preserve">
+    <value>로컬 파일</value>
+  </data>
+  <data name="SERVER_FILE" xml:space="preserve">
+    <value>서버 파일</value>
+  </data>
+  <data name="UPD_DATE_TIME" xml:space="preserve">
+    <value>수정일시</value>
+  </data>
+  <data name="BTCH_CANCEL" xml:space="preserve">
+    <value>배치취소</value>
+  </data>
+  <data name="BTCH_CLOSE" xml:space="preserve">
+    <value>배치종료</value>
+  </data>
+  <data name="BTCH_CREATE" xml:space="preserve">
+    <value>배치생성</value>
+  </data>
+  <data name="PLAN_CREATE" xml:space="preserve">
+    <value>PLAN 수립</value>
+  </data>
+  <data name="(MSG)ASK_CLOSE_BTCH_SAVE" xml:space="preserve">
+    <value>배치를 종료하시겠습니까?</value>
+  </data>
+  <data name="(MSG)CMPT_BTCH_CLOSE_SAVE" xml:space="preserve">
+    <value>배치종료가 정상처리되었습니다.</value>
+  </data>
+  <data name="SRT_WRK_STAT_NM" xml:space="preserve">
+    <value>상태 명</value>
+  </data>
+  <data name="IP_NO" xml:space="preserve">
+    <value>IP_NO</value>
+  </data>
+  <data name="RMK" xml:space="preserve">
+    <value>비고</value>
+  </data>
+  <data name="IP_MGMT_LIST" xml:space="preserve">
+    <value>IP 리스트</value>
+  </data>
+  <data name="(MSG)ASK_DEL" xml:space="preserve">
+    <value>선택한 데이터를 삭제하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ERR_DEL_DATA" xml:space="preserve">
+    <value>데이터 삭제 중 오류가 발생했습니다.</value>
+  </data>
+  <data name="(MSG)CMPT_DEL" xml:space="preserve">
+    <value>삭제되었습니다.</value>
+  </data>
+  <data name="TOTAL_ALL" xml:space="preserve">
+    <value>전체 합</value>
+  </data>
+  <data name="FR_INIT_HM" xml:space="preserve">
+    <value>시작 초기 시간</value>
+  </data>
+  <data name="FR_INIT_YMD_DIFF" xml:space="preserve">
+    <value>시작 초기 일자 차이</value>
+  </data>
+  <data name="IP_MGMT_YN" xml:space="preserve">
+    <value>IP 관리 여부</value>
+  </data>
+  <data name="TO_INIT_YMD_DIFF" xml:space="preserve">
+    <value>종료 초기 일자 차이</value>
+  </data>
+  <data name="TO_INT_HM" xml:space="preserve">
+    <value>종료 초기 시간</value>
+  </data>
+  <data name="FR_CURR_DATE" xml:space="preserve">
+    <value>시작 현재일자</value>
+  </data>
+  <data name="TO_CURR_DATE" xml:space="preserve">
+    <value>종료 현재일자</value>
+  </data>
+  <data name="TO_INIT_HM" xml:space="preserve">
+    <value>종료 초기시간</value>
+  </data>
+  <data name="RSLT_MSG" xml:space="preserve">
+    <value>결과 메세지</value>
+  </data>
+  <data name="(MSG)ASK_CLOSE_ALL_TAB" xml:space="preserve">
+    <value>모든 탭을 종료하시겠습니까?|현재 작업중인 화면의 데이터는 저장되지 않습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_CHANGE_DATA" xml:space="preserve">
+    <value>변경된 데이터가 없습니다.</value>
+  </data>
+  <data name="CLOSE_ALL_TAB" xml:space="preserve">
+    <value>모든 탭 종료</value>
+  </data>
+  <data name="EQP_ERR_CD" xml:space="preserve">
+    <value>설비오류코드</value>
+  </data>
+  <data name="EQP_ERR_CD_NM" xml:space="preserve">
+    <value>설비오류코드명</value>
+  </data>
+  <data name="ERR_CD" xml:space="preserve">
+    <value>오류 코드</value>
+  </data>
+  <data name="ERR_CD_NM" xml:space="preserve">
+    <value>오류 코드명</value>
+  </data>
+  <data name="QTY_PER_ERRCD_RGN" xml:space="preserve">
+    <value>분류코드별 오류별 수량</value>
+  </data>
+  <data name="RJT_TYPE" xml:space="preserve">
+    <value>리젝 구분</value>
+  </data>
+  <data name="TOTAL_PER_ERRCD" xml:space="preserve">
+    <value>오류코드별 집계</value>
+  </data>
+  <data name="TOTAL_QTY" xml:space="preserve">
+    <value>총 수량</value>
+  </data>
+  <data name="CV_ELEMENT_NO" xml:space="preserve">
+    <value>Conveyor Element No</value>
+  </data>
+  <data name="ID_INPUT" xml:space="preserve">
+    <value>입력창</value>
+  </data>
+  <data name="(MSG)ERR_NOT_EXIST_PATH" xml:space="preserve">
+    <value>경로가 존재하지 않습니다.</value>
+  </data>
+  <data name="0000" xml:space="preserve">
+    <value>00</value>
+  </data>
+  <data name="0100" xml:space="preserve">
+    <value>01</value>
+  </data>
+  <data name="0200" xml:space="preserve">
+    <value>02</value>
+  </data>
+  <data name="0300" xml:space="preserve">
+    <value>03</value>
+  </data>
+  <data name="0400" xml:space="preserve">
+    <value>04</value>
+  </data>
+  <data name="0500" xml:space="preserve">
+    <value>05</value>
+  </data>
+  <data name="0600" xml:space="preserve">
+    <value>06</value>
+  </data>
+  <data name="0700" xml:space="preserve">
+    <value>07</value>
+  </data>
+  <data name="0800" xml:space="preserve">
+    <value>08</value>
+  </data>
+  <data name="0900" xml:space="preserve">
+    <value>09</value>
+  </data>
+  <data name="1000" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="1100" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="1200" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="1300" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="1400" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="1500" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="1600" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="1700" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="1800" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="1900" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="2000" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="2100" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="2200" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="2300" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="CHUTE_TYPE" xml:space="preserve">
+    <value>슈트 타입</value>
+  </data>
+  <data name="EQP" xml:space="preserve">
+    <value>설비</value>
+  </data>
+  <data name="RSLT_INQ" xml:space="preserve">
+    <value>실적 조회</value>
+  </data>
+  <data name="ZONE" xml:space="preserve">
+    <value>ZONE</value>
+  </data>
+  <data name="SCANS_DT" xml:space="preserve">
+    <value>스캔일시</value>
+  </data>
+  <data name="CONT" xml:space="preserve">
+    <value>내용</value>
+  </data>
+  <data name="END_DATE" xml:space="preserve">
+    <value>종료일자</value>
+  </data>
+  <data name="PRIORITY" xml:space="preserve">
+    <value>우선순위</value>
+  </data>
+  <data name="START_DATE" xml:space="preserve">
+    <value>시작일자</value>
+  </data>
+  <data name="TITLE" xml:space="preserve">
+    <value>제목</value>
+  </data>
+  <data name="WRITER" xml:space="preserve">
+    <value>작성자</value>
+  </data>
+  <data name="(MSG)ASK_UPDATE_DATA_INQ" xml:space="preserve">
+    <value>수정된 데이터가 있습니다.|조회하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_UPDATE_DATA_NEW" xml:space="preserve">
+    <value>수정된 데이터가 있습니다.|신규 작성 하시겠습니까?</value>
+  </data>
+  <data name="(MSG)CMPT_RESEND_PROC" xml:space="preserve">
+    <value>재처리가 완료되었습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_MODIFY" xml:space="preserve">
+    <value>수정된 데이터가 없습니다.</value>
+  </data>
+  <data name="(MSG)ERR_RECEIVE_PART_ERR" xml:space="preserve">
+    <value>데이터 수신측에서 오류를 반환했습니다.</value>
+  </data>
+  <data name="(MSG)ERR_SEND_FAIL" xml:space="preserve">
+    <value>데이터 전송이 실패했습니다.</value>
+  </data>
+  <data name="TEST" xml:space="preserve">
+    <value>테스트</value>
+  </data>
+  <data name="(MSG)ASK_ADD_DATA_MODIFY" xml:space="preserve">
+    <value>수정된 데이터가 있습니다.|신규 데이터를 입력하시겠습니까?</value>
+  </data>
+  <data name="CHUTE_OPR_CD" xml:space="preserve">
+    <value>슈트운영코드</value>
+  </data>
+  <data name="PCL_DTM_CD" xml:space="preserve">
+    <value>Parcel 결정</value>
+  </data>
+  <data name="PCL_DTM_PROR_CD" xml:space="preserve">
+    <value>Parcel 결정 우선순위</value>
+  </data>
+  <data name="PWD_CHG_SWCS201_02_FIFTH" xml:space="preserve">
+    <value>하나 이상의 소문자를 제공합니다.</value>
+  </data>
+  <data name="PWD_CHG_SWCS201_02_FOURTH" xml:space="preserve">
+    <value>하나 이상의 특수문자를 제공합니다.</value>
+  </data>
+  <data name="PWD_CHG_SWCS201_02_SIXTH" xml:space="preserve">
+    <value>비밀번호를 변경하시면 메인 화면이 열립니다.</value>
+  </data>
+  <data name="BK_COND_REQ" xml:space="preserve">
+    <value>백업조건(*)</value>
+  </data>
+  <data name="BK_ORD" xml:space="preserve">
+    <value>백업순서</value>
+  </data>
+  <data name="BK_REBLD_YN" xml:space="preserve">
+    <value>백업후 리빌드여부</value>
+  </data>
+  <data name="BK_TBL" xml:space="preserve">
+    <value>백업테이블</value>
+  </data>
+  <data name="BK_TBL_OWNER_REQ" xml:space="preserve">
+    <value>백업테이블 OWNER(*)</value>
+  </data>
+  <data name="BK_TBL_REQ" xml:space="preserve">
+    <value>백업테이블(*)</value>
+  </data>
+  <data name="BK_YN" xml:space="preserve">
+    <value>백업여부</value>
+  </data>
+  <data name="DEL_YN" xml:space="preserve">
+    <value>삭제여부</value>
+  </data>
+  <data name="TBL_OWNER_REQ" xml:space="preserve">
+    <value>테이블 OWNER(*)</value>
+  </data>
+  <data name="TBL_REQ" xml:space="preserve">
+    <value>테이블(*)</value>
+  </data>
+  <data name="BK_COND" xml:space="preserve">
+    <value>백업조건</value>
+  </data>
+  <data name="BK_TBL_OWNER" xml:space="preserve">
+    <value>백업 테이블 OWNER</value>
+  </data>
+  <data name="TBL" xml:space="preserve">
+    <value>테이블</value>
+  </data>
+  <data name="TBL_OWNER" xml:space="preserve">
+    <value>테이블 OWNER</value>
+  </data>
+  <data name="(MSG)CHK_OPEN_TAB" xml:space="preserve">
+    <value>탭은 10개까지만 열 수 있습니다.</value>
+  </data>
+  <data name="(MSG)ASK_REPROS" xml:space="preserve">
+    <value>재처리를 수행하시겠습니까?</value>
+  </data>
+  <data name="ERR_RSN_CD" xml:space="preserve">
+    <value>오류 사유코드</value>
+  </data>
+  <data name="{MSG)ERR_SEARCH_COND_TERM" xml:space="preserve">
+    <value>일자 조건을 이내로 설정하셔야 합니다.</value>
+  </data>
+  <data name="(MSG)ERR_COND_TERM" xml:space="preserve">
+    <value>날짜 조건을 {0}일 이내로 설정하셔야 합니다.</value>
+  </data>
+  <data name="CURR_DATE" xml:space="preserve">
+    <value>현재일자</value>
+  </data>
+  <data name="DATE_COND_END_VAL" xml:space="preserve">
+    <value>일자조건 종료값</value>
+  </data>
+  <data name="DATE_COND_STAT_VAL" xml:space="preserve">
+    <value>일자조건 시작값</value>
+  </data>
+  <data name="(MENU)EMS" xml:space="preserve">
+    <value>EMS</value>
+  </data>
+  <data name="(MSG)ERR_EXISTS_ID" xml:space="preserve">
+    <value>ID가 존재합니다.</value>
+  </data>
+  <data name="(MSG)INFO_SEL_DEL" xml:space="preserve">
+    <value>삭제 대상을 선택하세요;.</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>아이디</value>
+  </data>
+  <data name="MNGR" xml:space="preserve">
+    <value>담당자</value>
+  </data>
+  <data name="VNDR_NM" xml:space="preserve">
+    <value>업체명</value>
+  </data>
+  <data name="(MSG)ERR_DUP_ID" xml:space="preserve">
+    <value>중복된 ID가 존재합니다.</value>
+  </data>
+  <data name="(MSG)ERR_EXISTS_EQP" xml:space="preserve">
+    <value>설비가 존재합니다.</value>
+  </data>
+  <data name="(MSG)ERR_EXISTS_SUB" xml:space="preserve">
+    <value>하위 분류가 존재합니다.</value>
+  </data>
+  <data name="(MSG)ERR_INVALID_ID" xml:space="preserve">
+    <value>Invalid ID</value>
+  </data>
+  <data name="(MSG)ERR_OVER_LVL" xml:space="preserve">
+    <value>레벨이 초과되었습니다.</value>
+  </data>
+  <data name="(MSG)ERR_PARTNT_CHILD_RELA" xml:space="preserve">
+    <value>하위ID는 부모ID와 연관이 있어야합니다.</value>
+  </data>
+  <data name="(MSG)ERR_REQ_ID_NM" xml:space="preserve">
+    <value>ID/명칭은 필수항목입니다.</value>
+  </data>
+  <data name="EQP_QTY" xml:space="preserve">
+    <value>설비수량</value>
+  </data>
+  <data name="EQP_QTY_REQ" xml:space="preserve">
+    <value>(*) 설비수량</value>
+  </data>
+  <data name="PBS_ID_REQ" xml:space="preserve">
+    <value>(*) PBS ID</value>
+  </data>
+  <data name="PBS_NM_REQ" xml:space="preserve">
+    <value>(*) PSB 명칭</value>
+  </data>
+  <data name="PBS_TYPE" xml:space="preserve">
+    <value>(*) PBS 구분</value>
+  </data>
+  <data name="(MSG)NO_ECS_CONNECTION" xml:space="preserve">
+    <value>ECS가 연결되지 않았습니다.</value>
+  </data>
+  <data name="EQP_SPR_NM_REQ" xml:space="preserve">
+    <value>(*) 설비분류명</value>
+  </data>
+  <data name="EQP_SPR_REQ" xml:space="preserve">
+    <value>(*) 설비분류</value>
+  </data>
+  <data name="SPR_NM" xml:space="preserve">
+    <value>분류명</value>
+  </data>
+  <data name="(MSG)ERR_FAIL_FILE_TRANS" xml:space="preserve">
+    <value>파일전송이 실패하였습니다.</value>
+  </data>
+  <data name="(MSG)ERR_FAIL_IMG_PROC" xml:space="preserve">
+    <value>이미지 파일 구성에 실패하였습니다.</value>
+  </data>
+  <data name="(MSG)ERR_FAIL_IMG_TRANS" xml:space="preserve">
+    <value>이미지 파일 전송이 실패하였습니다.</value>
+  </data>
+  <data name="(MSG)ERR_FAIL_SEND_IMG" xml:space="preserve">
+    <value>이미지 전송이 실패하였습니다.</value>
+  </data>
+  <data name="(MSG)ERR_FAIL_TRANS_FILE_PROC" xml:space="preserve">
+    <value>전송파일 구성이 실패하였습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_EXISTS_IMG" xml:space="preserve">
+    <value>이미지 파일이 존재하지 않습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_EXISTS_TRANS_FILE" xml:space="preserve">
+    <value>전송파일이 존재하지 않습니다.</value>
+  </data>
+  <data name="(MSG)ERR_REQ_EQP_LOC" xml:space="preserve">
+    <value>설비위치는 필수항목입니다.</value>
+  </data>
+  <data name="(MSG)ERR_REQ_EQP_SPR" xml:space="preserve">
+    <value>설비 분류는 필수항목입니다.</value>
+  </data>
+  <data name="OBST_HIS" xml:space="preserve">
+    <value>장애이력</value>
+  </data>
+  <data name="PART_INFO" xml:space="preserve">
+    <value>부품정보</value>
+  </data>
+  <data name="(MSG)ERR_REQ_LIFECYLE" xml:space="preserve">
+    <value>라이프사이클은 필수항목입니다.</value>
+  </data>
+  <data name="(MSG)ERR_REQ_PART_SPR" xml:space="preserve">
+    <value>부품분류는 필수항목입니다.</value>
+  </data>
+  <data name="USE_EQP" xml:space="preserve">
+    <value>사용설비</value>
+  </data>
+  <data name="WH_HIS" xml:space="preserve">
+    <value>입출고 이력</value>
+  </data>
+  <data name="(MSG)INFO_SEL_MUST" xml:space="preserve">
+    <value>담당자를 선택하세요.</value>
+  </data>
+  <data name="IF_TYPE_YN" xml:space="preserve">
+    <value>I/F 여부</value>
+  </data>
+  <data name="(MSG)CMPT_REPROS" xml:space="preserve">
+    <value>재처리가 완료되었습니다.</value>
+  </data>
+  <data name="(MSG)ERR_REPROS" xml:space="preserve">
+    <value>재처리 중 오류가 발생했습니다.</value>
+  </data>
+  <data name="MODULE_DTL" xml:space="preserve">
+    <value>모듈 상세</value>
+  </data>
+  <data name="EQP_CLS" xml:space="preserve">
+    <value>설비분류</value>
+  </data>
+  <data name="EQP_MODEL_REQ" xml:space="preserve">
+    <value>(*) 모델</value>
+  </data>
+  <data name="EQP_STND_REQ" xml:space="preserve">
+    <value>(*) 설비규격</value>
+  </data>
+  <data name="INST_DT_REQ" xml:space="preserve">
+    <value>(*) 설치일자</value>
+  </data>
+  <data name="MTBF" xml:space="preserve">
+    <value>MTBF</value>
+  </data>
+  <data name="MTTR" xml:space="preserve">
+    <value>MTTR</value>
+  </data>
+  <data name="PBS" xml:space="preserve">
+    <value>PBS</value>
+  </data>
+  <data name="PBS_NM" xml:space="preserve">
+    <value>PSB 명칭</value>
+  </data>
+  <data name="ALM_LEAD_TIME" xml:space="preserve">
+    <value>사전알람</value>
+  </data>
+  <data name="ATTACH_FILE" xml:space="preserve">
+    <value>첨부파일</value>
+  </data>
+  <data name="BASE_VAL_REQ" xml:space="preserve">
+    <value>(*) 기준값</value>
+  </data>
+  <data name="CHK_CONTENT_REQ" xml:space="preserve">
+    <value>(*) 체크내용</value>
+  </data>
+  <data name="CHK_ITEM_REQ" xml:space="preserve">
+    <value>(*) 점검항목</value>
+  </data>
+  <data name="CHK_LIST" xml:space="preserve">
+    <value>체크 리스트</value>
+  </data>
+  <data name="CHK_NOTE_REQ" xml:space="preserve">
+    <value>(*) 점검방법</value>
+  </data>
+  <data name="CHK_UNIT_REQ" xml:space="preserve">
+    <value>(*) 단위</value>
+  </data>
+  <data name="CLS_NM" xml:space="preserve">
+    <value>분류명</value>
+  </data>
+  <data name="EQP_CLS_ID" xml:space="preserve">
+    <value>설비분류</value>
+  </data>
+  <data name="EQP_INFO" xml:space="preserve">
+    <value>설비 정보</value>
+  </data>
+  <data name="EQP_MNFACT" xml:space="preserve">
+    <value>제조사</value>
+  </data>
+  <data name="EQP_MODEL" xml:space="preserve">
+    <value>설비 모델</value>
+  </data>
+  <data name="EQP_NM_POP" xml:space="preserve">
+    <value>설비참조</value>
+  </data>
+  <data name="EQP_PBS_ID" xml:space="preserve">
+    <value>설비위치</value>
+  </data>
+  <data name="EQP_REG" xml:space="preserve">
+    <value>설비 등록</value>
+  </data>
+  <data name="EQP_SEARCH" xml:space="preserve">
+    <value>설비 검색</value>
+  </data>
+  <data name="EQP_USE_N" xml:space="preserve">
+    <value>미사용</value>
+  </data>
+  <data name="EQP_USE_Y" xml:space="preserve">
+    <value>사용</value>
+  </data>
+  <data name="FILE_DEV_REQ" xml:space="preserve">
+    <value>(*) 파일구분</value>
+  </data>
+  <data name="FILE_NM_REQ" xml:space="preserve">
+    <value>(*) 파일명</value>
+  </data>
+  <data name="FINAL_CHK_DT" xml:space="preserve">
+    <value>최신점검일자</value>
+  </data>
+  <data name="INST_DT" xml:space="preserve">
+    <value>설치일자</value>
+  </data>
+  <data name="INST_MODEL" xml:space="preserve">
+    <value>모델</value>
+  </data>
+  <data name="INST_QTY_REQ" xml:space="preserve">
+    <value>(*) 설치수량</value>
+  </data>
+  <data name="LIFE_CLE" xml:space="preserve">
+    <value>수명주기</value>
+  </data>
+  <data name="LIFE_CLE_REQ" xml:space="preserve">
+    <value>(*) 수명주기</value>
+  </data>
+  <data name="LOWER_VAL_REQ" xml:space="preserve">
+    <value>(*) 하한값</value>
+  </data>
+  <data name="MNGR_CHGR_ID" xml:space="preserve">
+    <value>긴급연락처</value>
+  </data>
+  <data name="NOTE" xml:space="preserve">
+    <value>비고</value>
+  </data>
+  <data name="PART_CLS_ID_REQ" xml:space="preserve">
+    <value>(*) 부품분류</value>
+  </data>
+  <data name="PART_CLS_NM_REQ" xml:space="preserve">
+    <value>(*) 부품분류명</value>
+  </data>
+  <data name="PART_CLS_NOTE_REQ" xml:space="preserve">
+    <value>(*) 부품 분류비고</value>
+  </data>
+  <data name="PART_ID" xml:space="preserve">
+    <value>부품 ID</value>
+  </data>
+  <data name="PART_ID_REQ" xml:space="preserve">
+    <value>(*) 부품 ID</value>
+  </data>
+  <data name="PART_MNFACT" xml:space="preserve">
+    <value>제조사</value>
+  </data>
+  <data name="PART_MNFACT_REQ" xml:space="preserve">
+    <value>(*) 제조사</value>
+  </data>
+  <data name="PART_MODEL" xml:space="preserve">
+    <value>모델</value>
+  </data>
+  <data name="PART_MODEL_REQ" xml:space="preserve">
+    <value>(*) 모델</value>
+  </data>
+  <data name="PART_NM" xml:space="preserve">
+    <value>부품명</value>
+  </data>
+  <data name="PART_NM_REQ" xml:space="preserve">
+    <value>(*) 부품명</value>
+  </data>
+  <data name="PART_REG" xml:space="preserve">
+    <value>부품 등록</value>
+  </data>
+  <data name="PART_STND" xml:space="preserve">
+    <value>규격</value>
+  </data>
+  <data name="PART_STND_REQ" xml:space="preserve">
+    <value>(*) 규격</value>
+  </data>
+  <data name="PBS_STND" xml:space="preserve">
+    <value>규격</value>
+  </data>
+  <data name="STOCK_MNG_N" xml:space="preserve">
+    <value>재고관리 안함</value>
+  </data>
+  <data name="STOCK_MNG_Y" xml:space="preserve">
+    <value>재고관리</value>
+  </data>
+  <data name="STOCK_MNG_YN" xml:space="preserve">
+    <value>재고관리</value>
+  </data>
+  <data name="STOCK_MNG_YN_REQ" xml:space="preserve">
+    <value>(*) 재고관리</value>
+  </data>
+  <data name="STOCK_QTY_REQ" xml:space="preserve">
+    <value>(*) 재고수량</value>
+  </data>
+  <data name="String1" xml:space="preserve">
+    <value>설비 위치</value>
+  </data>
+  <data name="UPPER_VAL_REQ" xml:space="preserve">
+    <value>(*)상한값</value>
+  </data>
+  <data name="USE_DAYS_REQ" xml:space="preserve">
+    <value>(*) 사용일수</value>
+  </data>
+  <data name="APPD_FILE_NM" xml:space="preserve">
+    <value>첨부파일명</value>
+  </data>
+  <data name="APPLY" xml:space="preserve">
+    <value>적용</value>
+  </data>
+  <data name="CHKPLAN_REG" xml:space="preserve">
+    <value>점검계획등록</value>
+  </data>
+  <data name="CHK_CONTENT" xml:space="preserve">
+    <value>체크 내용</value>
+  </data>
+  <data name="CHK_COUNT" xml:space="preserve">
+    <value>조치건수</value>
+  </data>
+  <data name="CHK_DEV" xml:space="preserve">
+    <value>점검구분</value>
+  </data>
+  <data name="CHK_DEV_CD" xml:space="preserve">
+    <value>점검구분</value>
+  </data>
+  <data name="CHK_DEV_NM" xml:space="preserve">
+    <value>점검구분명</value>
+  </data>
+  <data name="CHK_DT" xml:space="preserve">
+    <value>점검일자</value>
+  </data>
+  <data name="CHK_EARNINGS_YN" xml:space="preserve">
+    <value>실적여부</value>
+  </data>
+  <data name="CHK_LOCATION" xml:space="preserve">
+    <value>점검위치</value>
+  </data>
+  <data name="CHK_LST_REF" xml:space="preserve">
+    <value>체크리스트 참조</value>
+  </data>
+  <data name="CHK_MNGR" xml:space="preserve">
+    <value>점검자</value>
+  </data>
+  <data name="CHK_MNGR_NM" xml:space="preserve">
+    <value>점검자</value>
+  </data>
+  <data name="CHK_NOTE" xml:space="preserve">
+    <value>체크 방법</value>
+  </data>
+  <data name="CHK_PERIOD" xml:space="preserve">
+    <value>점검기간</value>
+  </data>
+  <data name="CHK_PLAN" xml:space="preserve">
+    <value>점검계획</value>
+  </data>
+  <data name="CHK_PLAN_ADD" xml:space="preserve">
+    <value>점검계획등록</value>
+  </data>
+  <data name="CHK_PLAN_DT" xml:space="preserve">
+    <value>점검계획일자</value>
+  </data>
+  <data name="CHK_PLAN_NM" xml:space="preserve">
+    <value>점검명</value>
+  </data>
+  <data name="CHK_RST" xml:space="preserve">
+    <value>조치결과</value>
+  </data>
+  <data name="CHK_RST_NOTE" xml:space="preserve">
+    <value>점검결과내용</value>
+  </data>
+  <data name="CHK_TRGT_YN" xml:space="preserve">
+    <value>점검대상여부</value>
+  </data>
+  <data name="CONFIRM" xml:space="preserve">
+    <value>확정</value>
+  </data>
+  <data name="EARNINGS" xml:space="preserve">
+    <value>점검실적</value>
+  </data>
+  <data name="EMS_PART_WH_HIS" xml:space="preserve">
+    <value>입출고이력</value>
+  </data>
+  <data name="EMS_PBS_USE" xml:space="preserve">
+    <value>사용 설비</value>
+  </data>
+  <data name="ERR_HIS" xml:space="preserve">
+    <value>장애 이력</value>
+  </data>
+  <data name="FAIL_DT" xml:space="preserve">
+    <value>장애일자</value>
+  </data>
+  <data name="FAIL_NOTE" xml:space="preserve">
+    <value>장애 내용</value>
+  </data>
+  <data name="FAIL_REASON" xml:space="preserve">
+    <value>장애 사유</value>
+  </data>
+  <data name="INSP_QTY" xml:space="preserve">
+    <value>조사수량</value>
+  </data>
+  <data name="INSP_STAT_CD" xml:space="preserve">
+    <value>상태</value>
+  </data>
+  <data name="LOSS_QTY" xml:space="preserve">
+    <value>망실수량</value>
+  </data>
+  <data name="MANAGER" xml:space="preserve">
+    <value>담당자</value>
+  </data>
+  <data name="MNGR_NM" xml:space="preserve">
+    <value>담당자</value>
+  </data>
+  <data name="MSR_NOTE" xml:space="preserve">
+    <value>조치 내용</value>
+  </data>
+  <data name="OUT_QTY" xml:space="preserve">
+    <value>출고수량</value>
+  </data>
+  <data name="PART_DEV" xml:space="preserve">
+    <value>부품분류</value>
+  </data>
+  <data name="PERIOD" xml:space="preserve">
+    <value>기간</value>
+  </data>
+  <data name="PR_PRICE" xml:space="preserve">
+    <value>구매가격</value>
+  </data>
+  <data name="REST_QTY" xml:space="preserve">
+    <value>잔여수량</value>
+  </data>
+  <data name="STOCKIN_ADD" xml:space="preserve">
+    <value>재고조사등록</value>
+  </data>
+  <data name="STOCKTAKING_DT" xml:space="preserve">
+    <value>재고조사일자</value>
+  </data>
+  <data name="STOCKTAKING_REG" xml:space="preserve">
+    <value>재고조사등록</value>
+  </data>
+  <data name="STOCKTAK_ADD" xml:space="preserve">
+    <value>입고</value>
+  </data>
+  <data name="STOCK_INSP_DT" xml:space="preserve">
+    <value>재고조사일자</value>
+  </data>
+  <data name="WH_NOTE" xml:space="preserve">
+    <value>비고</value>
+  </data>
+  <data name="WH_QTY" xml:space="preserve">
+    <value>입고수량</value>
+  </data>
+  <data name="ID_REQ" xml:space="preserve">
+    <value>(*) ID</value>
+  </data>
+  <data name="PART_CLS" xml:space="preserve">
+    <value>부품 구분</value>
+  </data>
+  <data name="EQP_SPR_NM" xml:space="preserve">
+    <value>설비분류명</value>
+  </data>
+  <data name="EQP_CLS_NM" xml:space="preserve">
+    <value>설비분류명</value>
+  </data>
+  <data name="PWD_CHG_SWCS201_02_FIRST" xml:space="preserve">
+    <value>암호는 14자 이상이어야 합니다.</value>
+  </data>
+  <data name="PART_CLS_NM" xml:space="preserve">
+    <value>부품분류명</value>
+  </data>
+  <data name="PART_CLS_NOTE" xml:space="preserve">
+    <value>부품분류 비고</value>
+  </data>
+  <data name="CHK_ID" xml:space="preserve">
+    <value>점검 ID</value>
+  </data>
+  <data name="EDIT" xml:space="preserve">
+    <value>수정</value>
+  </data>
+  <data name="CHK_TYPE" xml:space="preserve">
+    <value>점검여부</value>
+  </data>
+  <data name="FAIL_TYPE" xml:space="preserve">
+    <value>장애 구분</value>
+  </data>
+  <data name="FAIL_NO" xml:space="preserve">
+    <value>장애번호</value>
+  </data>
+  <data name="MSR_DT" xml:space="preserve">
+    <value>조치일자</value>
+  </data>
+  <data name="REGIST" xml:space="preserve">
+    <value>등록</value>
+  </data>
+  <data name="FAIL_MSR_DETAIL" xml:space="preserve">
+    <value>장애조치 상세내용</value>
+  </data>
+  <data name="(MSG)EMS_QTY_NODEL" xml:space="preserve">
+    <value>당초 설치수량이 있으면 삭제할 수 없습니다.</value>
+  </data>
+  <data name="CHG_QTY" xml:space="preserve">
+    <value>교체수량</value>
+  </data>
+  <data name="FAIL_INFO_REG" xml:space="preserve">
+    <value>장애내용 등록</value>
+  </data>
+  <data name="FAIL_QTY" xml:space="preserve">
+    <value>장애수량</value>
+  </data>
+  <data name="NEW_INST_QTY" xml:space="preserve">
+    <value>신규설치수량</value>
+  </data>
+  <data name="ORG_INST_DT" xml:space="preserve">
+    <value>당초설치일자</value>
+  </data>
+  <data name="ORG_INST_QTY" xml:space="preserve">
+    <value>당초설치수량</value>
+  </data>
+  <data name="WRK_CONT" xml:space="preserve">
+    <value>작업내용</value>
+  </data>
+  <data name="(MSG)ERR_EXISTS_ADD_ROW" xml:space="preserve">
+    <value>행추가된 데이터가 있습니다.|행추가된 데이터는 삭제할 수 없습니다.</value>
+  </data>
+  <data name="(MSG)INFO_EXISTS_REG_PART_ID" xml:space="preserve">
+    <value>선택하신 부품번호는|기존에 등록된 부품번호입니다.</value>
+  </data>
+  <data name="WH_DT" xml:space="preserve">
+    <value>입고일자</value>
+  </data>
+  <data name="(MSG)ERR_EXISTS_INQ_DATA" xml:space="preserve">
+    <value>조회된 데이터는 행삭제를 할 수 없습니다.|삭제버튼을 이용하여 삭제해주세요.</value>
+  </data>
+  <data name="EMS_REFHIS_DEL" xml:space="preserve">
+    <value>재고 조사 이력을 삭제하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ERR_EXISTS_INQ" xml:space="preserve">
+    <value>조회된 데이터는 행 삭제를 할 수 없습니다.</value>
+  </data>
+  <data name="ERR_NOT_INPUT" xml:space="preserve">
+    <value>{0}(이)가 입력되지 않았습니다.</value>
+  </data>
+  <data name="PBS_ID" xml:space="preserve">
+    <value>PSB ID</value>
+  </data>
+  <data name="(MSG)ASK_EMS_CONF_COND" xml:space="preserve">
+    <value>{0} - 재고조사를 확정하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ASK_EMS_ERR_CONF" xml:space="preserve">
+    <value>장애 내역을 확정하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ERR_NOT_DEL_CONF" xml:space="preserve">
+    <value>확정된 항목은 삭제하실 수 없습니다.</value>
+  </data>
+  <data name="CHK_RSLT" xml:space="preserve">
+    <value>점검결과</value>
+  </data>
+  <data name="CHGE_QTY" xml:space="preserve">
+    <value>변경수량</value>
+  </data>
+  <data name="CHG_PLAN_DT_REQ" xml:space="preserve">
+    <value>(*) 변경예정일자</value>
+  </data>
+  <data name="INST_QTY" xml:space="preserve">
+    <value>설치수량</value>
+  </data>
+  <data name="SEARCH_RANGE" xml:space="preserve">
+    <value>검색 범위</value>
+  </data>
+  <data name="String2" xml:space="preserve">
+    <value>재고수량</value>
+  </data>
+  <data name="(MSG)ASK_DO_NOT_CHG_SERIAL_INFO" xml:space="preserve">
+    <value>시리얼 스캐너 정보를 변경하지 않으셨습니다.|창을 종료하시겠습니까?</value>
+  </data>
+  <data name="SET_SERIAL_SCANNER" xml:space="preserve">
+    <value>시리얼 스캐너 설정</value>
+  </data>
+  <data name="(MSG)ERR_NOT_CONNECT_SERIAL_SCANNER" xml:space="preserve">
+    <value>시리얼 포트 정보를 로드하지 못했습니다.|스캐너 연결 상태를 확인해주세요.</value>
+  </data>
+  <data name="(MSG)ERR_BARSCN_SERIAL_NOT_FOUND" xml:space="preserve">
+    <value>설정된 {0} 포트를 연결할 수 없습니다.</value>
+  </data>
+  <data name="EQP_STAND" xml:space="preserve">
+    <value>설비 규격</value>
+  </data>
+  <data name="PASSWORD_CHG" xml:space="preserve">
+    <value>비밀번호 변경</value>
+  </data>
+  <data name="(MSG)ERR_EMPTY_PWD_NM" xml:space="preserve">
+    <value>패스워드를 입력하세요.</value>
+  </data>
+  <data name="String3" xml:space="preserve">
+    <value />
+  </data>
+  <data name="(MSG)SEL_COMBO_BAUDRATE" xml:space="preserve">
+    <value>BaudRate 콤보박스 항목을 선택해주세요.</value>
+  </data>
+  <data name="(MSG)SEL_COMBO_SERIAL_NO" xml:space="preserve">
+    <value>시리얼번호 콤보박스 항목을 선택해주세요.</value>
+  </data>
+  <data name="(MSG)ASK_EXISTS_NO_CHG_TO_SEARCH" xml:space="preserve">
+    <value>변경된 데이터가 있습니다.|계속 조회하시겠습니까?</value>
+  </data>
+  <data name="(MSG)INFO_CMPT_SRT_SETTING" xml:space="preserve">
+    <value>소터 설정이 변경되었습니다.</value>
+  </data>
+  <data name="(MSG)INFO_SMS_PLC_NOT_CONNECT_RETRY" xml:space="preserve">
+    <value>SMS와 PLC의 연결이 끊겨 있습니다.|확인 후 다시 시도해주세요.</value>
+  </data>
+  <data name="(MSG)INFO_SRT_PROC_STOP_CHG" xml:space="preserve">
+    <value>소터가 가동 중입니다.소터 정지 후에 변경하세요.</value>
+  </data>
+  <data name="ALL_" xml:space="preserve">
+    <value>전체</value>
+  </data>
+  <data name="MASTER_REF" xml:space="preserve">
+    <value>마스터 참조</value>
+  </data>
+  <data name="(MSG)ERR_INPUT_MGNR" xml:space="preserve">
+    <value>담당자를 입력하세요.</value>
+  </data>
+  <data name="PART_REF" xml:space="preserve">
+    <value>부품 참조</value>
+  </data>
+  <data name="EQP_STND" xml:space="preserve">
+    <value>규격</value>
+  </data>
+  <data name="CHUTE_PLAN_CODE_REQ" xml:space="preserve">
+    <value>(*) 슈트 플랜코드</value>
+  </data>
+  <data name="CHUTE_PLAN_NM" xml:space="preserve">
+    <value>슈트 플랜명</value>
+  </data>
+  <data name="CHUTE_PLAN_COPY" xml:space="preserve">
+    <value>슈트 플랜 복사</value>
+  </data>
+  <data name="(MSG)ERR_ADD_DATA_RGN_CHUTE" xml:space="preserve">
+    <value>추가된 권역, 슈트 데이터가 없습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NO_SELECT_CHUTE" xml:space="preserve">
+    <value>선택된 슈트 정보가 업습니다.</value>
+  </data>
+  <data name="(MSG)ERR_NO_SELECT_RGN" xml:space="preserve">
+    <value>선택된 권역 데이터가 없습니다.</value>
+  </data>
+  <data name="CHUTE_PLAN_NM_REQ" xml:space="preserve">
+    <value>(*) 슈트 플랜명</value>
+  </data>
+  <data name="PLAN_COPY" xml:space="preserve">
+    <value>플랜 복사</value>
+  </data>
+  <data name="(MSG)ASK_TEMPLATE_DOWNLOAD" xml:space="preserve">
+    <value>템플릿을 다운로드 하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ERR_EMPTY_CHUTE_PLAN_CODE" xml:space="preserve">
+    <value>슈트 플랜코드를 입력하세요.</value>
+  </data>
+  <data name="(MSG)ERR_NOT_SAVE_CHUTE_MPNG" xml:space="preserve">
+    <value>저장할 슈트매핑 데이터가 없습니다.</value>
+  </data>
+  <data name="CHUTE_LIST" xml:space="preserve">
+    <value>슈트 리스트</value>
+  </data>
+  <data name="CHUTE_PLAN_CODE" xml:space="preserve">
+    <value>슈트 플랜코드</value>
+  </data>
+  <data name="ERR_EXIST_RGN_CHUTE" xml:space="preserve">
+    <value>권역코드:{0}, 슈트ID:{1} 이(가) 존재합니다.</value>
+  </data>
+  <data name="NOT_MPNG_YN" xml:space="preserve">
+    <value>미매핑여부</value>
+  </data>
+  <data name="CHUTE_MPNG_LIST" xml:space="preserve">
+    <value>슈트 매핑 리스트</value>
+  </data>
+  <data name="(MSG)CMPT_CONFIRM" xml:space="preserve">
+    <value>확정되었습니다.</value>
+  </data>
+  <data name="CHK_LIST_DOWNLOAD" xml:space="preserve">
+    <value>체크 리스트 다운로드</value>
+  </data>
+  <data name="CHUTE_MPNG_EXCEL_UPLOAD_RSLT" xml:space="preserve">
+    <value>슈트매핑 엑셀 업로드 결과</value>
+  </data>
+  <data name="RSLT_CD" xml:space="preserve">
+    <value>결과 코드</value>
+  </data>
+  <data name="(MSG)ERR_EXIST_RGN_CHUTE" xml:space="preserve">
+    <value>동일한 권역코드와 슈트 ID가 존재합니다.|수정하신 후 다시 업로드 해주세요.</value>
+  </data>
+  <data name="(MSG)ERR_OTHER_PLAN_CD_RE_UPLOAD" xml:space="preserve">
+    <value>동일하지 않은 플래코드가 존재합니다.|수정하신 후 다시 업로드 해주세요.</value>
+  </data>
+  <data name="(MSG)CMPT_CHG" xml:space="preserve">
+    <value>변환이 완료되었습니다.</value>
+  </data>
+  <data name="CHG_VALUE" xml:space="preserve">
+    <value>변환 대상 값</value>
+  </data>
+  <data name="DECRYPT" xml:space="preserve">
+    <value>복호화</value>
+  </data>
+  <data name="DECRYPT_VALUE" xml:space="preserve">
+    <value>복호화 값</value>
+  </data>
+  <data name="ENCRYPT" xml:space="preserve">
+    <value>암호화</value>
+  </data>
+  <data name="ENCRYPT_DECRYPT" xml:space="preserve">
+    <value>암호화 / 복호화</value>
+  </data>
+  <data name="ENCRYPT_VALUE" xml:space="preserve">
+    <value>암호화 값</value>
+  </data>
+  <data name="INIT" xml:space="preserve">
+    <value>초기화</value>
+  </data>
+  <data name="COMP_RSLT_CD" xml:space="preserve">
+    <value>비교 결과 코드</value>
+  </data>
+  <data name="COMP_RSLT_NM" xml:space="preserve">
+    <value>비교 결과</value>
+  </data>
+  <data name="EXTENS" xml:space="preserve">
+    <value>확장자</value>
+  </data>
+  <data name="FILE_NM" xml:space="preserve">
+    <value>파일명</value>
+  </data>
+  <data name="ALL_DEPLOY" xml:space="preserve">
+    <value>전체 배포</value>
+  </data>
+  <data name="(MSG)ASK_SERVER_DEPLOY_BACKUP" xml:space="preserve">
+    <value>서버 배포 파일을 백업하시겠습니까?</value>
+  </data>
+  <data name="(MSG)ERR_NOT_EXISTS_DEPLOY" xml:space="preserve">
+    <value>서버에 배포 파일이 없습니다.|전체 배포를 수행하세요.</value>
+  </data>
+  <data name="FILE_PATH" xml:space="preserve">
+    <value>파일 경로</value>
+  </data>
+  <data name="LOCAL_FILE_PATH" xml:space="preserve">
+    <value>로컬 파일경로</value>
+  </data>
+  <data name="SERVER_FILE_PATH" xml:space="preserve">
+    <value>서버 파일경로</value>
+  </data>
+  <data name="LOCAL_FILE_VER" xml:space="preserve">
+    <value>로컬 파일버전</value>
+  </data>
+  <data name="SERVER_FILE_VER" xml:space="preserve">
+    <value>서버 파일버전</value>
+  </data>
+  <data name="(MSG)CMPT_DEPLOY" xml:space="preserve">
+    <value>소스배포 작업이 완료되었습니다.</value>
+  </data>
+</root>

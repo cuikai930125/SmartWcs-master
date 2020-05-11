@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{517038AE-71C6-4ABE-8315-D49E313506A3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SMART.WCS.Main</RootNamespace>
+    <AssemblyName>SMART.WCS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SmartWCS.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Mvvm.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Charts.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Core.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.LayoutControl.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Connected Services\Local_WebService_Coupang\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WebService_Coupang\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DataModels\MainWindowDataModel.cs" />
+    <Compile Include="LoginSample.xaml.cs">
+      <DependentUpon>LoginSample.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LoginSample.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Logout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.xaml.cs">
+      <DependentUpon>Logout.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Connected Services\Local_WebService_Coupang\CoupangWebService.wsdl" />
+    <None Include="Connected Services\Local_WebService_Coupang\CoupangWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Local_WebService_Coupang\CoupangWebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Local_WebService_Coupang\CoupangWebService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Local_WebService_Coupang\CoupangWebService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Local_WebService_Coupang\CoupangWebService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Local_WebService_Coupang\CoupangWebService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\Local_WebService_Coupang\SMART.WCS.Main.Local_WebService_Coupang.CompositeType1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Local_WebService_Coupang\SMART.WCS.Main.Local_WebService_Coupang.DeployServerFileInfo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Local_WebService_Coupang\SMART.WCS.Main.Local_WebService_Coupang.LiveUpdateMember1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebService_Coupang\CoupangWebService.wsdl" />
+    <None Include="Connected Services\WebService_Coupang\CoupangWebService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebService_Coupang\CoupangWebService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebService_Coupang\CoupangWebService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebService_Coupang\CoupangWebService4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebService_Coupang\CoupangWebService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\WebService_Coupang\SMART.WCS.Main.WebService_Coupang.CompositeType1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebService_Coupang\SMART.WCS.Main.WebService_Coupang.DeployServerFileInfo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\WebService_Coupang\SMART.WCS.Main.WebService_Coupang.LiveUpdateMember1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Properties\DataSources\SMART.WCS.UI.COMMON.WebService_Coupang.CompositeType.datasource" />
+    <None Include="Properties\DataSources\SMART.WCS.UI.COMMON.WebService_Coupang.DeployServerFileInfo.datasource" />
+    <None Include="Properties\DataSources\SMART.WCS.UI.COMMON.WebService_Coupang.LiveUpdateMember.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\SMART.WCS.Common\SMART.WCS.Common.csproj">
+      <Project>{372a183a-873c-439d-b5a2-e95bb784a96f}</Project>
+      <Name>SMART.WCS.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\SMART.WCS.Control\SMART.WCS.Control.csproj">
+      <Project>{9bc0f5af-053d-4891-915b-252067182433}</Project>
+      <Name>SMART.WCS.Control</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\SMART.WCS.MsgBox\SMART.WCS.MsgBox.csproj">
+      <Project>{64249752-b59f-4e81-87f3-0b493f5af326}</Project>
+      <Name>SMART.WCS.MsgBox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Common\SMART.WCS.Resource\SMART.WCS.Resource.csproj">
+      <Project>{e6d6daee-5637-4f39-9549-2166aac6a74a}</Project>
+      <Name>SMART.WCS.Resource</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMART.WCS.UI.Analysis\SMART.WCS.UI.Analysis.csproj">
+      <Project>{e9b6bcac-eeea-4fa8-b32c-b54f77a913bb}</Project>
+      <Name>SMART.WCS.UI.Analysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMART.WCS.UI.COMMON\SMART.WCS.UI.Common.csproj">
+      <Project>{27fb7187-b771-4cda-a4cf-7071755359bf}</Project>
+      <Name>SMART.WCS.UI.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMART.WCS.UI.Monitoring\SMART.WCS.UI.Monitoring.csproj">
+      <Project>{59c12706-8de2-44ef-8f2b-8c7bbd0c5235}</Project>
+      <Name>SMART.WCS.UI.Monitoring</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMART.WCS.UI.Optimization\SMART.WCS.UI.Optimization.csproj">
+      <Project>{15997862-f6ec-42f5-978b-ccd8e04ab4f6}</Project>
+      <Name>SMART.WCS.UI.Optimization</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMART.WCS.UI.Plan\SMART.WCS.UI.Plan.csproj">
+      <Project>{dfe1a843-4a75-4e68-b290-b0cf6de6b69b}</Project>
+      <Name>SMART.WCS.UI.Plan</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SMART.WCS.UI.Processing\SMART.WCS.UI.Processing.csproj">
+      <Project>{ab504714-8da9-4c7d-8f14-85ee7eda60bb}</Project>
+      <Name>SMART.WCS.UI.Processing</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2%28x86 및 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LGCNS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SmartWCS.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Local_WebService_Coupang\" />
+    <WCFMetadataStorage Include="Connected Services\WebService_Coupang\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebService_Coupang\CoupangWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebService_Coupang\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebService_Coupang\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\WebService_Coupang\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Local_WebService_Coupang\CoupangWebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Local_WebService_Coupang\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Local_WebService_Coupang\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Local_WebService_Coupang\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

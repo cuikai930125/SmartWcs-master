@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16F61D48-41E9-4CDB-AE04-7DF377B52A2D}</ProjectGuid>
+    <OutputType>library</OutputType>
+    <RootNamespace>SMART.WCS.UI.EMS</RootNamespace>
+    <AssemblyName>SMART.WCS.UI.EMS</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <Deterministic>False</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\Deploy\WCS\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Data.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Mvvm.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Mvvm.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Printing.v19.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Charts.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Charts.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Controls.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Controls.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Core.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Core.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Grid.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Grid.v19.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Layout.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Layout.v19.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.LayoutControl.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.LayoutControl.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Printing.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Scheduler.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.Xpf.Scheduler.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Scheduling.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.Xpf.Scheduling.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Themes.Office2016White.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016WhiteSE.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Themes.Office2016WhiteSE.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2019Colorful.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\DevExpress.Xpf.Themes.Office2019Colorful.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraLayout.v19.1, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.XtraLayout.v19.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.XtraScheduler.v19.1.Core, Version=19.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\DevExpress 19.1\Components\Bin\Framework\DevExpress.XtraScheduler.v19.1.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="LGCNS.ezControl.Presentation, Version=2.0.8.6, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\LGCNS.ezControl.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="SMART.WCS.Control">
+      <HintPath>C:\Deploy\WCS\bin\SMART.WCS.Control.dll</HintPath>
+    </Reference>
+    <Reference Include="SMART.WCS.Resource, Version=1.0.7373.26877, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Deploy\WCS\bin\SMART.WCS.Resource.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DataMembers\COM\EmsAppdFile.cs" />
+    <Compile Include="DataMembers\COM\EmsChkList.cs" />
+    <Compile Include="DataMembers\COM\EmsCommCode.cs" />
+    <Compile Include="DataMembers\COM\EmsEqpClsList.cs" />
+    <Compile Include="DataMembers\COM\EmsEqpList.cs" />
+    <Compile Include="DataMembers\COM\EmsErrHis.cs" />
+    <Compile Include="DataMembers\COM\EmsMngrList.cs" />
+    <Compile Include="DataMembers\COM\EmsPartClsList.cs" />
+    <Compile Include="DataMembers\COM\EmsPartRef.cs" />
+    <Compile Include="DataMembers\COM\EmsPartRepairHis.cs" />
+    <Compile Include="DataMembers\COM\EmsPbsList.cs" />
+    <Compile Include="DataMembers\COM\EmsWhHisList.cs" />
+    <Compile Include="DataMembers\E1001\EmsEqpMngr.cs" />
+    <Compile Include="DataMembers\E1002\EmsPbs.cs" />
+    <Compile Include="DataMembers\E1002\PBSTreeItem.cs" />
+    <Compile Include="DataMembers\E1003\EmsEqpCls.cs" />
+    <Compile Include="DataMembers\E1003\EqpClsTreeItem.cs" />
+    <Compile Include="DataMembers\E1004\EmsEqpChkList.cs" />
+    <Compile Include="DataMembers\E1004\EmsEqpInfo.cs" />
+    <Compile Include="DataMembers\E1004\EmsEqpMng.cs" />
+    <Compile Include="DataMembers\E1004\EmsPartByEqp.cs" />
+    <Compile Include="DataMembers\E1005\EmsPartCls.cs" />
+    <Compile Include="DataMembers\E1005\PartClsTreeItem.cs" />
+    <Compile Include="DataMembers\E1006\EmsPartInfo.cs" />
+    <Compile Include="DataMembers\E3001\EmsChkList.cs" />
+    <Compile Include="DataMembers\E3001\EmsChkPbs.cs" />
+    <Compile Include="DataMembers\E3001\EmsChkPlan.cs" />
+    <Compile Include="DataMembers\E3001\EmsChkPlanInfo.cs" />
+    <Compile Include="DataMembers\E3001\EmsChkRst.cs" />
+    <Compile Include="DataMembers\E3001\EmsChkRstInfo.cs" />
+    <Compile Include="DataMembers\ECHK002\EmsFail.cs" />
+    <Compile Include="DataMembers\ECHK002\EmsFailPart.cs" />
+    <Compile Include="DataMembers\ECHK003\EmsAlarmStatus.cs" />
+    <Compile Include="DataMembers\ECHK003\EmsAlarmStatusDetail.cs" />
+    <Compile Include="DataMembers\ECHK004\EmsAppointment.cs" />
+    <Compile Include="DataMembers\ESPA001\EmsPartSpa.cs" />
+    <Compile Include="DataMembers\ESPA002\EmsStock.cs" />
+    <Compile Include="DataMembers\ESPA002\EmsStockDetail.cs" />
+    <Compile Include="HelperClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Views\BASE_INFO\E1001.xaml.cs">
+      <DependentUpon>E1001.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BASE_INFO\E1002.xaml.cs">
+      <DependentUpon>E1002.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BASE_INFO\E1003.xaml.cs">
+      <DependentUpon>E1003.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BASE_INFO\E1004.xaml.cs">
+      <DependentUpon>E1004.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BASE_INFO\E1004_01P.xaml.cs">
+      <DependentUpon>E1004_01P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BASE_INFO\E1004_02P.xaml.cs">
+      <DependentUpon>E1004_02P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BASE_INFO\E1005.xaml.cs">
+      <DependentUpon>E1005.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BASE_INFO\E1006.xaml.cs">
+      <DependentUpon>E1006.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BASE_INFO\E1006_01P.xaml.cs">
+      <DependentUpon>E1006_01P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BASE_INFO\E1007.xaml.cs">
+      <DependentUpon>E1007.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CHECK_MGMT\E3001.xaml.cs">
+      <DependentUpon>E3001.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CHECK_MGMT\E3001_01P.xaml.cs">
+      <DependentUpon>E3001_01P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CHECK_MGMT\E3001_04P.xaml.cs">
+      <DependentUpon>E3001_04P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CHECK_MGMT\E3001_05P.xaml.cs">
+      <DependentUpon>E3001_05P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CHECK_MGMT\E3002.xaml.cs">
+      <DependentUpon>E3002.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CHECK_MGMT\E3002_01P.xaml.cs">
+      <DependentUpon>E3002_01P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CHECK_MGMT\E3003.xaml.cs">
+      <DependentUpon>E3003.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CHECK_MGMT\E3004.xaml.cs">
+      <DependentUpon>E3004.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\COM\BandTemplateSelector.cs" />
+    <Compile Include="Views\COM\ECOM001_01P.xaml.cs">
+      <DependentUpon>ECOM001_01P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\COM\ECOM001_02P.xaml.cs">
+      <DependentUpon>ECOM001_02P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\COM\ECOM001_03P.xaml.cs">
+      <DependentUpon>ECOM001_03P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\COM\ECOM001_04P.xaml.cs">
+      <DependentUpon>ECOM001_04P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\COM\ECOM001_05P.xaml.cs">
+      <DependentUpon>ECOM001_05P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\COM\ECOM001_06P.xaml.cs">
+      <DependentUpon>ECOM001_06P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\COM\ECOM001_07P.xaml.cs">
+      <DependentUpon>ECOM001_07P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\COM\ECOM001_08P.xaml.cs">
+      <DependentUpon>ECOM001_08P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\COM\ECOM001_09P.xaml.cs">
+      <DependentUpon>ECOM001_09P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\COM\ECOM001_10P.xaml.cs">
+      <DependentUpon>ECOM001_10P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\COM\ECOM001_11P.xaml.cs">
+      <DependentUpon>ECOM001_11P.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SPACE_PARTS\E2001.xaml.cs">
+      <DependentUpon>E2001.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SPACE_PARTS\E2002.xaml.cs">
+      <DependentUpon>E2002.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SPACE_PARTS\E2002_01P.xaml.cs">
+      <DependentUpon>E2002_01P.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Utility\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Views\BASE_INFO\E1001.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BASE_INFO\E1002.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BASE_INFO\E1003.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BASE_INFO\E1004.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BASE_INFO\E1004_01P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BASE_INFO\E1004_02P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BASE_INFO\E1005.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BASE_INFO\E1006.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BASE_INFO\E1006_01P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BASE_INFO\E1007.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CHECK_MGMT\E3001.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CHECK_MGMT\E3001_01P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CHECK_MGMT\E3001_04P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CHECK_MGMT\E3001_05P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CHECK_MGMT\E3002.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CHECK_MGMT\E3002_01P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CHECK_MGMT\E3003.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CHECK_MGMT\E3004.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\COM\ECOM001_01P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\COM\ECOM001_02P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\COM\ECOM001_03P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\COM\ECOM001_04P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\COM\ECOM001_05P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\COM\ECOM001_06P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\COM\ECOM001_07P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\COM\ECOM001_08P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\COM\ECOM001_09P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\COM\ECOM001_10P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\COM\ECOM001_11P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SPACE_PARTS\E2001.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SPACE_PARTS\E2002.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\SPACE_PARTS\E2002_01P.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\SMART.WCS.Common\SMART.WCS.Common.csproj">
+      <Project>{372a183a-873c-439d-b5a2-e95bb784a96f}</Project>
+      <Name>SMART.WCS.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
